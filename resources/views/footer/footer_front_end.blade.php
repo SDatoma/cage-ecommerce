@@ -243,7 +243,7 @@
         <script src="{{asset('css_front_end/assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
 
             <!-- Plugins JS -->
-         <script src="{{asset('css_front_end/assets/js/plugins/jquery-ui.min.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/plugins/jquery-ui.min.js')}}"></script>
         <script src="{{asset('css_front_end/assets/js/plugins/swiper.min.js')}}"></script>
         <script src="{{asset('css_front_end/assets/js/plugins/countdown.js')}}"></script>
         <script src="{{asset('css_front_end/assets/js/plugins/scrollup.js')}}"></script>

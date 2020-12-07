@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages_front_end/index');
 });
+
+Route::get('/detail-produit', function () {
+    return view('pages_front_end/detail_produit');
+});

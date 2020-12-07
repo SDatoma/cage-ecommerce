@@ -10,75 +10,7 @@
                             <div class="header-menu-vertical bg-blue">
                                 <h4 class="menu-title be-af-none">All Cattegories</h4>
                                 <ul class="menu-content display-block">
-                                    <li class="menu-item">
-                                        <a href="#">Electronics <i class="ion-ios-arrow-right"></i></a>
-                                        <ul class="sub-menu flex-wrap">
-                                            <li>
-                                                <a href="#">
-                                                    <span> <strong> Accessories & Parts</strong></span>
-                                                </a>
-                                                <ul class="submenu-item">
-                                                    <li><a href="#">Cables & Adapters</a></li>
-                                                    <li><a href="#">Batteries</a></li>
-                                                    <li><a href="#">Chargers</a></li>
-                                                    <li><a href="#">Bags & Cases</a></li>
-                                                    <li><a href="#">Electronic Cigarettes</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span><strong>Camera & Photo</strong></span>
-                                                </a>
-                                                <ul class="submenu-item">
-                                                    <li><a href="#">Digital Cameras</a></li>
-                                                    <li><a href="#">Camcorders</a></li>
-                                                    <li><a href="#">Camera Drones</a></li>
-                                                    <li><a href="#">Action Cameras</a></li>
-                                                    <li><a href="#">Photo Studio Supplie</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span><strong>Smart Electronics</strong></span>
-                                                </a>
-                                                <ul class="submenu-item">
-                                                    <li><a href="#">Wearable Devices</a></li>
-                                                    <li><a href="#">Smart Home Appliances</a></li>
-                                                    <li><a href="#">Smart Remote Controls</a></li>
-                                                    <li><a href="#">Smart Watches</a></li>
-                                                    <li><a href="#">Smart Wristbands</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span><strong>Audio & Video</strong></span>
-                                                </a>
-                                                <ul class="submenu-item">
-                                                    <li><a href="#">Televisions</a></li>
-                                                    <li><a href="#">TV Receivers</a></li>
-                                                    <li><a href="#">Projectors</a></li>
-                                                    <li><a href="#">Audio Amplifier Boards</a></li>
-                                                    <li><a href="#">TV Sticks</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span><strong>Portable Audio & Video</strong></span>
-                                                </a>
-                                                <ul class="submenu-item">
-                                                    <li><a href="#">Headphones</a></li>
-                                                    <li><a href="#">Speakers</a></li>
-                                                    <li><a href="#">MP3 Players</a></li>
-                                                    <li><a href="#">VR/AR Devices</a></li>
-                                                    <li><a href="#">Microphones</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/menu-image/banner-mega1.jpg" alt="" />
-                                            </li>
-                                        </ul>
-                                        <!-- sub menu -->
-                                    </li>
+                                    
                                     <li class="menu-item">
                                         <a href="#">Video Games <i class="ion-ios-arrow-right"></i></a>
                                         <ul class="sub-menu sub-menu-2">
@@ -232,12 +164,12 @@
                         <div class="feature-slider-item swiper-slide">
                             <article class="list-product">
                                 <div class="img-block">
-                                    <a href="single-product.html" class="thumbnail">
+                                    <a href="/detail-produit" class="thumbnail">
                                         <img class="first-img" src="{{asset('css_front_end/assets/images/product-image/6.jpg')}}" alt="" />
                                         <img class="second-img" src="{{asset('css_front_end/assets/images/product-image/7.jpg')}}" alt="" />
                                     </a>
                                     <div class="quick-view">
-                                        <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                                        <a class="quick_view" href="/detail-produit" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
                                             <i class="icon-magnifier icons"></i>
                                         </a>
                                     </div>
@@ -278,12 +210,12 @@
                         <div class="feature-slider-item swiper-slide">
                             <article class="list-product">
                                 <div class="img-block">
-                                    <a href="single-product.html" class="thumbnail">
+                                    <a href="/detail-produit" class="thumbnail">
                                         <img class="first-img" src="{{asset('css_front_end/assets/images/product-image/7.jpg')}}" alt="" />
                                         <img class="second-img" src="{{asset('css_front_end/assets/images/product-image/8.jpg')}}" alt="" />
                                     </a>
                                     <div class="quick-view">
-                                        <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                                        <a class="quick_view" href="/detail-produit" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
                                             <i class="icon-magnifier icons"></i>
                                         </a>
                                     </div>
