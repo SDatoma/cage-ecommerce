@@ -835,3 +835,7 @@
     </div> 
 
     </br></br>
+
+    @yield('content')
+
+    @include('footer/footer_front_end')

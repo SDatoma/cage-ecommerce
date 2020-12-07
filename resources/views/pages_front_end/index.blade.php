@@ -1,6 +1,7 @@
 
-@include('header/header_front_end')
+@extends('header/header_front_end')
 
+@section('content')
 <!-- Header Nav End -->
 <div class="header-menu  d-xl-block d-none bg-light-gray">
                 <div class="container">
@@ -1534,6 +1535,4 @@
         </div>
         <!-- category Area End -->
 
-           
-
-@include('footer/footer_front_end')
+@endsection()          
