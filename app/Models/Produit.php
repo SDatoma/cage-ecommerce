@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * Created by Reliese Model.
+ */
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class Produit
+ * 
+ * @property int $id_produit
+ * @property string|null $nom_produit
+ * @property string|null $titre_produit
+ * @property string|null $description_produit
+ * @property int|null $prix_ht_produit
+ * @property int|null $quantite_produit
+ * @property int|null $etat_produit
+ * @property int|null $id_sous_categorie
+ * @property int|null $id_boutique
+ * 
+ * @property SousCategorie $sous_categorie
+ * @property Collection|Commande[] $commandes
+ * @property Collection|PhotoProduit[] $photo_produits
+ * @property Collection|Promotion[] $promotions
+ *
+ * @package App\Models
+ */
+class Produit extends Model
+{
+	protected $table = 'produit';
+	protected $primaryKey = 'id_produit';
+	public $timestamps = false;
+
+	protected $casts = [
+		'prix_ht_produit' => 'int',
+		'quantite_produit' => 'int',
+		'etat_produit' => 'int',
+		'id_sous_categorie' => 'int',
+		'id_boutique' => 'int'
+	];
+
+	protected $fillable = [
+		'nom_produit',
+		'titre_produit',
+		'description_produit',
+		'prix_ht_produit',
+		'quantite_produit',
+		'etat_produit',
+		'id_sous_categorie',
+		'id_boutique'
+	];
+
+	public function sous_categorie()
+	{
+		return $this->belongsTo(SousCategorie::class, 'id_sous_categorie');
+	}
+
+	public function commandes()
+	{
+		return $this->hasMany(Commande::class, 'id_produit');
+	}
+
+	public function photo_produits()
+	{
+		return $this->hasMany(PhotoProduit::class, 'id_produit');
+	}
+
+	public function promotions()
+	{
+		return $this->hasMany(Promotion::class, 'id_produit');
+	}
+}
