@@ -21,3 +21,15 @@ Route::get('/', function () {
 Route::get('/detail-produit', function () {
     return view('pages_front_end/detail_produit');
 });
+
+
+
+
+
+
+
+
+// ROUTE BACKEND
+Route::get('/admin', function () {
+    return view('pages_backend/index');
+});
