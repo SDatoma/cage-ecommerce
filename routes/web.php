@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/detail-produit', function () {
     return view('pages_front_end/detail_produit');
 });
+
+
