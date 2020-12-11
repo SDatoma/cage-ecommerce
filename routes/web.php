@@ -26,3 +26,17 @@ Route::get('/detail-produit', function () {
 Route::get('/admin', function () {
     return view('pages_backend/index');
 });
+
+//Boutique
+Route::get('/add/boutique', 'FournisseurController@create');
+Route::get('/list/boutique', 'FournisseurController@getBoutique');
+
+//Categorie
+Route::get('/list/categorie', 'CategorieController@getCategorie');
+Route::get('/list/sous/categorie', 'CategorieController@getSousCategorie');
+Route::post('/add/sous/categorie', 'CategorieController@store_sous_categorie')->name('sous_categorie.store');
+Route::put('/update/sous/{id}categorie', 'CategorieController@update_sous_categorie')->name('sous_categorie.update');
+
+//LES RESOURCES
+Route::resource('fournisseur', 'FournisseurController');
+Route::resource('categorie', 'CategorieController');

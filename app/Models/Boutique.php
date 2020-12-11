@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_boutique
  * @property string|null $nom_boutique
  * @property string|null $description_boutique
- * @property int $ville_boutique
- * @property string $pays_boutique
+ * @property string|null $ville_boutique
+ * @property string|null $pays_boutique
  * @property string|null $nif_boutique
  * @property int|null $contact_1_boutique
  * @property int|null $contact_2_boutique
@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $slogan_boutique
  * @property int|null $id_role
  * @property string|null $password_boutique
+ * @property int|null $etat_boutique
  * 
  * @property Role $role
  *
@@ -35,10 +36,10 @@ class Boutique extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'ville_boutique' => 'int',
 		'contact_1_boutique' => 'int',
 		'contact_2_boutique' => 'int',
-		'id_role' => 'int'
+		'id_role' => 'int',
+		'etat_boutique' => 'int'
 	];
 
 	protected $fillable = [
@@ -52,7 +53,8 @@ class Boutique extends Model
 		'email_boutique',
 		'slogan_boutique',
 		'id_role',
-		'password_boutique'
+		'password_boutique',
+		'etat_boutique'
 	];
 
 	public function role()
