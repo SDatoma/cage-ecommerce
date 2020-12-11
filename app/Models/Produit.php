@@ -14,13 +14,14 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id_produit
  * @property string|null $nom_produit
- * @property string|null $titre_produit
  * @property string|null $description_produit
  * @property int|null $prix_ht_produit
  * @property int|null $quantite_produit
  * @property int|null $etat_produit
  * @property int|null $id_sous_categorie
  * @property int|null $id_boutique
+ * @property string|null $caracteristique_produit
+ * @property string|null $image_produit
  * 
  * @property SousCategorie $sous_categorie
  * @property Collection|Commande[] $commandes
@@ -45,13 +46,14 @@ class Produit extends Model
 
 	protected $fillable = [
 		'nom_produit',
-		'titre_produit',
 		'description_produit',
 		'prix_ht_produit',
 		'quantite_produit',
 		'etat_produit',
 		'id_sous_categorie',
-		'id_boutique'
+		'id_boutique',
+		'caracteristique_produit',
+		'image_produit'
 	];
 
 	public function sous_categorie()

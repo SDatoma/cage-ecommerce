@@ -284,8 +284,8 @@
 
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Boutiques</span></a>
                 <ul class="ml-menu">
-                    <li><a href="/add/boutique">Ajouter fournisseur</a></li>                  
-                    <li><a href="/list/boutique">Liste des fournisseurs</a></li>
+                    <li><a href="/add/boutique">Ajouter boutique</a></li>                  
+                    <li><a href="/list/boutique">Liste des boutiques</a></li>
                 </ul>
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Gestion Categorie</span></a>
@@ -296,7 +296,8 @@
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>Gestion Produits</span></a>
                 <ul class="ml-menu">
-                    <li><a href="file-dashboard.html">Liste des produits</a></li>
+                    <li><a href="/add/produit">Ajouter un produit</a></li>
+                    <li><a href="/list/produit">Liste des produits</a></li>
                 </ul>
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commandes</span></a>

@@ -21,11 +21,7 @@
 <script src="{{asset('css_backend/assets/js/pages/forms/advanced-form-elements.js')}}"></script>
 
 <!-- Jquery Core Js --> 
-<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
 <script src="{{asset('css_backend/assets/plugins/jquery-validation/jquery.validate.js')}}"></script> <!-- Jquery Validation Plugin Css --> 
-<script src="assets/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js --> 
-<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
 <script src="{{asset('css_backend/assets/plugins/jquery-validatiassets/js/pages/forms/form-validation.js')}}"></script> 
 <script src="{{asset('css_backend/assets/assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
 </body>

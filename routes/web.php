@@ -37,6 +37,12 @@ Route::get('/list/sous/categorie', 'CategorieController@getSousCategorie');
 Route::post('/add/sous/categorie', 'CategorieController@store_sous_categorie')->name('sous_categorie.store');
 Route::put('/update/sous/{id}categorie', 'CategorieController@update_sous_categorie')->name('sous_categorie.update');
 
+//Produits
+Route::get('/add/produit', 'ProduitController@create');
+Route::get('/list/produit', 'ProduitController@getProduit');
+
+
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');
 Route::resource('categorie', 'CategorieController');
+Route::resource('produit', 'ProduitController');

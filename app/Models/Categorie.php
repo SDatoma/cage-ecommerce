@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id_categorie
  * @property string|null $libelle_categorie
+ * @property int|null $etat_categorie
  * 
  * @property Collection|SousCategorie[] $sous_categories
  *
@@ -25,8 +26,13 @@ class Categorie extends Model
 	protected $primaryKey = 'id_categorie';
 	public $timestamps = false;
 
+	protected $casts = [
+		'etat_categorie' => 'int'
+	];
+
 	protected $fillable = [
-		'libelle_categorie'
+		'libelle_categorie',
+		'etat_categorie'
 	];
 
 	public function sous_categories()
