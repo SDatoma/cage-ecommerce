@@ -284,7 +284,7 @@
 
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Boutiques</span></a>
                 <ul class="ml-menu">
-                    <li><a href="/add/boutique">Ajouter boutique</a></li>                  
+                    <li><a href="/add/boutique">Ajouter une boutique</a></li>                  
                     <li><a href="/list/boutique">Liste des boutiques</a></li>
                 </ul>
             </li>
