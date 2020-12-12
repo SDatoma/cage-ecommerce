@@ -12,7 +12,7 @@
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon/favicon.png" />
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800&amp;display=swap" rel="stylesheet" />
+        <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800&amp;display=swap" rel="stylesheet" /-->
 
         <link rel="stylesheet" href="{{asset('css_front_end/assets/css/vendor/vendor.min.css')}}"/>
         <link rel="stylesheet" href="{{asset('css_front_end/assets/css/plugins/plugins.min.css')}}"/>
@@ -30,26 +30,16 @@
                 <div class="container">
                     <div class="header-nav-wrapper d-md-flex d-sm-flex d-xl-flex d-lg-flex justify-content-between">
                         <div class="header-static-nav">
-                            <p>Welcome you to Rozer Store!</p>
+                            <p>Bienvenue sur CAGE E-Commerce !</p>
                         </div>
                         <div class="header-menu-nav">
                             <ul class="menu-nav">
                                 <li>
                                     <div class="dropdown">
-                                        <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting <i class="ion-ios-arrow-down"></i></button>
-
-                                        <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton">
-                                            <li><a href="my-account.html">My account</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="login.html">Sign in</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="dropdown">
-                                        <button type="button" id="dropdownMenuButton-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD $ <i class="ion-ios-arrow-down"></i></button>
+                                        <button type="button" id="dropdownMenuButton-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devise <i class="ion-ios-arrow-down"></i></button>
 
                                         <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton-2">
+                                            <li><a href="#">XOF €</a></li>
                                             <li><a href="#">EUR €</a></li>
                                             <li><a href="#">USD $</a></li>
                                         </ul>
@@ -58,13 +48,11 @@
                                 <li class="pr-0">
                                     <div class="dropdown">
                                         <button type="button" id="dropdownMenuButton-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="assets/images/flag/1.jpg" alt="" /> English <i class="ion-ios-arrow-down"></i>
+                                            <img src="assets/images/flag/1.jpg" alt="" /> Langues <i class="ion-ios-arrow-down"></i>
                                         </button>
 
                                         <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton-3">
-                                            <li>
-                                                <a href="#"><img src="assets/images/flag/1.jpg" alt="" /> English</a>
-                                            </li>
+                                            
                                             <li>
                                                 <a href="#"><img src="assets/images/flag/2.jpg" alt="" /> Français</a>
                                             </li>
@@ -82,7 +70,7 @@
                     <div class="row">
                         <div class="col-md-2">
                             <div class="logo">
-                                <a href=""><img class="img-responsive" src="{{asset('css_front_end/assets/images/logo/logo.jpg')}}" alt="logo.jpg" /></a>
+                                <a href=""><h1>CAGE BÄTIMENT</h1><!--img class="img-responsive" src="{{asset('css_front_end/assets/images/logo/logo.jpg')}}" alt="logo.jpg" /--></a>
                             </div>
                         </div>
                         <div class="col-md-10 align-self-center">
@@ -91,7 +79,7 @@
                                     <form class="d-flex" action="#">
                                         <div class="search-category">
                                             <select>
-                                                <option value="0">All categories</option>
+                                                <option value="0">Les categories</option>
                                                 <option value="12">Laptop</option>
                                                 <option value="13">- - Hot Categories</option>
                                                 <option value="19">- - - - Dresses</option>
@@ -105,8 +93,8 @@
                                 </div>
                                 <div class="contact-link">
                                     <div class="phone">
-                                        <p>Call us:</p>
-                                        <a href="tel:(+800)345678">(+800)345678</a>
+                                        <p>Appel : +228 70 45 37 85 | 96 35 80 90</p>
+                                        <a href="tel:+22890904903">+228 90 90 49 03</a>
                                     </div>
                                 </div>
                                 <!--Cart info Start -->
@@ -129,31 +117,7 @@
                     <div class="row">
                         <div class="col-lg-3 custom-col-2">
                             <div class="header-menu-vertical">
-                                <h4 class="menu-title">All Cattegories</h4>
-                                <ul class="menu-content display-none">
-                                    
-                                    <li class="menu-item">
-                                        <a href="#">Video Games <i class="ion-ios-arrow-right"></i></a>
-                                        <ul class="sub-menu sub-menu-2">
-                                            <li>
-                                                <ul class="submenu-item">
-                                                    <li><a href="#">Handheld Game Players</a></li>
-                                                    <li><a href="#">Game Controllers</a></li>
-                                                    <li><a href="#">Joysticks</a></li>
-                                                    <li><a href="#">Stickers</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <!-- sub menu -->
-                                    </li>
-                                    <li class="menu-item"><a href="#">Televisions</a></li>
-                                    <li class="menu-item"><a href="#">Digital Cameras</a></li>
-                                    <li class="menu-item"><a href="#">Headphones</a></li>
-                                    <li class="menu-item"><a href="#"> Wearable Devices</a></li>
-                                    <li class="menu-item"><a href="#"> Smart Watches</a></li>
-                                    <li class="menu-item"><a href="#"> Game Controllers</a></li>
-                                    <li class="menu-item"><a href="#"> Smart Home Appliances</a></li>
-                                </ul>
+                                
                                 <!-- menu content -->
                             </div>
                             <!-- header menu vertical -->
@@ -161,107 +125,18 @@
                         <div class="col-lg-9 custom-col-2">
                             <div class="header-horizontal-menu">
                                 <ul class="menu-content">
-                                    <li class="active menu-dropdown">
-                                        <a href="#">Home <i class="ion-ios-arrow-down"></i></a>
-                                        <ul class="main-sub-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                            <li><a href="index-3.html">Home 3</a></li>
-                                            <li><a href="index-4.html">Home 4</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="/">Accueil </a></li>
                                     <li class="menu-dropdown">
-                                        <a href="#">Shop <i class="ion-ios-arrow-down"></i></a>
-                                        <ul class="mega-menu-wrap">
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title"><a href="#">Shop Grid</a></li>
-                                                    <li><a href="shop-3-column.html">Shop Grid 3 Column</a></li>
-                                                    <li><a href="shop-4-column.html">Shop Grid 4 Column</a></li>
-                                                    <li><a href="shop-left-sidebar.html">Shop Grid Left Sidebar</a></li>
-                                                    <li><a href="shop-right-sidebar.html">Shop Grid Right Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title"><a href="#">Shop List</a></li>
-                                                    <li><a href="shop-list.html">Shop List</a></li>
-                                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title"><a href="#">Shop Single</a></li>
-                                                    <li><a href="single-product.html">Shop Single</a></li>
-                                                    <li><a href="single-product-variable.html">Shop Variable</a></li>
-                                                    <li><a href="single-product-affiliate.html">Shop Affiliate</a></li>
-                                                    <li><a href="single-product-group.html">Shop Group</a></li>
-                                                    <li><a href="single-product-tabstyle-2.html">Shop Tab 2</a></li>
-                                                    <li><a href="single-product-tabstyle-3.html">Shop Tab 3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title"><a href="#">Shop Single</a></li>
-                                                    <li><a href="single-product-slider.html">Shop Slider</a></li>
-                                                    <li><a href="single-product-gallery-left.html">Shop Gallery Left</a></li>
-                                                    <li><a href="single-product-gallery-right.html">Shop Gallery Right</a></li>
-                                                    <li><a href="single-product-sticky-left.html">Shop Sticky Left</a></li>
-                                                    <li><a href="single-product-sticky-right.html">Shop Sticky Right</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="w-100">
-                                                <ul class="banner-megamenu-wrapper d-flex">
-                                                    <li class="banner-wrapper mr-30px">
-                                                        <a href="single-product.html"><img src="assets/images/menu-image/banner-menu2.jpg" alt="" /></a>
-                                                    </li>
-                                                    <li class="banner-wrapper">
-                                                        <a href="single-product.html"><img src="assets/images/menu-image/banner-menu3.jpg" alt="" /></a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-dropdown">
-                                        <a href="#">Pages <i class="ion-ios-arrow-down"></i></a>
+                                        <a href="#">Boutique <i class="ion-ios-arrow-down"></i></a>
                                         <ul class="main-sub-menu">
-                                            <li><a href="about.html">About Page</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                            <li><a href="compare.html">Compare Page</a></li>
-                                            <li><a href="login.html">Login & Register Page</a></li>
-                                            <li><a href="my-account.html">Account Page</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                            <li><a href="">Au Togo </a></li>
+                                            <li><a href="">A l'extérieur </a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-dropdown">
-                                        <a href="#">Blog <i class="ion-ios-arrow-down"></i></a>
-                                        <ul class="main-sub-menu">
-                                            <li class="menu-dropdown position-static">
-                                                <a href="#">Blog Grid <i class="ion-ios-arrow-right"></i></a>
-                                                <ul class="main-sub-menu main-sub-menu-2">
-                                                    <li><a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a></li>
-                                                    <li><a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-dropdown position-static">
-                                                <a href="#">Blog List <i class="ion-ios-arrow-right"></i></a>
-                                                <ul class="main-sub-menu main-sub-menu-2">
-                                                    <li><a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a></li>
-                                                    <li><a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-dropdown position-static">
-                                                <a href="#">Blog Single <i class="ion-ios-arrow-right"></i></a>
-                                                <ul class="main-sub-menu main-sub-menu-2">
-                                                    <li><a href="blog-single-left-sidebar.html">Blog Single Left Sidebar</a></li>
-                                                    <li><a href="blog-single-right-sidebar.html">Blog Single Right Sidbar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">contact Us</a></li>
+                                    <li><a href="">Sol </a></li>
+                                    <li><a href="">Mûr </a></li>
+                                    <li><a href="">Finition </a></li>
+                                    <li><a href="">contact </a></li>
                                 </ul>
                             </div>
                             <!-- header horizontal menu -->

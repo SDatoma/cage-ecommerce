@@ -6,14 +6,15 @@
                         <div class="row">
                             <div class="col-md-6 col-lg-4 mb-md-30px mb-lm-30px">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">ABOUT US</h4>
-                                    <p class="text-infor">We are a team of designers and developers that create high quality HTML template</p>
+                                    <h4 class="footer-herading">A propos</h4>
+                                    <p class="text-infor">CAGE = Centre des Affaires et de Gestion des Entreprises se situe
+									à Lomé, Agoè Démakpoè | N° RCCM : TG-LOM 2020 B 1946 | N° Fiscal : 1001697467 | N° CNSS: 125728</p>
                                     <div class="need-help">
                                         <p class="phone-info">
-                                            NEED HELP?
+                                            Besoin d'aide ?
                                             <span>
-                                                (+800) 345 678 <br />
-                                                (+800) 123 456
+                                                (+228) 70 45 37 85 | 96 35 80 90<br />
+                                                (+228) 90 90 49 03
                                             </span>
                                         </p>
                                     </div>
@@ -21,39 +22,38 @@
                             </div>
                             <div class="col-md-6 col-lg-2 mb-md-30px mb-lm-30px">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">Information</h4>
+                                    <h4 class="footer-herading">Informations</h4>
                                     <div class="footer-links">
                                         <ul>
-                                            <li><a href="#">Delivery</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="#">Secure Payment</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="#">Sitemap</a></li>
-                                            <li><a href="#">Stores</a></li>
+                                            <li><a href="#">Zones de livraison</a></li>
+                                            <li><a href="">A propos</a></li>
+                                            <li><a href="#">Moyens de paiement</a></li>
+                                            <li><a href="">Contact</a></li>
+                                            <li><a href="#">Bureaux</a></li>
+                                            <li><a href="#">Partenaires</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-2 mb-sm-30px mb-lm-30px">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">CUSTOM LINKS</h4>
+                                    <h4 class="footer-herading">Liens personnalisés</h4>
                                     <div class="footer-links">
                                         <ul>
-                                            <li><a href="#">Legal Notice</a></li>
-                                            <li><a href="#">Prices Drop</a></li>
-                                            <li><a href="#">New Products</a></li>
-                                            <li><a href="#">Best Sales</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="my-account.html">My Account</a></li>
+                                            <li><a href="#">Politique de confidentialité</a></li>
+                                            <li><a href="#">Les promotions</a></li>
+                                            <li><a href="#">Nouveaux produits</a></li>
+                                            <li><a href="#">Les meilleures ventes</a></li>
+                                            <li><a href="">Connexion</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4 ">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">NEWSLETTER</h4>
+                                    <h4 class="footer-herading">Newsletter</h4>
                                     <div class="subscrib-text">
-                                        <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+                                        <p>Merci de souscrire, vous pouvez vous désinscrire à tout moment. Pour cela, veuillez trouver nos coordonnées dans les mentions légales.</p>
                                     </div>
                                     <div id="mc_embed_signup" class="subscribe-form">
                                         <form
@@ -66,12 +66,12 @@
                                             action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef"
                                         >
                                             <div id="mc_embed_signup_scroll" class="mc-form">
-                                                <input class="email" type="email" required="" placeholder="Enter your email here.." name="EMAIL" value="" />
+                                                <input class="email" type="email" required="" placeholder="Entrer votre e-mail ici ..." name="e-mail" value="" />
                                                 <div class="mc-news" aria-hidden="true" style="position: absolute; left: -5000px;">
                                                     <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" />
                                                 </div>
                                                 <div class="clear">
-                                                    <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Sign Up" />
+                                                    <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Souscrire" />
                                                 </div>
                                             </div>
                                         </form>
@@ -104,10 +104,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <p class="copy-text">Copyright © <a href="https://hasthemes.com/"> HasThemes</a>. All Rights Reserved</p>
+                                <p class="copy-text">Copyright © <a href="https://www.sebi-inc.com/"> SEBI Inc</a>. Tous droits sont réservés.</p>
                             </div>
                             <div class="col-md-6 text-right">
-                                <img class="payment-img" src="assets/images/icons/payment.png" alt="" />
+                                <img class="payment-img" src="{{asset('css_front_end/assets/images/icons/payment.png')}}" alt="" />
                             </div>
                         </div>
                     </div>
@@ -129,32 +129,32 @@
                                   <div class="swiper-container gallery-top">
                                         <div class="swiper-wrapper">
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/11.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/11.jpg')}}" alt="">
                                           </div>
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/12.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/12.jpg')}}" alt="">
                                           </div>
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/13.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/13.jpg')}}" alt="">
                                           </div>
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/14.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/14.jpg')}}" alt="">
                                           </div>
                                         </div>
                                   </div>
                                   <div class="swiper-container gallery-thumbs">
                                     <div class="swiper-wrapper">
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/11.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/11.jpg')}}" alt="">
                                           </div>
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/12.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/12.jpg')}}" alt="">
                                           </div>
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/13.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/13.jpg')}}" alt="">
                                           </div>
                                           <div class="swiper-slide"> 
-                                                <img class="img-responsive m-auto" src="assets/images/product-image/14.jpg" alt="">
+                                                <img class="img-responsive m-auto" src="{{asset('css_front_end/assets/images/product-image/14.jpg')}}" alt="">
                                           </div>
                                         </div>
                                   </div>

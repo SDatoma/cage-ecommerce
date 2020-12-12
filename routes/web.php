@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ROUTE FRONT-END
-Route::get('/', function () {
-    return view('pages_front_end/index');
-});
+Route::get('/', 'IndexController@index');
+
 
 Route::get('/detail-produit', function () {
     return view('pages_front_end/detail_produit');
 });
+
+
+
 
 // ROUTE BACKEND
 Route::get('/admin', function () {

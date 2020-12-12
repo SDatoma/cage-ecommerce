@@ -128,7 +128,8 @@ class ProduitController extends Controller
  
          return view('pages_backend/produit/list_produit',compact('produits'));
      }
-
+	 
+	
     /**
      * Display the specified resource.
      *

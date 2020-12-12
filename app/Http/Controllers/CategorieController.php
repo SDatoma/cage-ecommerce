@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categorie;
+use App\Models\Produit;
 use App\Models\SousCategorie;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -138,6 +139,9 @@ class CategorieController extends Controller
         Session()->flash('succes',"Modification effectuée avec succès");
         return redirect()->back();
     }
+	
+	
+	
 
     /**
      * Remove the specified resource from storage.
