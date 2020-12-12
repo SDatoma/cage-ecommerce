@@ -47,7 +47,7 @@
 
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <table class="table table-bordered table-striped table-hover theme-color dataTable js-exportable">
                                     <thead>
                                         <tr>
                                             <th>NOM</th>

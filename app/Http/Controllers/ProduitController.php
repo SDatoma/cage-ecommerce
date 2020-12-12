@@ -134,7 +134,7 @@ class ProduitController extends Controller
     {
         //$produit = Produit::where(['id_produit' =>$id])->first() ;
         $produit_images = PhotoProduit::where(['id_produit' =>$id])->get() ;
-        $produit = DB::table('produit')
+         $produit = DB::table('produit')
         ->join('sous_categorie', 'produit.id_sous_categorie', '=', 'sous_categorie.id_sous_categorie')
         ->join('boutique', 'produit.id_boutique', '=', 'boutique.id_boutique')
         ->where('produit.id_produit', '=', $id)
@@ -151,7 +151,11 @@ class ProduitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produit = Produit::where(['id_produit' =>$id])->first() ;
+        $boutiques = Boutique::all() ;
+        $sous_categories = SousCategorie::all() ;
+
+        return view('pages_backend/produit/edit_produit',compact('produit','boutiques','sous_categories'));
     }
 
     /**
@@ -163,7 +167,22 @@ class ProduitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produit = Produit::where(['id_produit' =>$id])->first() ;
+
+        $produit->nom_produit= $request->nom_produit;
+        $produit->description_produit= $request->description_produit;
+        $produit->caracteristique_produit= $request->caracteristique_produit;
+        $produit->quantite_produit= $request->quantite_produit;
+        $produit->prix_ht_produit= $request->prix_produit;
+        $produit->id_sous_categorie= $request->id_sous_categorie;
+        $produit->id_boutique= $request->id_boutique;
+        //$produit->image_produit=$file_name;
+        //$produit->etat_produit= 1 ;
+
+        $produit->save();
+
+        Session()->flash('succes',"Modification effectuee avec succès");
+        return redirect()->to('/list/produit');
     }
 
     /**
@@ -174,6 +193,13 @@ class ProduitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produit = Produit::where(['id_produit' =>$id])->first() ;
+
+        $produit->etat_produit = 0 ;
+
+        $produit->save();
+
+        Session()->flash('error',"Suppression effectuee avec succès");
+        return redirect()->back();
     }
 }

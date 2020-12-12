@@ -47,8 +47,8 @@
                                         <h3 class="product-title mb-0">{{$produit->nom_produit}}</h3>
                                         <hr>
                                         <p class="product-description">{{$produit->description_produit}}</p>
-                                        <p class="vote"><strong>QUANTITE</strong> : {{$produit->quantite_produit}}</p>
-                                        <p class="vote"><strong>PRIX_HT</strong> : {{$produit->prix_ht_produit}} FCFA</p>
+                                        <p class="vote"><strong>QUANTITE</strong> : {{$produit->quantite_produit ?? '0'}}</p>
+                                        <p class="vote"><strong>PRIX_HT</strong> : {{$produit->prix_ht_produit ?? '0'}} FCFA</p>
                                         <hr>
                                         <p class="vote"><strong>SOUS CATEGORIE</strong> : {{$produit->libelle_sous_categorie}}</p>
                                         <p class="vote"><strong>FOURNISSEUR</strong> : {{$produit->nom_boutique}}</p>
