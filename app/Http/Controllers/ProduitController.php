@@ -52,6 +52,14 @@ class ProduitController extends Controller
             'nom_produit' => 'required|string',
         ]);
 
+         $verification_produit = Produit::where(['nom_produit' =>$request->nom_produit ,'id_boutique' =>$request->id_boutique])->first() ;
+
+        if ($verification_produit) {
+
+            Session()->flash('error',"Cet produit existe deja dans cette boutique , Veuillez mettre à jour la quantité");
+            return back()->withErrors($validator)->withInput();
+        }
+
         if ($request->HasFile('file')) {
             $cover = $request->file('file');
             $image = Image::make($cover)->encode('jpg');
@@ -66,7 +74,6 @@ class ProduitController extends Controller
 
             $file_name ="";
          }
-
 
         $produit = new Produit();
 
@@ -86,8 +93,6 @@ class ProduitController extends Controller
 
             $i=0; 
             foreach($request->photo as $photo){
-                
-               //dd($video->getClientOriginalName());
                 $taille_max = 104857600; // 100 Mo
                 $file_name_photo = $photo->getClientOriginalName();
                 $file_extension = strrchr($file_name_photo, ".");
