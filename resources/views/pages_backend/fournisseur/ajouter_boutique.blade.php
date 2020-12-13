@@ -9,7 +9,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>AJOUTER UNE BOUTIQUE</h2>
+                <h5>AJOUTER UNE BOUTIQUE</h5>
                     <!--<ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>

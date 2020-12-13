@@ -8,7 +8,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>LISTE DES PRODUITS</h2>
+                    <h5>LISTE DES PRODUITS</h5>
                     <!-- <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
                         <li class="breadcrumb-item">eCommerce</li>
