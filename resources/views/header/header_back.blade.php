@@ -300,15 +300,14 @@
                     <li><a href="/list/produit">Liste des produits</a></li>
                 </ul>
             </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commandes</span></a>
+            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commande</span></a>
                 <ul class="ml-menu">
-                    <li><a href="blog-dashboard.html">Dashboard</a></li>
-                    <li><a href="blog-post.html">Blog Post</a></li>
-                    <li><a href="blog-list.html">List View</a></li>
-                    <li><a href="blog-grid.html">Grid View</a></li>
-                    <li><a href="blog-details.html">Blog Details</a></li>
+                    <li><a href="#"> Commande en attente <sup style="font-size:15px">0</sup> </a></li>
+                    <li><a href="#"> Editer une facture </a></li>
+                    <li><a href="#"> Commande en attente</a></li>
                 </ul>
             </li>
+
         </ul>
     </div>
 </aside>

@@ -25,26 +25,36 @@ Route::get('/detail-produit', function () {
 
 
 // ROUTE BACKEND
-Route::get('/admin', function () {
-    return view('pages_backend/index');
-});
+Route::get('/admin', 'AdminController@index');
 
 //Boutique
 Route::get('/add/boutique', 'FournisseurController@create');
 Route::get('/list/boutique', 'FournisseurController@getBoutique');
 
 //Categorie
-Route::get('/list/categorie', 'CategorieController@getCategorie');
-Route::get('/list/sous/categorie', 'CategorieController@getSousCategorie');
+Route::get('/list/categorie', 'CategorieController@getAllCategorie');
+Route::get('/list/sous/categorie', 'CategorieController@getAllSousCategorie');
 Route::post('/add/sous/categorie', 'CategorieController@store_sous_categorie')->name('sous_categorie.store');
 Route::put('/update/sous/{id}categorie', 'CategorieController@update_sous_categorie')->name('sous_categorie.update');
 
 //Produits
 Route::get('/add/produit', 'ProduitController@create');
-Route::get('/list/produit', 'ProduitController@getProduit');
+Route::get('/list/produit', 'ProduitController@getAllProduit');
+Route::post('/promotion/produit', 'ProduitController@promotionProduit')->name('promotion.produit');
+Route::delete('delete/promotion/produit/{id}', 'ProduitController@destroyPromotion')->name('delete.promotion');
+Route::put('update/promotion/produit/{id}', 'ProduitController@updatePromotion')->name('update.promotion');
+
+//Commande
+Route::get('/facturation/commande', function () {
+    return view('pages_backend/commande/facturation');
+});
+
+Route::get('/statistique/stock', 'StockController@index');
 
 
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');
 Route::resource('categorie', 'CategorieController');
 Route::resource('produit', 'ProduitController');
+Route::resource('stock', 'StockController');
+

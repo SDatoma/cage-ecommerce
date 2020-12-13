@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $image_produit
  * 
  * @property SousCategorie $sous_categorie
+ * @property Boutique $boutique
  * @property Collection|Commande[] $commandes
  * @property Collection|PhotoProduit[] $photo_produits
  * @property Collection|Promotion[] $promotions
@@ -59,6 +60,11 @@ class Produit extends Model
 	public function sous_categorie()
 	{
 		return $this->belongsTo(SousCategorie::class, 'id_sous_categorie');
+	}
+
+	public function boutique()
+	{
+		return $this->belongsTo(Boutique::class, 'id_boutique');
 	}
 
 	public function commandes()

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Produit;
 use App\Models\PhotoProduit;
 use App\Models\Boutique;
+use App\Models\Promotion;
 use App\Models\SousCategorie;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -121,8 +122,39 @@ class ProduitController extends Controller
         return redirect()->back();
     }
 
+    // ajouter une promotion du produit
+    public function promotionProduit(Request $request)
+    {
+        $promotion = new Promotion();
+        
+        $number_pays=$request->telephone;
+        $chars = "abcdefghijkmnopqrstuvwxyz023456789";
+         srand((double)microtime()*1000000);
+         $i = 0 ;
+         $code = '' ;
+
+         while ($i <= 4) {
+             $num = rand() % 33;
+             $tmp = substr($chars, $num, 1);
+             $code = $code . $tmp;
+             $i++;
+         }
+
+        $promotion->pourcentage_promotion= $request->pourcentage_promotion;
+        $promotion->date_debut_promotion= $request->date_debut_promotion;
+        $promotion->date_fin_promotion= $request->date_fin_promotion;
+        $promotion->code_promotion= $code;
+        $promotion->id_produit= $request->id_produit;
+
+        $promotion->save();
+
+        Session()->flash('succes',"Promotion enregistree avec succè");
+        return redirect()->back();
+
+    }
+
      //List des produits
-     public function getProduit()
+     public function getAllProduit()
      {
          $produits = Produit::where(['etat_produit' =>1])->get() ;
  
@@ -140,13 +172,14 @@ class ProduitController extends Controller
     {
         //$produit = Produit::where(['id_produit' =>$id])->first() ;
         $produit_images = PhotoProduit::where(['id_produit' =>$id])->get() ;
-         $produit = DB::table('produit')
+        $promotion = Promotion::where(['id_produit' =>$id])->first() ;
+        $produit = DB::table('produit')
         ->join('sous_categorie', 'produit.id_sous_categorie', '=', 'sous_categorie.id_sous_categorie')
         ->join('boutique', 'produit.id_boutique', '=', 'boutique.id_boutique')
         ->where('produit.id_produit', '=', $id)
         ->first();
  
-        return view('pages_backend/produit/detail_produit',compact('produit','produit_images'));
+        return view('pages_backend/produit/detail_produit',compact('produit','produit_images','promotion'));
     }
 
     /**
@@ -191,6 +224,20 @@ class ProduitController extends Controller
         return redirect()->to('/list/produit');
     }
 
+
+    public function updatePromotion(Request $request, $id)
+    {
+        $promotion = Promotion::where(['id_promotion' =>$id])->first() ;
+
+        $promotion->pourcentage_promotion= $request->pourcentage_promotion;
+        $promotion->date_debut_promotion= $request->date_debut_promotion;
+        $promotion->date_fin_promotion= $request->date_fin_promotion;
+
+        $promotion->save();
+
+         return redirect()->back();
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -204,6 +251,16 @@ class ProduitController extends Controller
         $produit->etat_produit = 0 ;
 
         $produit->save();
+
+        Session()->flash('error',"Suppression effectuee avec succès");
+        return redirect()->back();
+    }
+
+    public function destroyPromotion($id)
+    {
+        $promotion = Promotion::where(['id_promotion' =>$id])->first() ;
+        //dd($promotion);
+        $promotion->delete();
 
         Session()->flash('error',"Suppression effectuee avec succès");
         return redirect()->back();

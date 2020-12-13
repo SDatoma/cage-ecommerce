@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -26,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $etat_boutique
  * 
  * @property Role $role
+ * @property Collection|Produit[] $produits
  *
  * @package App\Models
  */
@@ -60,5 +62,10 @@ class Boutique extends Model
 	public function role()
 	{
 		return $this->belongsTo(Role::class, 'id_role');
+	}
+
+	public function produits()
+	{
+		return $this->hasMany(Produit::class, 'id_boutique');
 	}
 }

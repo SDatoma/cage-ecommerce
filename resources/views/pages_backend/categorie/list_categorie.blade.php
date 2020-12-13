@@ -14,7 +14,7 @@
                                    <i class="zmdi zmdi-plus"></i> Ajouter une categorie
                                </button>
                             </div>
-
+                            @include('modals/ajout/ajouter_categorie')
                     <!-- 
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
@@ -67,7 +67,7 @@
                                             <td>{{$categorie->libelle_categorie}}</td>
                                             <td>
                                              
-                                            <button class="btn btn-succes btn-sm" title="Sous categorie"  data-toggle="modal" data-target="#sous-c{{$categorie->id_categorie}}"><i class="zmdi zmdi-eye"></i></i></button> 
+                                            <button class="btn btn-succes btn-sm" title="Sous categorie"  data-toggle="modal" data-target="#sous-c{{$categorie->id_categorie}}"><i class="zmdi zmdi-plus"></i></i></button> 
 
                                             <button class="btn btn-primary btn-sm" title="Modifier" data-toggle="modal" data-target="#mc{{$categorie->id_categorie}}"><i class="zmdi zmdi-edit"></i></button> 
 
@@ -90,6 +90,5 @@
 
     </div>
 </section>
-
 
 @endsection()

@@ -71,7 +71,7 @@ class CategorieController extends Controller
 
 
     //List des categories
-    public function getCategorie()
+    public function getAllCategorie()
     {
         $categories = Categorie::where(['etat_categorie' =>1])->get() ;
 
@@ -79,7 +79,7 @@ class CategorieController extends Controller
     }
 
     //List des sous-categories
-    public function getSousCategorie()
+    public function getAllSousCategorie()
     {
         $categories = Categorie::where(['etat_categorie' =>1])->get() ;
 

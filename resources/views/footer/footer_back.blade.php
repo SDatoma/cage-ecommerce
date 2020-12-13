@@ -24,6 +24,8 @@
 <script src="{{asset('css_backend/assets/plugins/jquery-validation/jquery.validate.js')}}"></script> <!-- Jquery Validation Plugin Css --> 
 <script src="{{asset('css_backend/assets/plugins/jquery-validatiassets/js/pages/forms/form-validation.js')}}"></script> 
 <script src="{{asset('css_backend/assets/assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+
+
 </body>
 
 

@@ -13,7 +13,20 @@
                         <li class="breadcrumb-item">eCommerce</li>
                         <li class="breadcrumb-item active">Product Detail</li>
                     </ul> -->
-                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                            @if($promotion==null)
+                               <button class="btn btn-primary btn-sm" style="float:right" data-toggle="modal" data-target="#promotion">
+                                   <i class="zmdi zmdi-plus"></i> Definir une Promotion
+                               </button>
+                               @include('modals/ajout/definir_promotion')
+                            @else
+                            <button class="btn btn-success btn-sm" style="float:right" data-toggle="modal" data-target="#mp{{$promotion->id_promotion}}">
+                                   <i class="zmdi zmdi-plus"></i> Modifier Promotion
+                               </button>
+                               @include('modals/modification/edit_promotion')
+                            @endif
+
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button">
+                    <i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
                 <!-- <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
@@ -48,7 +61,13 @@
                                         <hr>
                                         <p class="product-description">{{$produit->description_produit}}</p>
                                         <p class="vote"><strong>QUANTITE</strong> : {{$produit->quantite_produit ?? '0'}}</p>
-                                        <p class="vote"><strong>PRIX_HT</strong> : {{$produit->prix_ht_produit ?? '0'}} FCFA</p>
+                                        <p class="vote"><strong>PRIX_HT</strong> : {{$produit->prix_ht_produit ?? '0'}} FCFA 
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        @if($promotion!=null)
+                                          <b style="color:red">En promotion {{$promotion->pourcentage_promotion ?? '0'}} % ; Code promo : {{$promotion->code_promotion ?? '0'}} <sup><a href="" title="Supprimer" data-toggle="modal" data-target="#sp{{$promotion->id_promotion}}"><i class="fa fa-remove"></i> Supprimer</a></sup></b>
+                                          @include('modals/suppression/delete_promotion')
+                                        @endif
+                                        </p>
                                         <hr>
                                         <p class="vote"><strong>SOUS CATEGORIE</strong> : {{$produit->libelle_sous_categorie}}</p>
                                         <p class="vote"><strong>FOURNISSEUR</strong> : {{$produit->nom_boutique}}</p>
