@@ -57,7 +57,7 @@
                     <div class="row">
                         <div class="col-md-12 text-center float">
                             <h2><u>FACTURE N 888888888</u></h2> 
-                            <h5 style="float:left"><strong style="color:black">Client :</strong> KPEKPASSI Bilali Fofana</h5>
+                            <h5 style="float:left"><strong style="color:black">Client : </strong>{{$user->nom_user}} {{$user->prenom_user}}</h5>
                         </div>
                     </div> <br />
                     <div>
@@ -80,30 +80,14 @@
                                 </tr>
                             </thead>
                             <tbody>
+							@foreach($commandes as $commande)
                                 <tr>
-                                    <td class="col-md-5">Samsung Galaxy 8 64 GB</td>
-									<td class="col-md-5">5</td>
-									<td class="col-md-5">300</td>
-                                    <td class="col-md-5"><i class="fas fa-rupee-sign" area-hidden="true"></i> 50,000 </td>
+                                    <td class="col-md-5">{{$commande->nom_produit}}</td>
+									<td class="col-md-5">{{$commande->quantite}}</td>
+									<td class="col-md-5">{{$commande->prix_ht_produit}}</td>
+                                    <td class="col-md-5">{{$commande->prix_total}}</td>
                                 </tr>
-                                <tr>
-                                    <td class="col-md-9">JBL Bluetooth Speaker</td>
-									<td class="col-md-9">5</td>
-									<td class="col-md-9">300</td>
-                                    <td class="col-md-3"><i class="fas fa-rupee-sign" area-hidden="true"></i> 5,200 </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-9">Apple Iphone 6s 16GB</td>
-									<td class="col-md-9">5</td>
-									<td class="col-md-9">300</td>
-                                    <td class="col-md-3"><i class="fas fa-rupee-sign" area-hidden="true"></i> 25,000 </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-9">MI Smartwatch 2</td>
-									<td class="col-md-9">5</td>
-									<td class="col-md-9">300</td>
-                                    <td class="col-md-3"><i class="fas fa-rupee-sign" area-hidden="true"></i> 2,200 </td>
-                                </tr>
+                            @endforeach  
                                 <tr>
                                     <td class="text-right">
                                         <p> <strong>Taxes :</strong> </p>

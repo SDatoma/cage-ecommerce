@@ -302,7 +302,7 @@
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commande</span></a>
                 <ul class="ml-menu">
-                    <li><a href="#"> Commande en attente <sup style="font-size:15px">0</sup> </a></li>
+                    <li><a href="/list/commande/attente"> Commande en attente <sup style="font-size:15px">0</sup> </a></li>
                     <li><a href="/facturation/commande"> Generer la facture </a></li>
                 </ul>
             </li>
