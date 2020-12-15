@@ -181,6 +181,34 @@ class ProduitController extends Controller
  
         return view('pages_backend/produit/detail_produit',compact('produit','produit_images','promotion'));
     }
+	
+	public function detail_produit($id)
+    {
+        $produit = DB::table('produit')
+		->where('produit.id_produit', '=', $id)
+		->first(); 
+		
+		$photo_produits = PhotoProduit::All();
+		$sous_categories = SousCategorie::All();
+		
+		$produits_idem_ss_cats = DB::table('produit')
+		->where('produit.id_sous_categorie', '=', $produit->id_sous_categorie)
+		->get();
+		
+		$produits_idem_cats = DB::table('sous_categorie')
+		->join('produit', 'produit.id_sous_categorie', '=', 'sous_categorie.id_sous_categorie')
+		->where('produit.id_sous_categorie', '=', $produit->id_sous_categorie)
+		->get();
+		
+		$produits_autres_cats = DB::table('sous_categorie')
+		->where('sous_categorie.id_categorie', '=', $produit->id_categorie)
+		->get();
+		
+		
+		
+	   return view('pages_front_end/detail_produit',compact('produits_autres_cats', 'produits_idem_cats', 
+	   'produits_idem_ss_cats', 'sous_categories', 'produit', 'photo_produits'));
+    }
 
     /**
      * Show the form for editing the specified resource.

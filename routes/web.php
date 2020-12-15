@@ -21,7 +21,7 @@ Route::get('/detail-produit', function () {
     return view('pages_front_end/detail_produit');
 });
 
-
+Route::get('/detail-produit/{id}','ProduitController@detail_produit')->name('detail-produit.produit');
 
 
 // ROUTE BACKEND

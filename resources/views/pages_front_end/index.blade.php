@@ -159,55 +159,57 @@
                         <!-- Single Item -->
 						
 						@foreach($produits as $produit)
-                        <div class="feature-slider-item swiper-slide">
-                            <article class="list-product">
-                                <div class="img-block">
-                                    <a href="/detail-produit" class="thumbnail">
-                                        <img class="first-img" src="{{$produit->image_produit}}" height=180 alt="" />
-                                        <img class="second-img" src="{{$produit->image_produit}}" alt="" />
-                                    </a>
-                                    <div class="quick-view">
-                                        <a class="quick_view" href="/detail-produit" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
-                                            <i class="icon-magnifier icons"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <ul class="product-flag">
-                                    <li class="new">Neuf</li>
-                                </ul>
-                                <div class="product-decs">
-                                    <a class="inner-link" href="shop-4-column.html"><span>{{$produit->nom_produit}}</span></a>
-                                    <h2><a href="single-product.html" class="product-link">{{$produit->description_produit}}</a></h2>
-                                    <div class="rating-product">
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                    </div>
-                                    <div class="pricing-meta">
-                                        <ul>
-                                            <li class="current-price">{{$produit->prix_ht_produit}} F CFA</li>
-                                        </ul>
-										<hr/>
+                        <a href="/detail-produit">
+							<div class="feature-slider-item swiper-slide">
+								<article class="list-product">
+									<div class="img-block">
+										<a href="{{route('detail-produit.produit', $produit->id_produit)}}" class="thumbnail">
+											<img class="first-img" src="{{$produit->image_produit}}" height=180 alt="" />
+											<img class="second-img" src="{{$produit->image_produit}}" alt="" />
+										</a>
+										<div class="quick-view">
+											<a class="quick_view" href="/detail-produit" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+												<i class="icon-magnifier icons"></i>
+											</a>
+										</div>
+									</div>
+									<ul class="product-flag">
+										<li class="new">Neuf</li>
+									</ul>
+									<div class="product-decs">
+										<a class="inner-link" href="shop-4-column.html"><span>{{$produit->nom_produit}}</span></a>
+										<h2><a href="single-product.html" class="product-link">{{$produit->description_produit}}</a></h2>
+										<div class="rating-product">
+											<i class="ion-android-star"></i>
+											<i class="ion-android-star"></i>
+											<i class="ion-android-star"></i>
+											<i class="ion-android-star"></i>
+											<i class="ion-android-star"></i>
+										</div>
+										<div class="pricing-meta">
+											<ul>
+												<li class="current-price">{{$produit->prix_ht_produit}} F CFA</li>
+											</ul>
+											<hr/>
+											<ul>
+												<li style="color:#2bbbad">Disponible</li>
+											</ul>
+										</div>
+									</div>
+									<div class="add-to-link">
 										<ul>
-                                            <li class="old-price not-cut">En stock</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="add-to-link">
-                                    <ul>
-                                        <li class="cart"><a class="cart-btn" href="#">Ajouter au panier </a></li>
-                                        <li>
-                                            <a href="wishlist.html"><i class="icon-heart"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html"><i class="icon-shuffle"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </div>
+											<li class="cart"><a class="cart-btn" href="#">Ajouter au panier </a></li>
+											<li>
+												<a href="wishlist.html"><i class="icon-heart"></i></a>
+											</li>
+											<li>
+												<a href="compare.html"><i class="icon-shuffle"></i></a>
+											</li>
+										</ul>
+									</div>
+								</article>
+							</div>
+						</a>
 						@endforeach
                         <!-- Single Item -->
 						
