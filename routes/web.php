@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 // ROUTE FRONT-END
 Route::get('/', 'IndexController@index');
 
+// Route::get('/', function () {
+    // return view('pages_frontend/index');
+// });
 
 Route::get('/detail-produit', function () {
     return view('pages_front_end/detail_produit');
