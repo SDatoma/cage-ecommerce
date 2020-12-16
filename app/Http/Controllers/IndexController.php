@@ -31,7 +31,7 @@ class IndexController extends Controller
 		
 		$sous_categories = SousCategorie::all();
         
-       return view('pages_front_end/index',compact('categories', 'produits', 'sous_categories'));
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories'));
 	
     }
 
