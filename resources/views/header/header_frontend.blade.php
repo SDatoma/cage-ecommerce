@@ -193,3 +193,43 @@
 	</div>
 	<!-- //Modal2 -->
 	
+<!-- Header Nav End -->
+            <div class="header-menu bg-blue sticky-nav d-xl-block d-none padding-0px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 custom-col-2">
+                            <div class="header-menu-vertical">
+                                
+                                <!-- menu content -->
+                            </div>
+                            <!-- header menu vertical -->
+                        </div>
+                        <div class="col-lg-9 custom-col-2">
+                            <div class="header-horizontal-menu">
+                                <ul class="menu-content">
+                                    <li><a href="/">Accueil </a></li>
+                                    <li class="menu-dropdown">
+                                        <a href="#">Boutique <i class="ion-ios-arrow-down"></i></a>
+                                        <ul class="main-sub-menu">
+                                            <li><a href="">Au Togo </a></li>
+                                            <li><a href="">A l'extérieur </a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Sol </a></li>
+                                    <li><a href="">Mûr </a></li>
+                                    <li><a href="">Finition </a></li>
+                                    <li><a href="">contact </a></li>
+                                </ul>
+                            </div>
+                            <!-- header horizontal menu -->
+                            <div class="intro-text-shipping text-right">
+                                <div class="free-ship">Free Shipping on Orders $50+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- header menu -->
+	<!-- Header Nav End -->

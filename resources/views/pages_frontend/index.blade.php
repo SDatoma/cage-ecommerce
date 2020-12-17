@@ -1,46 +1,6 @@
 
 @include('header/header_frontend')
 
-<!-- Header Nav End -->
-            <div class="header-menu bg-blue sticky-nav d-xl-block d-none padding-0px">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 custom-col-2">
-                            <div class="header-menu-vertical">
-                                
-                                <!-- menu content -->
-                            </div>
-                            <!-- header menu vertical -->
-                        </div>
-                        <div class="col-lg-9 custom-col-2">
-                            <div class="header-horizontal-menu">
-                                <ul class="menu-content">
-                                    <li><a href="/">Accueil </a></li>
-                                    <li class="menu-dropdown">
-                                        <a href="#">Boutique <i class="ion-ios-arrow-down"></i></a>
-                                        <ul class="main-sub-menu">
-                                            <li><a href="">Au Togo </a></li>
-                                            <li><a href="">A l'extérieur </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Sol </a></li>
-                                    <li><a href="">Mûr </a></li>
-                                    <li><a href="">Finition </a></li>
-                                    <li><a href="">contact </a></li>
-                                </ul>
-                            </div>
-                            <!-- header horizontal menu -->
-                            <div class="intro-text-shipping text-right">
-                                <div class="free-ship">Free Shipping on Orders $50+</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- row -->
-                </div>
-                <!-- container -->
-            </div>
-            <!-- header menu -->
-	<!-- Header Nav End -->
 	
 <div class="header-menu  d-xl-block d-none bg-light-gray">
                 <div class="container">
@@ -201,13 +161,13 @@
 					<li>
 						<div class="w3l-specilamk">
 							<div class="speioffer-agile">
-								<a href="single.html">
+								<a href="">
 									<img src="{{asset('css_front_end/assets/images/product-image/2-1.jpg')}}" height=180 alt="">
 								</a>
 							</div>
 							<div class="product-name-w3l">
 								<h4>
-									<a href="single.html">Nom : {{$categorie->libelle_categorie}}</a>
+									<a href="">Nom : {{$categorie->libelle_categorie}}</a>
 								</h4>
 								<div class="w3l-pricehkj">
 								@foreach($sous_categories as $sous_categorie)
@@ -275,7 +235,7 @@
 											<a href="{{route('detail-produit.produit', $produit->id_produit)}}" class="link-product-add-cart">Voir plus</a>
 										</div>
 									</div>
-									<span class="product-new-top">Neuf</span>
+									
 								</div>
 								<div class="item-info-product ">
 									<h4>
@@ -323,6 +283,7 @@
 											<a href="single.html" class="link-product-add-cart">Quick View</a>
 										</div>
 									</div>
+									<span class="product-new-top">Neuf</span>
 								</div>
 								<div class="item-info-product ">
 									<h4>
@@ -446,10 +407,10 @@
 	<div class="footer-top">
 		<div class="container-fluid">
 			<div class="col-xs-8 agile-leftmk">
-				<h2>Get your Groceries delivered from local stores</h2>
-				<p>Free Delivery on your first order!</p>
+				<h2>Faites livrer vos courses dans les magasins locaux</h2>
+				<p>Livraison gratuite sur votre première commande!</p>
 				<form action="#" method="post">
-					<input type="email" placeholder="E-mail" name="email" required="">
+					<input type="email" placeholder="Laissez nous votre E-mail" name="email" required="">
 					<input type="submit" value="Subscribe">
 				</form>
 				<div class="newsform-w3l">
@@ -457,7 +418,7 @@
 				</div>
 			</div>
 			<div class="col-xs-4 w3l-rightmk">
-				<img src="images/tab3.png" alt=" ">
+				<img src="{{asset('css_frontend/images/tab3.png')}}" alt=" ">
 			</div>
 			<div class="clearfix"></div>
 		</div>

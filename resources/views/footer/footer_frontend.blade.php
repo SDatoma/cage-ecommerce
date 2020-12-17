@@ -3,21 +3,21 @@
 		<div class="container">
 			<!-- footer second section -->
 			<div class="w3l-grids-footer">
-				<div class="col-xs-4 offer-footer">
-					<div class="col-xs-4 icon-fot">
+				<div class="col-xs-5 offer-footer">
+					<div class="col-xs-3 icon-fot">
 						<span class="fa fa-map-marker" aria-hidden="true"></span>
 					</div>
-					<div class="col-xs-8 text-form-footer">
-						<h3>Track Your Order</h3>
+					<div class="col-xs-9 text-form-footer">
+						<h3>Togo, Lomé, quatier Agoè Démakpoè</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
-				<div class="col-xs-4 offer-footer">
-					<div class="col-xs-4 icon-fot">
+				<div class="col-xs-3 offer-footer">
+					<div class="col-xs-3 icon-fot">
 						<span class="fa fa-refresh" aria-hidden="true"></span>
 					</div>
-					<div class="col-xs-8 text-form-footer">
-						<h3>Free & Easy Returns</h3>
+					<div class="col-xs-9 text-form-footer">
+						<h3>Simple et facile</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -26,7 +26,7 @@
 						<span class="fa fa-times" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-8 text-form-footer">
-						<h3>Online cancellation </h3>
+						<h3>Satisfait ou rembousser </h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -36,99 +36,65 @@
 			<!-- footer third section -->
 			<div class="footer-info w3-agileits-info">
 				<!-- footer categories -->
-				<div class="col-sm-5 address-right">
-					<div class="col-xs-6 footer-grids">
+				<div class="col-sm-3 address-right">
+					<div class="col-xs-12 footer-grids">
 						<h3>Categories</h3>
 						<ul>
-							<li>
-								<a href="product.html">Grocery</a>
-							</li>
-							<li>
-								<a href="product.html">Fruits</a>
-							</li>
-							<li>
-								<a href="product.html">Soft Drinks</a>
-							</li>
-							<li>
-								<a href="product2.html">Dishwashers</a>
-							</li>
-							<li>
-								<a href="product.html">Biscuits & Cookies</a>
-							</li>
-							<li>
-								<a href="product2.html">Baby Diapers</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-xs-6 footer-grids agile-secomk">
-						<ul>
-							<li>
-								<a href="product.html">Snacks & Beverages</a>
-							</li>
-							<li>
-								<a href="product.html">Bread & Bakery</a>
-							</li>
-							<li>
-								<a href="product.html">Sweets</a>
-							</li>
-							<li>
-								<a href="product.html">Chocolates & Biscuits</a>
-							</li>
-							<li>
-								<a href="product2.html">Personal Care</a>
-							</li>
-							<li>
-								<a href="product.html">Dried Fruits & Nuts</a>
-							</li>
+							
 						</ul>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<!-- //footer categories -->
 				<!-- quick links -->
-				<div class="col-sm-5 address-right">
-					<div class="col-xs-6 footer-grids">
-						<h3>Quick Links</h3>
+				<div class="col-sm-3 address-right">
+					<div class="col-xs-12 footer-grids">
+						<h3>Liens personnalisés</h3>
 						<ul>
 							<li>
-								<a href="about.html">About Us</a>
+								<a href="">A propos</a>
 							</li>
 							<li>
-								<a href="contact.html">Contact Us</a>
+								<a href="">Politique de confidentialité</a>
 							</li>
 							<li>
-								<a href="help.html">Help</a>
+								<a href="">Les promotions</a>
 							</li>
 							<li>
-								<a href="faqs.html">Faqs</a>
+								<a href="">Nouveaux produits</a>
 							</li>
 							<li>
-								<a href="terms.html">Terms of use</a>
+								<a href="">Les meilleures ventes</a>
 							</li>
 							<li>
-								<a href="privacy.html">Privacy Policy</a>
+								<a href="">Contact</a>
 							</li>
 						</ul>
 					</div>
-					<div class="col-xs-6 footer-grids">
-						<h3>Get in Touch</h3>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-sm-3 address-right">
+				<div class="col-xs-12 footer-grids">
+						<h3>Contact </h3>
 						<ul>
 							<li>
-								<i class="fa fa-map-marker"></i> 123 Sebastian, USA.</li>
+								<i class="fa fa-map-marker"></i> Lomé, Togo.</li>
 							<li>
-								<i class="fa fa-mobile"></i> 333 222 3333 </li>
+								<i class="fa fa-phone"></i> +228 70 45 37 85 </li>
 							<li>
-								<i class="fa fa-phone"></i> +222 11 4444 </li>
+								<i class="fa fa-phone"></i> +228 96 35 80 90 </li>
 							<li>
-								<i class="fa fa-envelope-o"></i>
-								<a href="mailto:example@mail.com"> mail@example.com</a>
+								<i class="fa fa-mobile"></i> +228 90 90 49 03 </li>
+							<li>
+								<i class="fa fa-envelope"></i>
+								<a href="mailto:cagetogo@gmail.com">cagetogo@gmail.com</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<!-- //quick links -->
 				<!-- social icons -->
-				<div class="col-sm-2 footer-grids  w3l-socialmk">
+				<div class="col-sm-3 footer-grids  w3l-socialmk">
 					<h3>Follow Us on</h3>
 					<div class="social">
 						<ul>
@@ -150,12 +116,12 @@
 						</ul>
 					</div>
 					<div class="agileits_app-devices">
-						<h5>Download the App</h5>
+						<h5>Télécharger notre application sur</h5>
 						<a href="#">
-							<img src="images/1.png" alt="">
+							<img src="{{asset('css_frontend/images/1.png')}}" alt="">
 						</a>
 						<a href="#">
-							<img src="images/2.png" alt="">
+							<img src="{{asset('css_frontend/images/2.png')}}" alt="">
 						</a>
 						<div class="clearfix"> </div>
 					</div>
@@ -169,34 +135,22 @@
 				<!-- //brands -->
 				<!-- payment -->
 				<div class="sub-some child-momu">
-					<h5>Payment Method</h5>
+					<h5>Mode de paiement</h5>
 					<ul>
 						<li>
-							<img src="images/pay2.png" alt="">
+							<img src="{{asset('css_frontend/images/tmoney.jpg')}}" height=80 alt="">
 						</li>
 						<li>
-							<img src="images/pay5.png" alt="">
+							<img src="{{asset('css_frontend/images/flooz.jpg')}}" height=80 alt="">
 						</li>
 						<li>
-							<img src="images/pay1.png" alt="">
+							<img src="{{asset('css_frontend/images/orabank.jpg')}}" height=80 alt="">
 						</li>
 						<li>
-							<img src="images/pay4.png" alt="">
+							<img src="{{asset('css_frontend/images/visa.jpg')}}" height=80 alt="">
 						</li>
 						<li>
-							<img src="images/pay6.png" alt="">
-						</li>
-						<li>
-							<img src="images/pay3.png" alt="">
-						</li>
-						<li>
-							<img src="images/pay7.png" alt="">
-						</li>
-						<li>
-							<img src="images/pay8.png" alt="">
-						</li>
-						<li>
-							<img src="images/pay9.png" alt="">
+							<img src="{{asset('css_frontend/images/master.png')}}" height=80 alt="">
 						</li>
 					</ul>
 				</div>
