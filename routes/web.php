@@ -21,7 +21,7 @@ Route::get('/', 'IndexController@index');
 // });
 
 Route::get('/detail-produit', function () {
-    return view('pages_front_end/detail_produit');
+    return view('pages_frontend/detail_produit');
 });
 
 Route::get('/detail-produit/{id}','ProduitController@detail_produit')->name('detail-produit.produit');

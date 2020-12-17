@@ -206,7 +206,7 @@ class ProduitController extends Controller
 		
 		
 		
-	   return view('pages_front_end/detail_produit',compact('produits_autres_cats', 'produits_idem_cats', 
+	   return view('pages_frontend/detail_produit',compact('produits_autres_cats', 'produits_idem_cats', 
 	   'produits_idem_ss_cats', 'sous_categories', 'produit', 'photo_produits'));
     }
 
