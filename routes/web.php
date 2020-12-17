@@ -26,7 +26,6 @@ Route::get('/detail-produit', function () {
 
 Route::get('/detail-produit/{id}','ProduitController@detail_produit')->name('detail-produit.produit');
 
-
 // ROUTE BACKEND
 Route::get('/admin', 'AdminController@index');
 
