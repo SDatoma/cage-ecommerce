@@ -57,9 +57,21 @@
 								<div class="item-info-product ">
 									<h4>
 										<a href="{{route('detail-produit.produit', $produit->id_produit)}}" style="font-size:15px">{{$produit->nom_produit}}</a>
-									</h4>
+                                    </h4>
+                                    <?php
+									 $promotion = \App\Models\Promotion::where(['id_produit' =>$produit->id_produit])->first();
+									?>
 									<div class="info-product-price">
-										<span class="item_price">{{$produit->prix_ht_produit}} F CFA</span>
+                                       @if($promotion)
+										 <?php 
+										   $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
+										   $prix_ht_promo= $produit->prix_ht_produit - $reduction;
+										 ?>
+										<span class="item_price" style="font-size:15px">{{$prix_ht_promo}} F CFA</span>
+										<del> <span class="item_price" style="font-size:15px">{{$produit->prix_ht_produit}} F CFA</span></del>
+										@else
+									   <span class="item_price" style="font-size:15px">{{$produit->prix_ht_produit}} F CFA</span>
+									    @endif
 										
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item 
