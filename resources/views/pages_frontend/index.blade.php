@@ -5,12 +5,12 @@
                     <div class="row mt-2">
                         <div class="col-lg-2 custom-col-3">
                             <div class="header-menu-vertical bg-blue">
-                                <h4 class="menu-title be-af-none">Les Catégories</h4>
+                                <h4 class="menu-title be-af-none">Catégories</h4>
                                 <ul class="menu-content display-block">
                                     
 								  @foreach($categories as $categorie)
                                     <li class="menu-item">
-                                        <a href="{{route('tri.produit.categorie',$categorie->id_categorie)}}">{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
+                                        <a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}">{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
 										   <?php
                                               $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();
                                              ?>
@@ -18,7 +18,7 @@
                                             <li>
                                                 <ul class="submenu-item">
 												@foreach($sous_categories as $sous_categorie)
-                                                    <li><a href="{{route('tri.produit.sous_categorie',[$categorie->id_categorie,$sous_categorie->id_sous_categorie])}}">{{$sous_categorie->libelle_sous_categorie}}</a></li>
+                                                    <li><a href="{{route('tri.produit.sous_categorie',[$categorie->id_categorie,$sous_categorie->id_sous_categorie,$sous_categorie->libelle_sous_categorie])}}">{{$sous_categorie->libelle_sous_categorie}}</a></li>
 												@endforeach
                                                 </ul>
                                             </li>
@@ -210,7 +210,7 @@
 						<div class="col-md-2 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img src="{{$produit->image_produit}}" height=150 width=200 class="thumbnail" alt="">
+									<img src="{{$produit->image_produit}}" height=150 width=200 class="thumbnail image-resp" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a href="{{route('detail-produit.produit', $produit->id_produit)}}" class="link-product-add-cart">Voir plus</a>
@@ -239,7 +239,7 @@
 												<input type="hidden" name="currency_code" value="USD" />
 												<input type="hidden" name="return" value=" " />
 												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button" />
+												<input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
 											</fieldset>
 										</form>
 									</div>

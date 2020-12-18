@@ -8,12 +8,16 @@
         </button>
       </div>
       <div class="modal-body">
-      <form  method="POST" action="{{route('categorie.update',$categorie->id_categorie)}}">
+      <form  method="POST" action="{{route('categorie.update',$categorie->id_categorie)}}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       {{ csrf_field() }}
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Libelle</label>
             <input type="text" class="form-control" id="recipient-name" name="libelle_categorie" value="{{$categorie->libelle_categorie}}" required="">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Photos</label>
+            <input type="file" class="form-control" id="recipient-name" name="file">
           </div>
         </div>
       <div class="modal-footer">

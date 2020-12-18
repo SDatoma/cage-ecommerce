@@ -44,9 +44,33 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
+        $verification_categorie = Categorie::where(['libelle_categorie' =>$request->libelle_categorie])->first() ;
+         
+        if ($verification_categorie) {
+
+            Session()->flash('error',"Cette categorie existe deja dans le catalogue");
+            return back()->withErrors($validator)->withInput();
+        }
+
         $categorie= new Categorie();
 
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/categorie/'.$request->libelle_categorie.'.jpg');
+
+            $file_name ='files_upload/categorie/'.$request->libelle_categorie.'.jpg';
+
+          }else{
+
+            $file_name ="";
+         }
+
         $categorie->libelle_categorie=$request->libelle_categorie;
+        $categorie->image_categorie=$request->$file_name;
         $categorie->etat_categorie=1;
 
         $categorie->save();
@@ -60,8 +84,24 @@ class CategorieController extends Controller
     {
         $sous_categorie= new SousCategorie();
 
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/categorie/'.$request->libelle_sous_categorie.'.jpg');
+
+            $file_name ='files_upload/categorie/'.$request->libelle_sous_categorie.'.jpg';
+
+          }else{
+
+            $file_name ="";
+         }
+
         $sous_categorie->libelle_sous_categorie=$request->libelle_sous_categorie;
         $sous_categorie->id_categorie=$request->id_categorie;
+        $sous_categorie->image_sous_categorie= $file_name;
 
         $sous_categorie->save();
 
@@ -119,7 +159,23 @@ class CategorieController extends Controller
     {
         $categorie = Categorie::where(['id_categorie' =>$id])->first() ;
 
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/categorie/'.$request->libelle_categorie.'.jpg');
+
+            $file_name ='files_upload/categorie/'.$request->libelle_categorie.'.jpg';
+
+          }else{
+
+            $file_name =$categorie->image_categorie;
+         }
+
         $categorie->libelle_categorie=$request->libelle_categorie;
+        $categorie->image_categorie= $file_name;
          
         $categorie->save();
 
@@ -132,7 +188,23 @@ class CategorieController extends Controller
     {
         $sous_categorie = SousCategorie::where(['id_sous_categorie' =>$id])->first() ;
 
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/categorie/'.$request->libelle_sous_categorie.'.jpg');
+
+            $file_name ='files_upload/categorie/'.$request->libelle_sous_categorie.'.jpg';
+
+          }else{
+
+            $file_name =$sous_categorie->image_sous_categorie;
+         }
+
         $sous_categorie->libelle_sous_categorie=$request->libelle_sous_categorie;
+        $sous_categorie->image_sous_categorie=$request->$file_name;
          
         $sous_categorie->save();
 

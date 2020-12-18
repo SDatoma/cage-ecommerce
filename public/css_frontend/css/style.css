@@ -29,6 +29,19 @@ input[type="button"],input[type="submit"]{
 	-ms-transition:0.5s all;
 }
 
+#recherche{
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    height: 66%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    border: 2px solid black; /* Add a grey border */
+    margin-bottom: 8px; /* Add some space below the input */
+    color:rgb(10, 10, 10);
+
+   }
+
 h1,h2,h3,h4,h5,h6{
 	margin:0;
     font-family: 'Open Sans', sans-serif;
@@ -1006,6 +1019,14 @@ h3.tittle-w3l {
     font-size: 3em;
     text-align: center;
     margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+h3.tittle-w3l1 {
+    color: #000;
+    font-size: 3em;
+    margin-bottom: 25px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -4872,7 +4893,40 @@ input[type="radio"], input[type="checkbox"] {
     .vertical_post form input[type="submit"], .number-paymk input[type="submit"] {
         margin-top: 20px;
     }
-    
+
 }
+
+@media(min-width:362px) and (max-width:480px){
+    .image-resp{
+        margin-left:43px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ }
+
+ @media(min-width:458px) and (max-width:480px){
+    .image-resp{
+        margin-left:85px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ }
+
+ @media(min-width:480px) and (max-width:480px){
+    .image-resp{
+        margin-left:85px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ }
 
 /*--//responsive--*/

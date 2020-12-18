@@ -8,7 +8,7 @@
 						<span class="fa fa-map-marker" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-9 text-form-footer">
-						<h3>Togo, Lomé, quatier Agoè Démakpoè</h3>
+						<h3 style="font-size:20px">Togo, Lomé, quatier Agoè Démakpoè</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -17,7 +17,7 @@
 						<span class="fa fa-refresh" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-9 text-form-footer">
-						<h3>Simple et facile</h3>
+						<h3 style="font-size:20px">Simple et facile</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -26,7 +26,7 @@
 						<span class="fa fa-times" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-8 text-form-footer">
-						<h3>Satisfait ou rembousser </h3>
+						<h3 style="font-size:20px">Satisfait ou rembousser </h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -135,22 +135,22 @@
 				<!-- //brands -->
 				<!-- payment -->
 				<div class="sub-some child-momu">
-					<h5>Mode de paiement</h5>
+					<h5 style="color:black">Mode de paiement</h5>
 					<ul>
 						<li>
-							<img src="{{asset('css_frontend/images/tmoney.jpg')}}" height=80 alt="">
+							<img src="{{asset('css_frontend/images/tmoney.jpg')}}" height=40 alt="">
 						</li>
 						<li>
-							<img src="{{asset('css_frontend/images/flooz.jpg')}}" height=80 alt="">
+							<img src="{{asset('css_frontend/images/flooz.jpg')}}" height=40 alt="">
 						</li>
 						<li>
-							<img src="{{asset('css_frontend/images/orabank.jpg')}}" height=80 alt="">
+							<img src="{{asset('css_frontend/images/orabank.jpg')}}" height=40 alt="">
 						</li>
 						<li>
-							<img src="{{asset('css_frontend/images/visa.jpg')}}" height=80 alt="">
+							<img src="{{asset('css_frontend/images/visa.jpg')}}" height=40 alt="">
 						</li>
 						<li>
-							<img src="{{asset('css_frontend/images/master.png')}}" height=80 alt="">
+							<img src="{{asset('css_frontend/images/master.png')}}" height=40 alt="">
 						</li>
 					</ul>
 				</div>
@@ -168,13 +168,7 @@
 		</div>
 	</div>
 	<!-- //copyright -->
-
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="{{asset('css_frontend/js/jquery-2.1.4.min.js')}}"></script>
-	<!-- //jquery -->
-
-	<!-- popup modal (for signin & signup)-->
+    <script src="{{asset('css_frontend/js/jquery-2.1.4.min.js')}}"></script>
 	<script src="{{asset('css_frontend/js/jquery.magnific-popup.js')}}"></script>
 	<script>
 		$(document).ready(function () {
@@ -290,6 +284,22 @@
 			//empty string means no validation error
 		}
 	</script>
+
+<script>
+document.getElementById('recherche').addEventListener('keyup', function(e) {
+var recherche = this.value.toLowerCase();
+var documents = document.querySelectorAll('.document');
+
+Array.prototype.forEach.call(documents, function(document) {
+ // On a bien trouvé les termes de recherche.
+ if (document.innerHTML.toLowerCase().indexOf(recherche) > -1) {
+   document.style.display = 'block';
+ } else {
+   document.style.display = 'none';
+ }
+});
+});
+</script>
 	<!-- //password-script -->
 
 	<!-- smoothscroll -->

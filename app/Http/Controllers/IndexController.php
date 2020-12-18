@@ -69,7 +69,7 @@ class IndexController extends Controller
         //
     }
 
-    public function tri_produit_par_categorie($id_categorie)
+    public function tri_produit_par_categorie($id_categorie,$libelle_categorie)
     {
         $categories = Categorie::all();
         $categoriee = Categorie::where(['id_categorie'=>$id_categorie])->first() ;
@@ -83,7 +83,7 @@ class IndexController extends Controller
 	
     }
 
-    public function tri_produit_par_sous_categorie($id_categorie,$id_sous_categorie)
+    public function tri_produit_par_sous_categorie($id_categorie,$id_sous_categorie,$libelle_sous_categorie)
     {
         $categories = Categorie::all();
         $categoriee = Categorie::where(['id_categorie'=>$id_categorie])->first() ;

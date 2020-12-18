@@ -8,11 +8,15 @@
         </button>
       </div>
       <div class="modal-body">
-      <form  method="POST" action="{{route('sous_categorie.store')}}">
-      {{ csrf_field() }}
+      <form  method="POST" action="{{route('sous_categorie.store')}}" enctype="multipart/form-data">
+      {{csrf_field()}}
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Libelle</label>
             <input type="text" class="form-control" id="recipient-name" name="libelle_sous_categorie" required="">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Photos</label>
+            <input type="file" class="form-control" id="recipient-name" name="file">
           </div>
           <input type="hidden" class="form-control" name="id_categorie" value="{{$categorie->id_categorie}}" required="">
         </div>

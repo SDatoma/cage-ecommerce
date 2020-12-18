@@ -1,15 +1,14 @@
-
 @include('header/header_frontend')
 <div class="header-menu ">
                 <div class="container">
                     <div class="row mt-2">
                         <div class="col-md-2">
                             <div class="header-menu-vertical bg-blue">
-                                <h4 class="menu-title be-af-none">Les Catégories</h4>
+                                <h4 class="menu-title be-af-none">Catégories</h4>
                                 <ul class="menu-content display-block">
                                   @foreach($categories as $categorie)
                                     <li class="menu-item">
-                                        <a href="{{route('tri.produit.categorie',$categorie->id_categorie)}}" @if($categorie->id_categorie==$id_categorie)style="color:red" @endif >{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
+                                        <a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}" @if($categorie->id_categorie==$id_categorie)style="color:red" @endif >{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
 										   <?php
                                               $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();
                                              ?>
@@ -17,7 +16,7 @@
                                             <li>
                                                 <ul class="submenu-item">
 												@foreach($sous_categories as $sous_categorie)
-                                                    <li><a href="{{route('tri.produit.sous_categorie',[$categorie->id_categorie,$sous_categorie->id_sous_categorie])}}">{{$sous_categorie->libelle_sous_categorie}}</a></li>
+                                                    <li><a href="{{route('tri.produit.sous_categorie',[$categorie->id_categorie,$sous_categorie->id_sous_categorie,$sous_categorie->libelle_sous_categorie])}}">{{$sous_categorie->libelle_sous_categorie}}</a></li>
 												@endforeach
                                                 </ul>
                                             </li>
@@ -32,13 +31,19 @@
                             <!-- header menu vertical -->
                         </div>
                         <div class="col-md-10">
-                        <h3 class="tittle-w3l" style="font-size:20px;margin-top:12px">{{$categoriee->libelle_categorie}} ====> <strong style="color:blue">{{$sous_categoriee->libelle_sous_categorie}}</strong> </h3>
+                        <h3 class="tittle-w3l1" style="font-size:20px;margin-top:12px"><img src="/{{$sous_categoriee->image_sous_categorie}}" height=150 width=200 class="thumbnail" alt=""> {{$categoriee->libelle_categorie}} ====> <strong style="color:blue">{{$sous_categoriee->libelle_sous_categorie}}</strong> 
+                           <div class="pull-right">
+                               <!-- <span>Recherches :dfdgf </span> -->
+                               <input type="text" id="recherche" class="col-md-8 ml-2 form" placeholder="Rechercher...">
+                           </div>
+                       </h3>
                            <!-- Slider Start -->
+                           <div class="row" id="documents">
                            @foreach($produits as $produit)
-						<div class="col-md-3 product-men" style="margin-top:-15px">
+						<div class="col-md-3 product-men document" style="margin-top:-15px">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img src="/{{$produit->image_produit}}" height=150 width=250 class="thumbnail" alt="">
+									<img src="/{{$produit->image_produit}}" height=150 width=250 class="thumbnail image-resp" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a href="{{route('detail-produit.produit', $produit->id_produit)}}" class="link-product-add-cart">Voir plus</a>
@@ -67,7 +72,7 @@
 												<input type="hidden" name="currency_code" value="USD" />
 												<input type="hidden" name="return" value=" " />
 												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button" />
+												<input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
 											</fieldset>
 										</form>
 									</div>
@@ -75,7 +80,8 @@
 								</div>
 							</div>
 						</div>
-						@endforeach
+                        @endforeach
+                         </div>
                             <!-- Slider End -->
                         </div>
                         
