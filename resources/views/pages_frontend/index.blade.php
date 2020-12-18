@@ -191,7 +191,7 @@
 	<div class="ads-grid" style="margin-top:-100px">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l" style="font-size:30px;margin-top:40px">Nos produits
+			<h3 class="tittle-w3l" style="font-size:27px;margin-top:40px">Nos produits
 				<span class="heading-style">
 					<i></i>
 					<i></i>

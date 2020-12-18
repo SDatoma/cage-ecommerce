@@ -34,7 +34,7 @@ input[type="button"],input[type="submit"]{
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */
-    height: 66%; /* Full-width */
+    height: 35px; /* Full-width */
     font-size: 16px; /* Increase font-size */
     border: 2px solid black; /* Add a grey border */
     margin-bottom: 8px; /* Add some space below the input */

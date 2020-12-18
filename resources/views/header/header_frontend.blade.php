@@ -82,9 +82,10 @@
 				<!-- //header lists -->
 				<!-- search -->
 				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="search" placeholder="Rechercher un produit ... " required="">
-						<button type="submit" class="btn btn-default" aria-label="Left Align">
+					<form action="{{route('recherche.produit')}}" method="post">
+					  {{csrf_field()}}
+						<input name="recherche" type="text" placeholder="Rechercher un produit ... " required="" style="height:39px;border:1px solid black;width:320px;color:black">
+						<button type="submit" class="btn btn-default" aria-label="Left Align" style="height:39px;margin-bottom:3px">
 							<span class="fa fa-search" aria-hidden="true"> </span>
 						</button>
 					</form>
@@ -96,9 +97,9 @@
 						<form action="#" method="post" class="last">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
-							<button class="w3view-cart" type="submit" name="submit" value="">
+							<button class="w3view-cart" type="submit" name="submit" value="" style="height:30px;width:40px">
 								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-							</button> Panier
+							</button><strong style="color:black"> Panier : 0 Produits - 0 FCFA </strong>
 						</form>
 					</div>
 				</div>

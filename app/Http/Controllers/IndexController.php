@@ -103,6 +103,20 @@ class IndexController extends Controller
 	
     }
 
+    public function recherche_produit(Request $request)
+    {
+        $categories = Categorie::all();
+        //$categoriee = Categorie::where(['id_categorie'=>$id_categorie])->first() ;
+        $produits = DB::table('produit')
+        ->where('nom_produit', 'like', '%' . $request->recherche . '%')
+        ->get();
+        
+        $id_categorie=0 ;
+		
+         return view('pages_frontend/resultat_recherche',compact('categories','produits','id_categorie'));
+	
+    }
+
     /**
      * Update the specified resource in storage.
      *

@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 // ROUTE FRONT-END
 Route::get('/', 'IndexController@index');
 Route::get('/tri-categorie-{id_categorie}-produit-{libelle_categorie}', 'IndexController@tri_produit_par_categorie')->name('tri.produit.categorie');
+
 Route::get('/tri-sous-categorie-{id_categorie}-produit-{id_sous_categorie}-{libelle_sous_categorie}', 'IndexController@tri_produit_par_sous_categorie')->name('tri.produit.sous_categorie');
+
 Route::get('/detail-produit/{id}','ProduitController@detail_produit')->name('detail-produit.produit');
+
+Route::post('/recherche','IndexController@recherche_produit')->name('recherche.produit');
 
 // ROUTE BACKEND
 Route::get('/admin', 'AdminController@index');
