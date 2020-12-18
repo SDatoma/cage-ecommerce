@@ -29,9 +29,14 @@ class IndexController extends Controller
 		
 		$produits = Produit::all();
 		
-		$sous_categories = SousCategorie::all();
+        $sous_categories = SousCategorie::all();
         
-       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories'));
+         $nouveau_produits = DB::table('produit')
+         ->orderBy('id_produit', 'desc')
+         ->limit(4)
+         ->get();
+        
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits'));
 	
     }
 

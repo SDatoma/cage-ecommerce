@@ -5,10 +5,9 @@
                     <div class="row mt-2">
                         <div class="col-lg-2 custom-col-3">
                             <div class="header-menu-vertical bg-blue">
-                                <h4 class="menu-title be-af-none">Catégories</h4>
+                                <center><h4 class="menu-title be-af-none">Catégories</h4></center>
                                 <ul class="menu-content display-block">
-                                    
-								  @foreach($categories as $categorie)
+                                  @foreach($categories as $categorie)
                                     <li class="menu-item">
                                         <a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}">{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
 										   <?php
@@ -26,8 +25,7 @@
                                         <!-- sub menu -->
                                     </li>
 								  @endforeach
-								   
-                                </ul>
+								</ul>
                                 <!-- menu content -->
                             </div>
                             <!-- header menu vertical -->
@@ -255,52 +253,14 @@
 					<!-- fourth section (noodles) -->
 					<div class="product-sec1">
 						<h3 class="heading-tittle" style="font-size:25px">Nouvelles Arrivées</h3>
-						<div class="col-md-4 product-men">
+                        @foreach($nouveau_produits as $nouveau_produit)
+						<div class="col-md-3 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img src="images/mk7.jpg" alt="">
+									<img src="/{{$nouveau_produit->image_produit}}"  height=150 width=200  alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">Neuf</span>
-								</div>
-								<div class="item-info-product ">
-									<h4>
-										<a href="single.html">Yippee Noodles, 65g</a>
-									</h4>
-									<div class="info-product-price">
-										<span class="item_price">$15.00</span>
-										<del>$25.00</del>
-									</div>
-									<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-										<form action="#" method="post">
-											<fieldset>
-												<input type="hidden" name="cmd" value="_cart" />
-												<input type="hidden" name="add" value="1" />
-												<input type="hidden" name="business" value=" " />
-												<input type="hidden" name="item_name" value="YiPPee Noodles, 65g" />
-												<input type="hidden" name="amount" value="15.00" />
-												<input type="hidden" name="discount_amount" value="1.00" />
-												<input type="hidden" name="currency_code" value="USD" />
-												<input type="hidden" name="return" value=" " />
-												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit" value="Add to cart" class="button" />
-											</fieldset>
-										</form>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 product-men">
-							<div class="men-pro-item simpleCart_shelfItem">
-								<div class="men-thumb-item">
-									<img src="images/mk8.jpg" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
+											<a href="single.html" class="link-product-add-cart">Detail</a>
 										</div>
 									</div>
 									<span class="product-new-top">New</span>
@@ -308,51 +268,11 @@
 								</div>
 								<div class="item-info-product ">
 									<h4>
-										<a href="single.html">Wheat Pasta, 500g</a>
+										<a href="single.html">{{$nouveau_produit->nom_produit}}</a>
 									</h4>
 									<div class="info-product-price">
-										<span class="item_price">$98.00</span>
-										<del>$120.00</del>
-									</div>
-									<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-										<form action="#" method="post">
-											<fieldset>
-												<input type="hidden" name="cmd" value="_cart" />
-												<input type="hidden" name="add" value="1" />
-												<input type="hidden" name="business" value=" " />
-												<input type="hidden" name="item_name" value="Wheat Pasta, 500g" />
-												<input type="hidden" name="amount" value="98.00" />
-												<input type="hidden" name="discount_amount" value="1.00" />
-												<input type="hidden" name="currency_code" value="USD" />
-												<input type="hidden" name="return" value=" " />
-												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit" value="Add to cart" class="button" />
-											</fieldset>
-										</form>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 product-men">
-							<div class="men-pro-item simpleCart_shelfItem">
-								<div class="men-thumb-item">
-									<img src="images/mk9.jpg" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-
-								</div>
-								<div class="item-info-product ">
-									<h4>
-										<a href="single.html">Chinese Noodles, 68g</a>
-									</h4>
-									<div class="info-product-price">
-										<span class="item_price">$11.99</span>
-										<del>$15.00</del>
+										<span class="item_price">{{$nouveau_produit->prix_ht_produit}} F CFA</span>
+										<!-- <del>$15.00</del> -->
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 										<form action="#" method="post">
@@ -366,14 +286,14 @@
 												<input type="hidden" name="currency_code" value="USD" />
 												<input type="hidden" name="return" value=" " />
 												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit" value="Add to cart" class="button" />
+												<input type="submit" name="submit" style="font-size:10px" value="Ajouter au panier" class="button" />
 											</fieldset>
 										</form>
 									</div>
-
-								</div>
+                               </div>
 							</div>
 						</div>
+						@endforeach
 						<div class="clearfix"></div>
 					</div>
 					<!-- //fourth section (noodles) -->

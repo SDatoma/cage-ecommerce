@@ -4895,10 +4895,31 @@ input[type="radio"], input[type="checkbox"] {
     }
 
 }
-
-@media(min-width:362px) and (max-width:480px){
+ @media(min-width:362px) and (max-width:480px){
     .image-resp{
         margin-left:43px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ } 
+
+ @media(min-width:350px) and (max-width:480px){
+    .image-resp{
+        margin-left:30px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ }
+
+ @media(min-width:444px) and (max-width:480px){
+    .image-resp{
+        margin-left:70px;
     }
 
     .cart-resp{
