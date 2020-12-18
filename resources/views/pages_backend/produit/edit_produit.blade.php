@@ -76,6 +76,12 @@
                                        @endforeach
                                     </select>
                                 </div>
+                                
+                                   <div>
+                                       <div class="form-group form-float col-sm-5">
+                                             <input type="file" class="dropify" name="file">
+                                       </div>
+                                   </div>
 
                                <center> <button class="btn btn-raised btn-primary waves-effect " type="submit">MTTRE A JOUR</button> </center>
                             </form>

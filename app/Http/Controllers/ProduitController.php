@@ -55,6 +55,8 @@ class ProduitController extends Controller
 
          $verification_produit = Produit::where(['nom_produit' =>$request->nom_produit ,'id_boutique' =>$request->id_boutique])->first() ;
 
+         $categorie = SousCategorie::where(['id_sous_categorie' =>$request->id_sous_categorie])->first() ;
+
         if ($verification_produit) {
 
             Session()->flash('error',"Cet produit existe deja dans cette boutique , Veuillez mettre à jour la quantité");
@@ -84,6 +86,7 @@ class ProduitController extends Controller
         $produit->quantite_produit= $request->quantite_produit;
         $produit->prix_ht_produit= $request->prix_produit;
         $produit->id_sous_categorie= $request->id_sous_categorie;
+        $produit->id_categorie= $categorie->id_categorie;
         $produit->id_boutique= $request->id_boutique;
         $produit->image_produit=$file_name;
         $produit->etat_produit= 1 ;
@@ -233,6 +236,21 @@ class ProduitController extends Controller
     public function update(Request $request, $id)
     {
         $produit = Produit::where(['id_produit' =>$id])->first() ;
+         
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/produit/'.$id.'.jpg');
+
+            $file_name ='files_upload/produit/'.$id.'.jpg';
+
+          }else{
+
+            $file_name ="";
+         }
 
         $produit->nom_produit= $request->nom_produit;
         $produit->description_produit= $request->description_produit;
@@ -241,7 +259,7 @@ class ProduitController extends Controller
         $produit->prix_ht_produit= $request->prix_produit;
         $produit->id_sous_categorie= $request->id_sous_categorie;
         $produit->id_boutique= $request->id_boutique;
-        //$produit->image_produit=$file_name;
+        $produit->image_produit=$file_name;
         //$produit->etat_produit= 1 ;
 
         $produit->save();

@@ -69,6 +69,35 @@ class IndexController extends Controller
         //
     }
 
+    public function tri_produit_par_categorie($id_categorie)
+    {
+        $categories = Categorie::all();
+        $categoriee = Categorie::where(['id_categorie'=>$id_categorie])->first() ;
+        $produits = DB::table('categorie')
+		->join('produit', 'produit.id_categorie', '=', 'categorie.id_categorie')
+        ->where('produit.id_categorie', '=', $id_categorie)
+        ->where('categorie.id_categorie', '=', $id_categorie)
+		->get();
+		
+         return view('pages_frontend/categorie_produit',compact('categories','produits','id_categorie','categoriee'));
+	
+    }
+
+    public function tri_produit_par_sous_categorie($id_categorie,$id_sous_categorie)
+    {
+        $categories = Categorie::all();
+        $categoriee = Categorie::where(['id_categorie'=>$id_categorie])->first() ;
+        $sous_categoriee = SousCategorie::where(['id_sous_categorie'=>$id_sous_categorie])->first() ;
+        $produits = DB::table('sous_categorie')
+		->join('produit', 'produit.id_sous_categorie', '=', 'sous_categorie.id_sous_categorie')
+        ->where('produit.id_sous_categorie', '=', $id_sous_categorie)
+        ->where('sous_categorie.id_sous_categorie', '=', $id_sous_categorie)
+		->get();
+		
+         return view('pages_frontend/sous_categorie_produit',compact('categories','produits','id_categorie','categoriee','sous_categoriee'));
+	
+    }
+
     /**
      * Update the specified resource in storage.
      *

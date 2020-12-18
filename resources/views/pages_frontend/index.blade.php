@@ -1,32 +1,32 @@
 
 @include('header/header_frontend')
-
-	
 <div class="header-menu  d-xl-block d-none bg-light-gray">
                 <div class="container">
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-lg-2 custom-col-3">
                             <div class="header-menu-vertical bg-blue">
                                 <h4 class="menu-title be-af-none">Les Catégories</h4>
                                 <ul class="menu-content display-block">
                                     
+								  @foreach($categories as $categorie)
                                     <li class="menu-item">
-                                        <a href="#">Video Games <i class="ion-ios-arrow-right"></i></a>
-                                        <ul class="sub-menu sub-menu-2">
+                                        <a href="{{route('tri.produit.categorie',$categorie->id_categorie)}}">{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
+										   <?php
+                                              $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();
+                                             ?>
+										<ul class="sub-menu sub-menu-2">
                                             <li>
                                                 <ul class="submenu-item">
-                                                    <li><a href="#">Handheld Game Players</a></li>
-                                                    <li><a href="#">Game Controllers</a></li>
-                                                    <li><a href="#">Joysticks</a></li>
-                                                    <li><a href="#">Stickers</a></li>
+												@foreach($sous_categories as $sous_categorie)
+                                                    <li><a href="{{route('tri.produit.sous_categorie',[$categorie->id_categorie,$sous_categorie->id_sous_categorie])}}">{{$sous_categorie->libelle_sous_categorie}}</a></li>
+												@endforeach
                                                 </ul>
                                             </li>
                                         </ul>
                                         <!-- sub menu -->
                                     </li>
-								@foreach($categories as $categorie)
-									<li class="menu-item"><a href="#">{{$categorie->libelle_categorie}}</a></li>
-								@endforeach
+								  @endforeach
+								   
                                 </ul>
                                 <!-- menu content -->
                             </div>
@@ -77,7 +77,7 @@
                                     <a href="shop-4-column.html"><img src="{{asset('css_front_end/assets/images/banner-image/9.jpg')}}" alt="" /></a>
                                 </div>
                                 <div class="banner-wrapper">
-                                    <a href="shop-4-column.html"><img src="{{asset('css_front_end/assets/images/banner-image/10.jpg')}}" alt="" /></a>
+                                    <a href="shop-4-column.html"><img src="{{asset('css_front_end/assets/images/banner-image/10.jpg')}}" alt="" height="226px"/></a>
                                 </div>
                             </div>
                         </div>
@@ -142,10 +142,9 @@
             </div>
 
 <div class="offcanvas-overlay"></div>
-<!-- special offers -->
-	<div class="featured-section" id="projects">
+   <!-- special offers -->
+	<!-- <div class="featured-section" id="projects">
 		<div class="container">
-			<!-- tittle heading -->
 			<h3 class="tittle-w3l">Catégories Populaires
 				<span class="heading-style">
 					<i></i>
@@ -153,11 +152,11 @@
 					<i></i>
 				</span>
 			</h3>
-			<!-- //tittle heading -->
 			<div class="content-bottom-in">
 				<ul id="flexiselDemo1">
 					
 					@foreach($categories as $categorie)
+					<div class="col-md-3 product-men">
 					<li>
 						<div class="w3l-specilamk">
 							<div class="speioffer-agile">
@@ -176,32 +175,16 @@
 									@endif
 								@endforeach
 								</div>
-								<div class="snipcart-details top_brand_home_details item_add single-item 
-								hvr-outline-out">
-									<form action="#" method="post">
-										<fieldset>
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" />
-											<input type="hidden" name="business" value=" " />
-											<input type="hidden" name="item_name" value="Aashirvaad, 5g" />
-											<input type="hidden" name="amount" value="220.00" />
-											<input type="hidden" name="discount_amount" value="1.00" />
-											<input type="hidden" name="currency_code" value="USD" />
-											<input type="hidden" name="return" value=" " />
-											<input type="hidden" name="cancel_return" value=" " />
-											<input type="submit" name="submit" value="Add to cart" class="button" />
-										</fieldset>
-									</form>
-								</div>
 							</div>
 						</div>
 					</li>
+					</div>
 					@endforeach
 					
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- //special offers -->
 
 
@@ -210,7 +193,7 @@
 	<div class="ads-grid" style="margin-top:-100px">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Nos produits
+			<h3 class="tittle-w3l" style="font-size:30px;margin-top:40px">Nos produits
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -222,14 +205,12 @@
 				<div class="wrapper">
 					<!-- first section (nuts) -->
 					<div class="product-sec1">
-						<h3 class="heading-tittle">Produits populaires</h3>
-						
-						
+						<h3 class="heading-tittle" style="font-size:25px">Produits populaires</h3>
 						@foreach($produits as $produit)
-						<div class="col-md-3 product-men">
+						<div class="col-md-2 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img src="{{$produit->image_produit}}" height=200 width=300 class="thumbnail" alt="">
+									<img src="{{$produit->image_produit}}" height=150 width=200 class="thumbnail" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a href="{{route('detail-produit.produit', $produit->id_produit)}}" class="link-product-add-cart">Voir plus</a>
@@ -239,7 +220,7 @@
 								</div>
 								<div class="item-info-product ">
 									<h4>
-										<a href="{{route('detail-produit.produit', $produit->id_produit)}}">{{$produit->nom_produit}}</a>
+										<a href="{{route('detail-produit.produit', $produit->id_produit)}}" style="font-size:15px">{{$produit->nom_produit}}</a>
 									</h4>
 									<div class="info-product-price">
 										<span class="item_price">{{$produit->prix_ht_produit}} F CFA</span>
@@ -258,7 +239,7 @@
 												<input type="hidden" name="currency_code" value="USD" />
 												<input type="hidden" name="return" value=" " />
 												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit" value="Ajouter au panier" class="button" />
+												<input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button" />
 											</fieldset>
 										</form>
 									</div>
@@ -273,7 +254,7 @@
 					<!-- //third section (oils) -->
 					<!-- fourth section (noodles) -->
 					<div class="product-sec1">
-						<h3 class="heading-tittle">Nouvelles Arrivées</h3>
+						<h3 class="heading-tittle" style="font-size:25px">Nouvelles Arrivées</h3>
 						<div class="col-md-4 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
