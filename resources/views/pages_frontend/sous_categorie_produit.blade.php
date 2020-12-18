@@ -83,11 +83,11 @@
 												<input type="hidden" name="currency_code" value="USD" />
 												<input type="hidden" name="return" value=" " />
 												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
+												<i class="fa fa-cart-arrow-down" aria-hidden="true"></i> <input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
 											</fieldset>
 										</form>
-									</div>
-
+									</div></br>
+                                    <i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En stock</b> </span>
 								</div>
 							</div>
 						</div>
