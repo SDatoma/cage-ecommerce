@@ -1,6 +1,6 @@
 
 @include('header/header_frontend')
-<div class="header-menu  d-xl-block d-none bg-light-gray">
+<div class="header-menu ">
                 <div class="container">
                     <div class="row mt-2">
                         <div class="col-md-2">
