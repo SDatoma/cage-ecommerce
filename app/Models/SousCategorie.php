@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_sous_categorie
  * @property string|null $libelle_sous_categorie
  * @property int|null $id_categorie
+ * @property string|null $image_sous_categorie
  * 
  * @property Categorie $categorie
  * @property Collection|Produit[] $produits
@@ -33,7 +34,8 @@ class SousCategorie extends Model
 
 	protected $fillable = [
 		'libelle_sous_categorie',
-		'id_categorie'
+		'id_categorie',
+		'image_sous_categorie'
 	];
 
 	public function categorie()

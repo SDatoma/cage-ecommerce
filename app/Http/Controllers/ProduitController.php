@@ -88,6 +88,7 @@ class ProduitController extends Controller
         $produit->id_sous_categorie= $request->id_sous_categorie;
         $produit->id_categorie= $categorie->id_categorie;
         $produit->id_boutique= $request->id_boutique;
+        $produit->stock_produit= $request->stock_produit;
         $produit->image_produit=$file_name;
         $produit->etat_produit= 1 ;
 
@@ -249,7 +250,7 @@ class ProduitController extends Controller
 
           }else{
 
-            $file_name ="";
+            $file_name =$produit->image_produit;
          }
 
         $produit->nom_produit= $request->nom_produit;
@@ -259,6 +260,7 @@ class ProduitController extends Controller
         $produit->prix_ht_produit= $request->prix_produit;
         $produit->id_sous_categorie= $request->id_sous_categorie;
         $produit->id_boutique= $request->id_boutique;
+        $produit->stock_produit= $request->stock_produit;
         $produit->image_produit=$file_name;
         //$produit->etat_produit= 1 ;
 

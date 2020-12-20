@@ -58,7 +58,7 @@
 									
 								</div>
 								<div class="item-info-product ">
-									<h4>
+									<h4 class="mb">
 										<a href="{{route('detail-produit.produit', $produit->id_produit)}}" style="font-size:15px">{{$produit->nom_produit}}</a>
                                     </h4>
                                     <?php
@@ -70,10 +70,10 @@
 										   $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
 										   $prix_ht_promo= $produit->prix_ht_produit - $reduction;
 										 ?>
-										<span class="item_price" style="font-size:15px">{{$prix_ht_promo}} F CFA</span>
-										<del> <span class="item_price" style="font-size:15px">{{$produit->prix_ht_produit}} F CFA</span></del>
+										<span class="item_price" style="font-size:15px;color:red">{{$prix_ht_promo}} F CFA</span>
+										<del> <span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span></del>
 										@else
-									   <span class="item_price" style="font-size:15px">{{$produit->prix_ht_produit}} F CFA</span>
+									   <span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span>
 									    @endif
 										
 									</div>
@@ -94,7 +94,11 @@
 											</fieldset>
 										</form>
 									</div></br>
-                                    <i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En stock</b> </span>
+                                    @if($produit->stock_produit=="En stock")
+									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>{{$produit->stock_produit}}</b> </span>
+									@else
+									<span class="item_price" style="font-size:15px;color:red"><b>{{$produit->stock_produit}}</b> </span>
+									@endif
 								</div>
 							</div>
 						</div>

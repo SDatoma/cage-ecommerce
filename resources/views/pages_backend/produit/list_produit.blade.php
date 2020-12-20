@@ -8,7 +8,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h5>LISTE DES PRODUITS</h5>
+                    <h5>CATALOGUE DES PRODUITS</h5>
                     <!-- <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
                         <li class="breadcrumb-item">eCommerce</li>
@@ -39,7 +39,7 @@
                         </div>
                     @endif
                         <div class="table-responsive">
-                            <table class="table table-hover product_item_list c_table theme-color mb-0">
+                            <table class="table table-bordered table-striped table-hover theme-color dataTable js-exportable">
                                 <thead>
                                     <tr>
                                         <th>IMAGE</th>
@@ -54,14 +54,12 @@
                                 @foreach($produits as $produit)
                                     <tr>
                                         <td><img src="/{{$produit->image_produit}}" width="48" alt="Product img"></td>
-                                        <td><h5>{{$produit->nom_produit}}</h5></td>
+                                        <td>{{$produit->nom_produit}}</td>
                                         <td><span class="text-muted">{{$produit->quantite_produit ?? 0}}</span></td>
                                         <td>{{$produit->prix_ht_produit ?? '0'}} FCFA</td>
                                         <td>
-                                        @if($produit->quantite_produit>=5) <span class="col-green">En stock </span> 
-                                        @elseif($produit->quantite_produit<=3)  
-                                        <span class="col-amber">En rupture</span> 
-                                        @else <span class="col-red">Fini</span>
+                                        @if($produit->stock_produit=="En stock") <span class="col-green">En stock </span> 
+                                        @elseif($produit->stock_produit=="En rupture")<span class="col-red">En rupture</span>
                                         @endif
                                         </td>
                                         <td>

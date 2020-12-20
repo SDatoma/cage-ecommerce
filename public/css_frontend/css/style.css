@@ -4906,7 +4906,7 @@ input[type="radio"], input[type="checkbox"] {
 
  } 
 
- @media(min-width:350px) and (max-width:480px){
+ @media(min-width:330px) and (max-width:480px){
     .image-resp{
         margin-left:30px;
     }
@@ -4917,9 +4917,9 @@ input[type="radio"], input[type="checkbox"] {
 
  }
 
- @media(min-width:444px) and (max-width:480px){
+ @media(min-width:400px) and (max-width:612px){
     .image-resp{
-        margin-left:70px;
+        margin-left:63px;
     }
 
     .cart-resp{
@@ -4948,6 +4948,32 @@ input[type="radio"], input[type="checkbox"] {
         margin-bottom:35px;
     }
 
+ }
+
+ @media(min-width:480px) and (max-width:492px){
+    .image-resp{
+        margin-left:97px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ }
+
+ @media(min-width:492px) and (max-width:612px){
+    .image-resp{
+        margin-left:100px;
+    }
+
+    .cart-resp{
+        margin-bottom:35px;
+    }
+
+ }
+
+ .mb{
+     margin-top:-33px;
  }
 
 /*--//responsive--*/

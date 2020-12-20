@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-	<title>CAGE BATIMENT | Accueil</title>
+	<title>CAGE BATIMENT | ACCUEIL</title>
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -62,17 +62,17 @@
 				<ul>
 					<li>
 						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> Siège : Togo, Lomé, Agoè Démakpoè</a>
+							<span class="fa fa-map-marker" aria-hidden="true"></span>Togo, Lomé, Agoè Démakpoè</a>
 					</li>
 					<li>
 						<a href="#" data-toggle="modal" data-target="#myModal1">
 							<span class="fa fa-truck" aria-hidden="true"></span>Livraison partout au Togo</a>
 					</li>
 					<li>
-						<span class="fa fa-phone" aria-hidden="true"></span> Appel : +228 70 45 37 85 | 96 35 80 90
+						<span class="fa fa-phone" aria-hidden="true"></span> +228 70 45 37 85 | 96 35 80 90
 					</li>
 					<li>
-						<span class="fa fa-whatsapp" aria-hidden="true"></span> <a href="tel:+22890904903">Contact whatsapp : +228 90 90 49 03</a>
+						<span class="fa-whatsapp" aria-hidden="true"></span> <a href="tel:+22890904903">Whatsapp : +228 90 90 49 03</a>
 					</li>
 					<li>
 						<a href="#" data-toggle="modal" data-target="#myModal2">

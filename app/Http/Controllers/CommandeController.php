@@ -80,6 +80,14 @@ class CommandeController extends Controller
     {
         $user = User::where(['id_user' =>$id])->first() ;
 
+        $prix_total = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        ->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.etat_commande', '=', 0)
+        ->SUM('ligne_commande.prix_commande');
+        
         $sql = ("SELECT count(ligne_commande.prix_commande) as prix_net,ligne_commande.quantite_commande as quantite,ligne_commande.prix_commande as prix_total,produit.nom_produit as nom_produit ,produit.prix_ht_produit as prix_ht_produit
 		FROM commande, user, produit,ligne_commande
         WHERE commande.id_user= $id
@@ -91,7 +99,7 @@ class CommandeController extends Controller
 		
 		$commandes=DB::select(DB::raw($sql));
 
-        return view('pages_backend/commande/facturation',compact('commandes','user'));
+        return view('pages_backend/commande/facturation',compact('commandes','user','prix_total'));
     }
 
     /**

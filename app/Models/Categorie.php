@@ -14,8 +14,10 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id_categorie
  * @property string|null $libelle_categorie
+ * @property string|null $image_categorie
  * @property int|null $etat_categorie
  * 
+ * @property Collection|Produit[] $produits
  * @property Collection|SousCategorie[] $sous_categories
  *
  * @package App\Models
@@ -32,8 +34,14 @@ class Categorie extends Model
 
 	protected $fillable = [
 		'libelle_categorie',
+		'image_categorie',
 		'etat_categorie'
 	];
+
+	public function produits()
+	{
+		return $this->hasMany(Produit::class, 'id_categorie');
+	}
 
 	public function sous_categories()
 	{

@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $prix_ht_produit
  * @property int|null $quantite_produit
  * @property int|null $etat_produit
+ * @property int|null $id_categorie
  * @property int|null $id_sous_categorie
  * @property int|null $id_boutique
  * @property string|null $caracteristique_produit
@@ -25,6 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property SousCategorie $sous_categorie
  * @property Boutique $boutique
+ * @property Categorie $categorie
  * @property Collection|Commande[] $commandes
  * @property Collection|PhotoProduit[] $photo_produits
  * @property Collection|Promotion[] $promotions
@@ -41,6 +43,7 @@ class Produit extends Model
 		'prix_ht_produit' => 'int',
 		'quantite_produit' => 'int',
 		'etat_produit' => 'int',
+		'id_categorie' => 'int',
 		'id_sous_categorie' => 'int',
 		'id_boutique' => 'int'
 	];
@@ -51,6 +54,7 @@ class Produit extends Model
 		'prix_ht_produit',
 		'quantite_produit',
 		'etat_produit',
+		'id_categorie',
 		'id_sous_categorie',
 		'id_boutique',
 		'caracteristique_produit',
@@ -65,6 +69,11 @@ class Produit extends Model
 	public function boutique()
 	{
 		return $this->belongsTo(Boutique::class, 'id_boutique');
+	}
+
+	public function categorie()
+	{
+		return $this->belongsTo(Categorie::class, 'id_categorie');
 	}
 
 	public function commandes()
