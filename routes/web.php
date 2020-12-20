@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//TEST ENVOI MAIL 
+Route::get('/testmail','TestController@testmail');
+
 // ROUTE FRONT-END
 Route::get('/', 'IndexController@index');
 Route::get('/tri-categorie-{id_categorie}-produit-{libelle_categorie}', 'IndexController@tri_produit_par_categorie')->name('tri.produit.categorie');

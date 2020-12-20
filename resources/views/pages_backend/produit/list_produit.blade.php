@@ -1,8 +1,18 @@
 @extends('header/header_back')
-
-
 <!-- Main Content -->
 @section('content')
+
+<style>
+.blink {
+  animation: blink 1s infinite;
+}
+@keyframes blink { 
+  0% { opacity:0; }
+  50% { opacity:1; } 
+  100% { opacity:0; }
+}
+</style>
+
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
@@ -58,8 +68,8 @@
                                         <td><span class="text-muted">{{$produit->quantite_produit ?? 0}}</span></td>
                                         <td>{{$produit->prix_ht_produit ?? '0'}} FCFA</td>
                                         <td>
-                                        @if($produit->stock_produit=="En stock") <span class="col-green">En stock </span> 
-                                        @elseif($produit->stock_produit=="En rupture")<span class="col-red">En rupture</span>
+                                        @if($produit->stock_produit=="En stock") <span class="col-green" >En stock </span> 
+                                        @elseif($produit->stock_produit=="En rupture")<span class="col-red blink">En rupture</span>
                                         @endif
                                         </td>
                                         <td>

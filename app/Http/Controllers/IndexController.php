@@ -27,11 +27,12 @@ class IndexController extends Controller
     {
         $categories = Categorie::all();
 		
-		$produits = Produit::all();
+		$produits = Produit::where(['etat_produit' =>1])->get() ;
 		
         $sous_categories = SousCategorie::all();
         
          $nouveau_produits = DB::table('produit')
+         ->where('produit.etat_produit', '=', 1)
          ->orderBy('id_produit', 'desc')
          ->limit(4)
          ->get();
@@ -82,6 +83,7 @@ class IndexController extends Controller
 		->join('produit', 'produit.id_categorie', '=', 'categorie.id_categorie')
         ->where('produit.id_categorie', '=', $id_categorie)
         ->where('categorie.id_categorie', '=', $id_categorie)
+        ->where('produit.etat_produit', '=', 1)
 		->get();
 		
          return view('pages_frontend/categorie_produit',compact('categories','produits','id_categorie','categoriee'));
@@ -97,6 +99,7 @@ class IndexController extends Controller
 		->join('produit', 'produit.id_sous_categorie', '=', 'sous_categorie.id_sous_categorie')
         ->where('produit.id_sous_categorie', '=', $id_sous_categorie)
         ->where('sous_categorie.id_sous_categorie', '=', $id_sous_categorie)
+        ->where('produit.etat_produit', '=', 1)
 		->get();
 		
          return view('pages_frontend/sous_categorie_produit',compact('categories','produits','id_categorie','categoriee','sous_categoriee'));
@@ -109,6 +112,7 @@ class IndexController extends Controller
         //$categoriee = Categorie::where(['id_categorie'=>$id_categorie])->first() ;
         $produits = DB::table('produit')
         ->where('nom_produit', 'like', '%' . $request->recherche . '%')
+        ->where('produit.etat_produit', '=', 1)
         ->get();
         
         $id_categorie=0 ;
