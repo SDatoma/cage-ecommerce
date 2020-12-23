@@ -49,7 +49,7 @@
 			<!-- header-bot-->
 			<div class="col-md-4 logo_agile">
 				<h1>
-					<a href="index.html">
+					<a href="/">
 						<span>CAGE</span>
 						<span>BAT</span>IMENT
 						<img src="{{asset('css_frontend/images/logo2.png')}}" alt=" ">
@@ -59,8 +59,8 @@
 			<!-- header-bot -->
 			<div class="col-md-8 header">
 				<!-- header lists -->
-				<ul>
-					<li>
+				<ul >
+					<li style="width:150px">
 						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
 							<span class="fa fa-map-marker" aria-hidden="true"></span>Togo, Lomé, Agoè Démakpoè</a>
 					</li>

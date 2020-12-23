@@ -10,11 +10,11 @@
                                 <h4 class="menu-title be-af-none">Catégories</h4>
                                 <ul class="menu-content display-block">
                                   @foreach($categories as $categorie)
-                                    <li class="menu-item">
-                                        <a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}" @if($categorie->id_categorie==$id_categorie)style="color:red" @endif >{{$categorie->libelle_categorie}}<i class="ion-ios-arrow-right"></i></a>
-										   <?php
+								            <?php
                                               $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();
                                              ?>
+                                    <li class="menu-item">
+                                        <a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}" @if($categorie->id_categorie==$id_categorie)style="color:red" @endif >{{$categorie->libelle_categorie}} @if(count($sous_categories)>0)<i class="ion-ios-arrow-right"></i> @endif</a>
 										<ul class="sub-menu sub-menu-2">
                                             <li>
                                                 <ul class="submenu-item">
