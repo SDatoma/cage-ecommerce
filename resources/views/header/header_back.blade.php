@@ -282,6 +282,12 @@
             </li>
             <li class="active open"><a href="/admin"><i class="zmdi zmdi-home"></i><span>Tableau de board</span></a></li>
 
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Paramettre</span></a>
+                <ul class="ml-menu">
+                    <li><a href="/list/slider">Image en slide</a></li>                  
+                </ul>
+            </li>
+
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Boutiques</span></a>
                 <ul class="ml-menu">
                     <li><a href="/add/boutique">Ajouter une boutique</a></li>                  
@@ -303,7 +309,7 @@
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commande</span></a>
                 <ul class="ml-menu">
                     <li><a href="/list/commande/attente"> Commande en attente <sup style="font-size:15px">0</sup> </a></li>
-                    <li><a href="/facturation/commande"> Generer la facture </a></li>
+
                 </ul>
             </li>
 

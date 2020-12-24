@@ -70,7 +70,7 @@ class CategorieController extends Controller
          }
 
         $categorie->libelle_categorie=$request->libelle_categorie;
-        $categorie->image_categorie=$request->$file_name;
+        $categorie->image_categorie=$file_name;
         $categorie->etat_categorie=1;
 
         $categorie->save();

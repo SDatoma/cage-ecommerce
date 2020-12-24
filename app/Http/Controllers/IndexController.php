@@ -8,6 +8,7 @@ use App\Models\Categorie;
 use App\Models\SousCategorie;
 use App\Models\PhotoProduit;
 use App\Models\Boutique;
+use App\Models\Slider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -30,6 +31,8 @@ class IndexController extends Controller
 		$produits = Produit::where(['etat_produit' =>1])->get() ;
 		
         $sous_categories = SousCategorie::all();
+
+        $sliders = Slider::where(['etat_slider' =>1])->get() ;
         
          $nouveau_produits = DB::table('produit')
          ->where('produit.etat_produit', '=', 1)
@@ -37,7 +40,7 @@ class IndexController extends Controller
          ->limit(4)
          ->get();
         
-       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits'));
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders'));
 	
     }
 

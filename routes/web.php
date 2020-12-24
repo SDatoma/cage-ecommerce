@@ -47,13 +47,12 @@ Route::delete('delete/promotion/produit/{id}', 'ProduitController@destroyPromoti
 Route::put('update/promotion/produit/{id}', 'ProduitController@updatePromotion')->name('update.promotion');
 
 //Commande
-// Route::get('/facturation/commande', function () {
-//     return view('pages_backend/commande/facturation');
-// });
-
 Route::get('/list/commande/attente', 'CommandeController@getAllCommandeUser');
-
 Route::get('/statistique/stock', 'StockController@index');
+
+//Slider
+Route::get('/list/slider', 'SliderController@getAllSlider');
+
 
 
 //LES RESOURCES
@@ -62,4 +61,5 @@ Route::resource('categorie', 'CategorieController');
 Route::resource('produit', 'ProduitController');
 Route::resource('stock', 'StockController');
 Route::resource('commande', 'CommandeController');
+Route::resource('slider', 'SliderController');
 

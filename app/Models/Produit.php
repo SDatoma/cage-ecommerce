@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $description_produit
  * @property int|null $prix_ht_produit
  * @property int|null $quantite_produit
+ * @property string|null $stock_produit
  * @property int|null $etat_produit
  * @property int|null $id_categorie
  * @property int|null $id_sous_categorie
@@ -53,6 +54,7 @@ class Produit extends Model
 		'description_produit',
 		'prix_ht_produit',
 		'quantite_produit',
+		'stock_produit',
 		'etat_produit',
 		'id_categorie',
 		'id_sous_categorie',
