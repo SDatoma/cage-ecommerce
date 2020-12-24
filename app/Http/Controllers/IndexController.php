@@ -40,7 +40,7 @@ class IndexController extends Controller
          ->limit(4)
          ->get();
         
-       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders'));
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits'));
 	
     }
 
