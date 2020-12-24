@@ -208,7 +208,7 @@
 						<div class="col-md-2 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img src="{{$produit->image_produit}}" height=150 width=200 class="thumbnail image-resp" alt="">
+									<img src="{{$produit->image_produit}}" height="150px" width="200px" class="thumbnail image-resp" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a href="{{route('detail-produit.produit', $produit->id_produit)}}" class="link-product-add-cart">Voir plus</a>

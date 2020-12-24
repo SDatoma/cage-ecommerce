@@ -37,16 +37,16 @@
 <div class="overlay"></div>
 
 <!-- Main Search -->
-<!-- <div id="search">
+<div id="search">
     <button id="close" type="button" class="close btn btn-primary btn-icon btn-icon-mini btn-round">x</button>
     <form>
       <input type="search" value="" placeholder="Search..." />
       <button type="submit" class="btn btn-primary">Search</button>
     </form>
-</div> -->
+</div>
 
 <!-- Right Icon menu Sidebar -->
-<!-- <div class="navbar-right">
+<div class="navbar-right">
     <ul class="navbar-nav">
         <li><a href="#search" class="main_search" title="Search..."><i class="zmdi zmdi-search"></i></a></li>
         <li class="dropdown">
@@ -261,13 +261,13 @@
         <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
         <li><a href="sign-in.html" class="mega-menu" title="Sign Out"><i class="zmdi zmdi-power"></i></a></li>
     </ul>
-</div> -->
+</div>
 
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="index.html"><img src="{{asset('css_backend/assets/images/logo.svg')}}" width="25" alt="Aero"><span class="m-l-10">CAGE</span></a>
+        <a href="#"><img src="{{asset('css_backend/assets/images/logo.svg')}}" width="25" alt="Aero"><span class="m-l-10">CAGE BATIMEMT</span></a>
     </div>
     <div class="menu">
         <ul class="list">
@@ -276,7 +276,7 @@
                     <a class="image" href="profile.html"><img src="{{asset('css_backend/assets/images/profile_av.jpg')}}" alt="User"></a>
                     <div class="detail">
                         <h4>Michael</h4>
-                        <small>Super Admin</small>                        
+                        <small><a href="/">Deconnexion</a></small>                       
                     </div>
                 </div>
             </li>
