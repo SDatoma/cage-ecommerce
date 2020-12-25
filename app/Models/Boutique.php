@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_boutique
  * @property string|null $nom_boutique
  * @property string|null $description_boutique
+ * @property string|null $photos_boutique
  * @property string|null $ville_boutique
  * @property string|null $pays_boutique
  * @property string|null $nif_boutique
@@ -47,6 +48,7 @@ class Boutique extends Model
 	protected $fillable = [
 		'nom_boutique',
 		'description_boutique',
+		'photos_boutique',
 		'ville_boutique',
 		'pays_boutique',
 		'nif_boutique',
