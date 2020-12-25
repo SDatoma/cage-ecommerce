@@ -20,7 +20,7 @@
 	<div class="banner-bootom-w3-agileits" style="margin-top:0px">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Détail du produit <span style="color:red">{{$produit->nom_produit}}</span>
+			<h3 class="tittle-w3l" style="font-size:25px">Détail du produit <span style="color:red">{{$produit->nom_produit}}</span>
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -32,17 +32,16 @@
 				<div class="grid images_3_of_2">
 					<div class="flexslider">
 						<ul class="slides">
-							<li data-thumb="/{{$produit->image_produit}}" style="height:400px; width:100%">
+							<li data-thumb="/{{$produit->image_produit}}" style="height:300px; width:300px">
 								<div class="thumb-image">
 									<img src="/{{$produit->image_produit}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
 							</li>
-							@foreach($photo_produits as $photo_produitt)
-								@if($photo_produitt->id_produit == $produit->id_produit)
-								<li data-thumb="/{{$photo_produitt->photo_produit}}" style="height:400px; width:100%">
+							@foreach($photo_produits as $photo_produit)
+								<li data-thumb="/{{$photo_produit->photo_produit}}" style="height:100px; width:200px">
 									<div class="thumb-image">
-										<img src="/{{$photo_produitt->photo_produit}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+										<img src="/{{$photo_produit->photo_produit}}" data-imagezoom="true" class="img-responsive" alt="" > 
+									</div>
 								</li>
-								@endif
                             @endforeach
 								
 						</ul>
@@ -51,7 +50,7 @@
 				</div>
 			</div>
 			<div class="col-md-7 single-right-left simpleCart_shelfItem">
-				<h3>{{$produit->nom_produit}} </h3>
+				<h3 style="font-size:20px">{{$produit->nom_produit}} </h3>
 				<div class="rating1">
 					<span class="starRating">
 						<input id="rating5" type="radio" name="rating" value="5">
@@ -119,7 +118,7 @@
 	<div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Dans la même sous catégorie
+			<h3 class="tittle-w3l" style="font-size:25px">Dans la même sous catégorie
 				<span class="heading-style">
 					<i></i>
 					<i></i>

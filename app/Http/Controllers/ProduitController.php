@@ -192,7 +192,10 @@ class ProduitController extends Controller
 		->where('produit.id_produit', '=', $id)
 		->first(); 
 		
-		$photo_produits = PhotoProduit::All();
+		$photo_produits= DB::table('photo_produit')
+        ->where('id_produit', '=', $id)
+        ->limit(2)
+		->get(); 
 		
 		$sous_categories = SousCategorie::All();
 		
