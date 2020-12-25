@@ -32,7 +32,7 @@ class IndexController extends Controller
 		
         $sous_categories = SousCategorie::all();
 
-        //$sliders = Slider::where(['etat_slider' =>1])->get() ;
+        $sliders = Slider::where(['etat_slider' =>1])->get() ;
         
          $nouveau_produits = DB::table('produit')
          ->where('produit.etat_produit', '=', 1)
@@ -40,7 +40,7 @@ class IndexController extends Controller
          ->limit(4)
          ->get();
         
-       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits'));
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders'));
 	
     }
 	

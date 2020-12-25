@@ -95,10 +95,10 @@
                                 </div>
 
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <h4 class="btn btn-succes btn-sm pull-right" onclick="addNewImageForm()"><i class="zmdi zmdi-plus"></i> Photo</h4>
+                                    <h4 class="btn btn-succes btn-sm pull-right" onclick="addNewImageForm()"><i class="zmdi zmdi-plus"></i> Photos</h4>
                                </div>
 
-                               <center> <button class="btn btn-raised btn-primary waves-effect " type="submit">ENREGISTRER</button> </center>
+                               <center> <button class="btn btn-raised btn-primary waves-effect " type="submit">Enregistrer</button> </center>
                             </form>
                         </div>
                     </div>

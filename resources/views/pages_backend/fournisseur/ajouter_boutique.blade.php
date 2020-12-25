@@ -83,7 +83,7 @@
                                     <textarea name="description_boutique" cols="30" rows="5" placeholder="Description de la boutique" class="form-control no-resize" required>{{ old('description_boutique') }}</textarea>
                                 </div>
                                 
-                                <button class="btn btn-raised btn-primary waves-effect" type="submit">ENREGISTRER</button>
+                               <center> <button class="btn btn-raised btn-primary waves-effect" type="submit">ENREGISTRER</button></center>
                             </form>
                         </div>
                     </div>

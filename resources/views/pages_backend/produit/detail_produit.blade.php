@@ -59,8 +59,8 @@
                                     <div class="product details">
                                         <h3 class="product-title mb-0">{{$produit->nom_produit}}</h3>
                                         <hr>
-                                        <p class="product-description">{{$produit->description_produit}}</p>
-                                        <p class="vote"><strong>QUANTITE</strong> : {{$produit->quantite_produit ?? '0'}}</p>
+                                        <!-- <p class="product-description">{{$produit->description_produit}}</p> -->
+                                        <p class="vote"><strong>QUANTITE</strong> : {{$produit->quantite_produit ?? '0'}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong style="color:red">{{$produit->stock_produit}}</strong></p>
                                         <p class="vote"><strong>PRIX_HT</strong> : {{$produit->prix_ht_produit ?? '0'}} FCFA 
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         @if($promotion!=null)
