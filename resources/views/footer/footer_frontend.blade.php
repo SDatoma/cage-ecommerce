@@ -1,40 +1,6 @@
-<!-- footer -->
-	<footer>
-		<div class="container">
-			<!-- footer second section -->
-			<div class="w3l-grids-footer">
-				<div class="col-xs-5 offer-footer">
-					<div class="col-xs-3 icon-fot">
-						<span class="fa fa-map-marker" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-9 text-form-footer">
-						<h3 style="font-size:20px">Togo, Lomé, quatier Agoè Démakpoè</h3>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="col-xs-3 offer-footer">
-					<div class="col-xs-3 icon-fot">
-						<span class="fa fa-refresh" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-9 text-form-footer">
-						<h3 style="font-size:20px">Simple et facile</h3>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="col-xs-4 offer-footer">
-					<div class="col-xs-4 icon-fot">
-						<span class="fa fa-times" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-8 text-form-footer">
-						<h3 style="font-size:20px">Satisfait ou rembousser </h3>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<!-- //footer second section -->
+
 			<!-- footer third section -->
-			<div class="footer-info w3-agileits-info">
+			<div class="footer-info w3-agileits-info" style="margin-top:-70px">
 				<!-- footer categories -->
 				<div class="col-sm-3 address-right">
 					<div class="col-xs-12 footer-grids">
@@ -346,7 +312,25 @@ Array.prototype.forEach.call(documents, function(document) {
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 
-            
+     <!-- Vendors JS -->
+        <script src="{{asset('css_front_end/assets/js/vendor/jquery-3.5.1.min.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/vendor/jquery-migrate-3.1.0.min.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
+
+            <!-- Plugins JS -->
+         <script src="{{asset('css_front_end/assets/js/plugins/jquery-ui.min.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/plugins/swiper.min.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/plugins/countdown.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/plugins/scrollup.js')}}"></script>
+        <script src="{{asset('css_front_end/assets/js/plugins/elevateZoom.js')}}"></script>
+
+        <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+        <!-- <script src="assets/js/vendor/vendor.min.js"></script>
+        <script src="assets/js/plugins/plugins.min.js"></script> -->
+
+        <!-- Main Activation JS -->
+        <script src="{{asset('css_front_end/assets/js/main.js')}}"></script>        
 
 </body>
 

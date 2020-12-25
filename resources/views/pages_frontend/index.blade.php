@@ -372,6 +372,40 @@
 		</div>
 	</div>
 	<!-- //newsletter -->
-	
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<!-- footer second section -->
+			<div class="w3l-grids-footer">
+				<div class="col-xs-5 offer-footer">
+					<div class="col-xs-3 icon-fot">
+						<span class="fa fa-map-marker" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-9 text-form-footer">
+						<h3 style="font-size:20px">Togo, Lomé, quatier Agoè Démakpoè</h3>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-xs-3 offer-footer">
+					<div class="col-xs-3 icon-fot">
+						<span class="fa fa-refresh" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-9 text-form-footer">
+						<h3 style="font-size:20px">Simple et facile</h3>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-xs-4 offer-footer">
+					<div class="col-xs-4 icon-fot">
+						<span class="fa fa-times" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-8 text-form-footer">
+						<h3 style="font-size:20px">Satisfait ou rembousser </h3>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!-- //footer second section -->
 	
 @include('footer/footer_frontend')

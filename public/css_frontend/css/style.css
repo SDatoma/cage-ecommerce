@@ -3159,8 +3159,14 @@ input[type="radio"], input[type="checkbox"] {
         padding: 0 0 0px;
         margin-bottom: 50px;
     }
+	.single-right {
+        float: right;
+        width: 50%;
+        padding: 0 0 0px;
+        margin-bottom: 50px;
+    }
     .single-right-left.simpleCart_shelfItem {
-        width: 100%;
+        width: 80%;
         margin: 0;
     }
     .faq-w3agile .faq > li > a {

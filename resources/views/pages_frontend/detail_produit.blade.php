@@ -28,22 +28,23 @@
 				</span>
 			</h3>
 			<!-- //tittle heading -->
-			<div class="col-md-5 single-right-left ">
+			<div class="col-md-4 single-right-left ">
 				<div class="grid images_3_of_2">
 					<div class="flexslider">
 						<ul class="slides">
-							<li data-thumb="/{{$produit->image_produit}}">
+							<li data-thumb="/{{$produit->image_produit}}" style="height:400px; width:100%">
 								<div class="thumb-image">
 									<img src="/{{$produit->image_produit}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
 							</li>
-							<li data-thumb="/{{$produit->image_produit}}">
-								<div class="thumb-image">
-									<img src="/{{$produit->image_produit}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
-							</li>
-							<li data-thumb="/{{$produit->image_produit}}">
-								<div class="thumb-image">
-									<img src="/{{$produit->image_produit}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
-							</li>
+							@foreach($photo_produits as $photo_produitt)
+								@if($photo_produitt->id_produit == $produit->id_produit)
+								<li data-thumb="/{{$photo_produitt->photo_produit}}" style="height:400px; width:100%">
+									<div class="thumb-image">
+										<img src="/{{$photo_produitt->photo_produit}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+								</li>
+								@endif
+                            @endforeach
+								
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -77,6 +78,16 @@
 					<p>
 						<i class="fa fa-refresh" aria-hidden="true"></i>
 						{{$produit->description_produit}}
+					</p>
+				</div>
+				<div class="product-single-w3l">
+					<p>
+						<i class="fa fa-hand-o-right" aria-hidden="true"></i>
+						<label>Caractéristiques</label>
+					</p>
+					<p>
+						<i class="fa fa-refresh" aria-hidden="true"></i>
+						{{$produit->caracteristique_produit}}
 					</p>
 				</div>
 				<div class="occasion-cart">
@@ -123,7 +134,7 @@
 						<div class="w3l-specilamk">
 							<div class="speioffer-agile">
 								<a href="{{route('detail-produit.produit', $produits_idem_ss_cat->id_produit)}}">
-									<img src="/{{$produits_idem_ss_cat->image_produit}}" height=200 alt="">
+									<img src="/{{$produits_idem_ss_cat->image_produit}}" height=250 alt="">
 								</a>
 							</div>
 							<div class="product-name-w3l">
@@ -172,7 +183,7 @@
 											<a href="{{route('detail-produit.produit', $nouveau_produit->id_produit)}}" class="link-product-add-cart">Detail</a>
 										</div>
 									</div>
-									<span class="product-new-top">New</span>
+									<span class="product-new-top">Neuf</span>
 
 								</div>
 								<div class="item-info-product ">
@@ -225,7 +236,11 @@
 					</div>
 					</div>
 					<!-- //fourth section (noodles) -->
-	
+	<!-- footer --><div class="product-single-w3l"></div>
+	<footer>
+		<div class="container">
+			<!-- footer second section -->
+			
 	@include('footer/footer_frontend')
 	
 	<!-- js-files -->

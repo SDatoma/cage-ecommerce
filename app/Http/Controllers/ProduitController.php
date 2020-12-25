@@ -193,6 +193,7 @@ class ProduitController extends Controller
 		->first(); 
 		
 		$photo_produits = PhotoProduit::All();
+		
 		$sous_categories = SousCategorie::All();
 		
 		$produits_idem_ss_cats = DB::table('produit')
