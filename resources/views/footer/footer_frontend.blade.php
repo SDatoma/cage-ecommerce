@@ -208,8 +208,8 @@
 				total += items[i].get('quantity');
 			}
 
-			if (total < 3) {
-				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+			if (total < 1) {
+				alert('Le minimum d\'article dans le panier est 1');
 				evt.preventDefault();
 			}
 		});
@@ -346,9 +346,7 @@ Array.prototype.forEach.call(documents, function(document) {
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 
-            <!-- Plugins JS -->
-        <script src="{{asset('css_front_end/assets/js/plugins/swiper.min.js')}}"></script>
-        <script src="{{asset('css_front_end/assets/js/main.js')}}"></script>
+            
 
 </body>
 

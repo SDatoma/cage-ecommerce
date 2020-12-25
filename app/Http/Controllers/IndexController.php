@@ -43,8 +43,15 @@ class IndexController extends Controller
        return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits'));
 	
     }
-
-    
+	
+	public function liste_categorie_header_mobile(){
+		
+		$categories = Categorie::all();
+		
+		return view('pages_frontend/header/header_frontend',compact('categories'));
+	}
+	
+	
     /**
      * Store a newly created resource in storage.
      *
