@@ -134,7 +134,7 @@
 						<div class="w3l-specilamk">
 							<div class="speioffer-agile">
 								<a href="{{route('detail-produit.produit', $produits_idem_ss_cat->id_produit)}}">
-									<img src="/{{$produits_idem_ss_cat->image_produit}}" height=250 alt="">
+									<img src="/{{$produits_idem_ss_cat->image_produit}}" height=250 width=350 alt="">
 								</a>
 							</div>
 							<div class="product-name-w3l">
