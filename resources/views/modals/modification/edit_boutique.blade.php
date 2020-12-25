@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form  method="POST"  action="{{route('fournisseur.update',$boutique->id_boutique)}}">
+      <form  method="POST"  action="{{route('fournisseur.update',$boutique->id_boutique)}}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       {{ csrf_field() }}
           <div class="form-group">
@@ -42,6 +42,11 @@
           <div class="form-group">
             <label for="message-text" class="col-form-label">Description</label>
             <textarea class="form-control" cols="30" name="description_boutique" id="message-text"> {{$boutique->description_boutique}}</textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Photos</label>
+            <input type="file" class="form-control" id="recipient-name" name="file">
           </div>
        
       </div>

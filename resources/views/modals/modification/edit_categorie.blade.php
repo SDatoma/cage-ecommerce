@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><strong>Modification</strong></h5></br></br>
+        <h5 class="modal-title"><strong>Modification <b style="color:red">{{$categorie->libelle_categorie}}</b></strong></h5></br></br>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

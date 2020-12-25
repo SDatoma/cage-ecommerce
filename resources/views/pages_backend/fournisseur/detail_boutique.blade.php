@@ -29,30 +29,30 @@
                     <div class="card mcard_4">
                         <div class="body">
                             <div class="img">
-                                <img src="{{asset('css_backend/assets/images/lg/avatar2.jpg')}}" class="rounded-circle" alt="profile-image">
+                                <img src="/{{$boutique->photos_boutique}}" class="rounded-circle" height="300px" width="450px" alt="profile-image">
                             </div>
                             <div class="user">
                                 <h5 class="mt-3 mb-1">{{$boutique->nom_boutique}}</h5>
                                 <small class="text-muted">{{$boutique->email_boutique}}</small>
-                                <ul class="list-unstyled mt-3 d-flex">
+                                <!-- <ul class="list-unstyled mt-3 d-flex">
                                     <li class="mr-3"><strong>Total:-</strong> 13</li>
                                     <li class="mr-3"><strong>Open:-</strong> 4</li>
                                     <li><strong>Closed:-</strong> 9</li>
-                                </ul>
-                                <div class="progress-container progress-success">
+                                </ul> -->
+                                <!-- <div class="progress-container progress-success">
                                     <span class="progress-badge">Statestics</span>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                             <span class="progress-value">90%</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
-                            <ul class="list-unstyled social-links">
+                            <!-- <ul class="list-unstyled social-links">
                                 <li><a href="javascript:void(0);"><i class="zmdi zmdi-dribbble"></i></a></li>
                                 <li><a href="javascript:void(0);"><i class="zmdi zmdi-behance"></i></a></li>
                                 <li><a href="javascript:void(0);"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="card">

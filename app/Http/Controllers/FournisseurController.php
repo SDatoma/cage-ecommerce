@@ -54,6 +54,21 @@ class FournisseurController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/boutique/'.$request->nom_boutique.'.jpg');
+
+            $file_name ='files_upload/boutique/'.$request->nom_boutique.'.jpg';
+
+          }else{
+
+            $file_name ="";
+         }
+
         $boutique = new Boutique();
 
         $boutique->nom_boutique= $request->nom_boutique ;
@@ -64,6 +79,7 @@ class FournisseurController extends Controller
         $boutique->contact_2_boutique= $request->contact_boutique2 ;
         $boutique->email_boutique= $request->email_boutique ;
         $boutique->nif_boutique= "null" ;
+        $boutique->photos_boutique=$file_name;
         $boutique->etat_boutique=1;
         $boutique->description_boutique= $request->description_boutique ;
 
@@ -117,6 +133,20 @@ class FournisseurController extends Controller
     {
         $boutique = Boutique::where(['id_boutique' =>$id])->first() ;
 
+        if ($request->HasFile('file')) {
+            $cover = $request->file('file');
+            $image = Image::make($cover)->encode('jpg');
+            $image->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            Image::make($image)->save('files_upload/boutique/'.$id.'.jpg');
+
+            $file_name ='files_upload/boutique/'.$id.'.jpg';
+
+          }else{
+
+            $file_name =$boutique->photos_boutique;
+         }
         $boutique->nom_boutique= $request->nom_boutique ;
         $boutique->slogan_boutique= $request->slogan_boutique ;
         $boutique->ville_boutique= $request->ville_boutique ;
@@ -124,7 +154,7 @@ class FournisseurController extends Controller
         $boutique->contact_1_boutique= $request->contact_boutique1 ;
         $boutique->contact_2_boutique= $request->contact_boutique2 ;
         $boutique->email_boutique= $request->email_boutique ;
-        //$boutique->nif_boutique= "null" ;
+        $boutique->photos_boutique=$file_name;
         $boutique->description_boutique= $request->description_boutique ;
 
         $boutique->save();

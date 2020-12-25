@@ -50,6 +50,7 @@
                                 <table class="table table-bordered table-striped table-hover theme-color dataTable js-exportable">
                                     <thead>
                                         <tr>
+                                            <th>PHOTOS</th>
                                             <th>NOM</th>
                                             <th>EMAIL</th>
                                             <th>CONTACT</th>
@@ -61,6 +62,7 @@
                                     <tbody>
                                     @foreach($boutiques as $boutique)
                                         <tr>
+                                            <td><img src="/{{$boutique->photos_boutique}}" width="48" alt="Boutique img"></td>
                                             <td>{{$boutique->nom_boutique}}</td>
                                             <td>{{$boutique->email_boutique}}</td>
                                             <td>{{$boutique->contact_1_boutique}}</td>

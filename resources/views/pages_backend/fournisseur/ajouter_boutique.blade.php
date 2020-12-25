@@ -43,7 +43,7 @@
                     @endif
             
                         <div class="body">
-                            <form id="form_validation" method="POST" action="{{route('fournisseur.store')}}">
+                            <form id="form_validation" method="POST" action="{{route('fournisseur.store')}}" enctype="multipart/form-data">
                             {{csrf_field()}}
                                 <div class="form-group form-float">
                                     <input type="text" class="form-control" placeholder="Nom de la boutique" name="nom_boutique" value="{{ old('nom_boutique') }}" required>
@@ -66,9 +66,7 @@
                                 <div class="form-group form-float">
                                     <input type="number" class="form-control" placeholder="Contact 2" value="{{ old('contact_boutique2') }}" name="contact_boutique2" >
                                 </div>
-                                <div class="form-group form-float">
-                                    <input type="file" class="form-control" placeholder="NIF" name="nif_boutique">
-                                </div>
+                               
                                 <!-- <div class="form-group">
                                     <div class="radio inlineblock m-r-20">
                                         <input type="radio" name="gender" id="male" class="with-gap" value="option1">
@@ -82,6 +80,10 @@
                                 <div class="form-group form-float">
                                     <textarea name="description_boutique" cols="30" rows="5" placeholder="Description de la boutique" class="form-control no-resize" required>{{ old('description_boutique') }}</textarea>
                                 </div>
+
+                                  <div class="form-group form-float col-sm-5">
+                                        <input type="file" class="dropify" name="file">
+                                  </div>
                                 
                                <center> <button class="btn btn-raised btn-primary waves-effect" type="submit">ENREGISTRER</button></center>
                             </form>
