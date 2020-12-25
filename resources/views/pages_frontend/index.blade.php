@@ -44,7 +44,7 @@
                                                         Pre-Order <br />
                                                         <strong>Exclusive</strong>
                                                     </h1>
-                                                    <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a>
+                                                    <!-- <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -57,11 +57,26 @@
                                                         Headset <br />
                                                         <strong>Hyper X</strong>
                                                     </h1>
-                                                    <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a>
+                                                    <!-- <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a> -->
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Single Slider  -->
+
+										<!-- Single Slider  -->
+                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_front_end/assets/images/slider-image/sample-3.jpg')}});">
+                                            <div class="container align-self-center">
+                                                <div class="slider-content-1 slider-animated-1 text-left pl-60px">
+                                                    <span class="animated color-white">GALAXY WATCH</span>
+                                                    <h1 class="animated color-white">
+                                                        Pre-Order <br />
+                                                        <strong>Exclusive</strong>
+                                                    </h1>
+                                                    <!-- <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a> -->
+                                                </div>
+                                            </div>
+                                        </div>
+										 <!-- Single Slider  -->
                                     </div>
                                     <!-- Add Pagination -->
                                     <div class="swiper-pagination swiper-pagination-white"></div>
@@ -72,10 +87,10 @@
                         <div class="col-lg-3">
                             <div class="banner-area banner-area-2">
                                 <div class="banner-wrapper mb-15px">
-                                    <a href="shop-4-column.html"><img src="{{asset('css_front_end/assets/images/banner-image/9.jpg')}}" alt="" /></a>
+                                    <a href="#"><img src="/{{$sliders[0]->image_slider}}" alt="" height="195px"/></a>
                                 </div>
                                 <div class="banner-wrapper">
-                                    <a href="shop-4-column.html"><img src="{{asset('css_front_end/assets/images/banner-image/10.jpg')}}" alt="" height="226px"/></a>
+                                    <a href="#"><img src="/{{$sliders[1]->image_slider}}" alt="" height="226px"/></a>
                                 </div>
                             </div>
                         </div>

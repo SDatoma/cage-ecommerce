@@ -284,7 +284,8 @@
 
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Paramettre</span></a>
                 <ul class="ml-menu">
-                    <li><a href="/list/slider">Image en slide</a></li>                  
+                    <li><a href="/list/slider">Image en slide</a></li>
+                    <li><a href="#">Liste des utilisateurs</a></li>                  
                 </ul>
             </li>
 
@@ -308,7 +309,7 @@
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commande</span></a>
                 <ul class="ml-menu">
-                    <li><a href="/list/commande/attente"> Commande en attente <sup style="font-size:15px">0</sup> </a></li>
+                    <li><a href="/list/commande/attente"> Commande en attente</a></li>
 
                 </ul>
             </li>

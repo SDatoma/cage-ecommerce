@@ -119,7 +119,9 @@
                     </div>
                     <div>
                         <div class="col-md-12">
-                            <p><b>Date : </b> 6 June 2019</p> <br />
+                            <p><b>Date : </b> 
+                            <?php echo date('d-m-Y')?>
+                            </p> <br />
                             <p><b>Signature</b></p>
                         </div>
                     </div>
