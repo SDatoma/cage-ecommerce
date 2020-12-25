@@ -226,7 +226,7 @@
                             </div> -->
                             <!-- header menu vertical -->
                         </div>
-                        <div class="col-lg-9 custom-col-2">
+                        <div class="col-lg-9 custom-col-2" style="margin-left:350px">
                             <div class="header-horizontal-menu">
                                 <ul class="menu-content">
                                     <li><a href="/">Accueil </a></li>
