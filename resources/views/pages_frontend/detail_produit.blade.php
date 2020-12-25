@@ -17,7 +17,7 @@
 	</div>
 	<!-- //page -->
 	<!-- Single Page -->
-	<div class="banner-bootom-w3-agileits" style="margin-top:-50px">
+	<div class="banner-bootom-w3-agileits" style="margin-top:0px">
 		<div class="container">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l">Détail du produit <span style="color:red">{{$produit->nom_produit}}</span>
