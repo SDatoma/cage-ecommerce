@@ -52,9 +52,9 @@
                                         <tr>
                                             <th>PHOTOS</th>
                                             <th>NOM</th>
+                                            <th>SLOGAN</th>
                                             <th>EMAIL</th>
                                             <th>CONTACT</th>
-                                            <th>SLOGAN</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -64,9 +64,9 @@
                                         <tr>
                                             <td><img src="/{{$boutique->photos_boutique}}" width="48" alt="Boutique img"></td>
                                             <td>{{$boutique->nom_boutique}}</td>
-                                            <td>{{$boutique->email_boutique}}</td>
-                                            <td>{{$boutique->contact_1_boutique}}</td>
                                             <td>{{$boutique->slogan_boutique}}</td>
+                                            <td>{{$boutique->email_boutique}}</td>
+                                            <td>{{$boutique->contact_1_boutique}} / {{$boutique->contact_2_boutique}}</td>
                                             <td>
                                              
                                             <a href="{{route('fournisseur.show',$boutique->id_boutique)}}"><button class="btn btn-succes btn-sm" title="Detail"  data-toggle="modal" data-target="#"><i class="zmdi zmdi-eye"></i></i></button></a> 

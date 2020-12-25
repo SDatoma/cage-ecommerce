@@ -196,7 +196,7 @@
             <div class="header-menu bg-blue sticky-nav d-xl-block d-none padding-0px">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 custom-col-2">
+                        <!-- <div class="col-lg-3 custom-col-2">
                             <div class="header-menu-vertical">
                                 <h4 class="menu-title">Catégories</h4>
                                 <ul class="menu-content display-block">
@@ -218,12 +218,12 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                        <!-- sub menu -->
+                                      
                                     </li>
 								  @endforeach
 								</ul>
-                                <!-- menu content -->
-                            </div>
+                               
+                            </div> -->
                             <!-- header menu vertical -->
                         </div>
                         <div class="col-lg-9 custom-col-2">
