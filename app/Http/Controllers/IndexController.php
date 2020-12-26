@@ -28,8 +28,8 @@ class IndexController extends Controller
     {
         $categories = Categorie::all();
 		
-		$produits = Produit::where(['etat_produit' =>1])->get() ;
-		
+        $produits = Produit::where(['etat_produit' =>1])->get() ;
+        
         $sous_categories = SousCategorie::all();
 
         $sliders = Slider::where(['etat_slider' =>1])->get() ;

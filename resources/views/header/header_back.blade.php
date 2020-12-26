@@ -8,7 +8,7 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <meta name="" content="">
 
-<title>CAGE E-Commerce</title>
+<title>CAGE E-Commerce - Administration</title>
 
 <link rel="stylesheet" href="{{asset('css_backend/assets/plugins/bootstrap/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('css_backend/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>

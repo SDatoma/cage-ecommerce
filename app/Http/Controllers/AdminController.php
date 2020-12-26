@@ -7,6 +7,7 @@ use App\Models\Produit;
 use App\Models\Categorie;
 use App\Models\SousCategorie;
 use App\Models\Boutique;
+use App\Models\Commande;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -25,11 +26,18 @@ class AdminController extends Controller
     public function index()
     {
         $nombre_boutique = Boutique::where(['etat_boutique' =>1])->count() ;
+
         $nombre_produit = Produit::where(['etat_produit' =>1])->count() ;
+
         $nombre_categorie = Categorie::where(['etat_categorie' =>1])->count() ;
+
         $nombre_sous_categorie = SousCategorie::all()->count() ;
 
-        return view('pages_backend/index',compact('nombre_boutique','nombre_categorie','nombre_produit','nombre_sous_categorie'));
+        $commande_en_attente = Commande::where(['etat_commande' =>0])->count() ;
+
+        $commande_valider = Commande::where(['etat_commande' =>1])->count() ;
+
+        return view('pages_backend/index',compact('nombre_boutique','nombre_categorie','nombre_produit','nombre_sous_categorie','commande_en_attente','commande_valider'));
     }
 
     /**
