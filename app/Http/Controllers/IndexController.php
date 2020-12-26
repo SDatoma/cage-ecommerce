@@ -32,7 +32,11 @@ class IndexController extends Controller
         
         $sous_categories = SousCategorie::all();
 
-        $sliders = Slider::where(['etat_slider' =>1])->get() ;
+        $sliders = DB::table('slider')
+         ->where('etat_slider', '=', 1)
+         ->orderBy('id_slider', 'desc')
+         ->limit(2)
+         ->get();
         
          $nouveau_produits = DB::table('produit')
          ->where('produit.etat_produit', '=', 1)
