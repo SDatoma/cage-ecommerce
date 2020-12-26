@@ -7,7 +7,7 @@
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
-        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{asset('css_backend/assets/images/loader.svg')}}" width="48" height="48" alt="Aero"></div>
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{asset('css_backend/assets/images/loader.svg')}}" width="48" height="48" alt="CAGE"></div>
         <p>Please wait...</p>
     </div>
 </div>
@@ -77,10 +77,10 @@
                 </div>
             </div>
             <div class="row clearfix">
-                <div class="col-lg-12">
+                <div class="col-lg-12 mb-6">
                     <div class="card">
                         <div class="header">
-                            <h2><strong><i class="zmdi zmdi-chart"></i> Sales</strong> Report</h2>
+                            <h2><strong><i class="zmdi zmdi-chart"></i> Statistiques</strong> Graphique</h2>
                             <!-- <ul class="header-dropdown">
                                 <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                     <ul class="dropdown-menu dropdown-menu-right slideUp">
@@ -100,10 +100,10 @@
                                     <div class="state_w1 mb-1 mt-1">
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                                <h5>2,365</h5>
-                                                <span><i class="zmdi zmdi-balance"></i> Revenue</span>
+                                               <center> <h5>{{$commande_valider}}</h5> </center>
+                                                <span>Commandes valider</span>
                                             </div>
-                                            <div class="sparkline" data-type="bar" data-width="97%" data-height="55px" data-bar-Width="3" data-bar-Spacing="5" data-bar-Color="#868e96">5,2,3,7,6,4,8,1</div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -111,10 +111,10 @@
                                     <div class="state_w1 mb-1 mt-1">
                                         <div class="d-flex justify-content-between">
                                             <div>                                
-                                                <h5>365</h5>
-                                                <span><i class="zmdi zmdi-turning-sign"></i> Returns</span>
+                                            <center> <h5>{{$commande_en_attente}}</h5>  </center>
+                                                <span>Commandes en attente</span>
                                             </div>
-                                            <div class="sparkline" data-type="bar" data-width="97%" data-height="55px" data-bar-Width="3" data-bar-Spacing="5" data-bar-Color="#2bcbba">8,2,6,5,1,4,4,3</div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -122,10 +122,10 @@
                                     <div class="state_w1 mb-1 mt-1">
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                                <h5>65</h5>
-                                                <span><i class="zmdi zmdi-alert-circle-o"></i> Queries</span>
+                                            <center><h5>0</h5> </center>
+                                                <span>Queries</span>
                                             </div>
-                                            <div class="sparkline" data-type="bar" data-width="97%" data-height="55px" data-bar-Width="3" data-bar-Spacing="5" data-bar-Color="#82c885">4,4,3,9,2,1,5,7</div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -133,10 +133,10 @@
                                     <div class="state_w1 mb-1 mt-1">
                                         <div class="d-flex justify-content-between">
                                             <div>                            
-                                                <h5>2,055</h5>
-                                                <span><i class="zmdi zmdi-print"></i> Invoices</span>
+                                            <center> <h5>0</h5>  </center>
+                                                <span>Invoices</span>
                                             </div>
-                                            <div class="sparkline" data-type="bar" data-width="97%" data-height="55px" data-bar-Width="3" data-bar-Spacing="5" data-bar-Color="#45aaf2">7,5,3,8,4,6,2,9</div>
+                                        
                                         </div>
                                     </div>
                                 </div>
