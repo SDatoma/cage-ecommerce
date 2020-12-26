@@ -1,6 +1,6 @@
 
 			<!-- footer third section -->
-			<div class="footer-info w3-agileits-info" style="margin-top:-70px">
+			<div class="footer-info w3-agileits-info" style="">
 				<!-- footer categories -->
 				<div class="col-sm-3 address-right">
 					<div class="col-xs-12 footer-grids">

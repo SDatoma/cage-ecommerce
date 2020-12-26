@@ -22,7 +22,7 @@ Route::get('/tri-categorie-{id_categorie}-produit-{libelle_categorie}', 'IndexCo
 
 Route::get('/tri-sous-categorie-{id_categorie}-produit-{id_sous_categorie}-{libelle_sous_categorie}', 'IndexController@tri_produit_par_sous_categorie')->name('tri.produit.sous_categorie');
 
-Route::get('/detail-produit/{id}','ProduitController@detail_produit')->name('detail-produit.produit');
+Route::get('/detail-produit /{id}','ProduitController@detail_produit')->name('detail-produit.produit');
 
 Route::post('/recherche','IndexController@recherche_produit')->name('recherche.produit');
 
