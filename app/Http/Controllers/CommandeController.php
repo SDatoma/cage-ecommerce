@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use PDF;
 
 class CommandeController extends Controller
 {
@@ -100,6 +101,36 @@ class CommandeController extends Controller
 		$commandes=DB::select(DB::raw($sql));
 
         return view('pages_backend/commande/facturation',compact('commandes','user','prix_total'));
+    }
+
+
+    public function download_facture($id)
+    {    
+        $user = User::where(['id_user' =>$id])->first() ;
+
+        $prix_total = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        ->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.etat_commande', '=', 0)
+        ->SUM('ligne_commande.prix_commande');
+        
+        $sql = ("SELECT count(ligne_commande.prix_commande) as prix_net,ligne_commande.quantite_commande as quantite,ligne_commande.prix_commande as prix_total,produit.nom_produit as nom_produit ,produit.prix_ht_produit as prix_ht_produit
+		FROM commande, user, produit,ligne_commande
+        WHERE commande.id_user= $id
+		AND produit.id_produit = commande.id_produit
+        AND ligne_commande.id_commande = commande.id_commande
+        AND user.id_user = commande.id_user 
+		AND commande.etat_commande = 0 
+		GROUP BY user.nom_user, prenom_user,ligne_commande.quantite_commande,ligne_commande.prix_commande,produit.nom_produit,produit.prix_ht_produit");
+		
+		$commandes=DB::select(DB::raw($sql));
+
+         $pdf = PDF::loadView('pages_backend/commande/facture_pdf',['user'=>$user,'prix_total'=>$prix_total,'commandes'=>$commandes])->setPaper('a4', 'landscape');
+
+        return $pdf->stream('facture.pdf');
+        
     }
 
     /**

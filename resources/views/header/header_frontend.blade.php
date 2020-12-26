@@ -143,21 +143,26 @@
                             </div> -->
                             <!-- header menu vertical -->
                         </div>
-                        <div class="col-lg-9 custom-col-2" style="margin-left:350px">
-                            <div class="header-horizontal-menu">
-                                <ul class="menu-content">
+                        <div class="col-lg-12">
+                            <div class="header-horizontal-menu" >
+                                <ul class="menu-content" style="font-size:5px">
                                     <li><a href="/">Accueil </a></li>
+									@foreach($categories as $categorie)
+								            <?php
+                                              $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();
+                                             ?>
                                     <li class="menu-dropdown">
-                                        <a href="#">Boutique <i class="ion-ios-arrow-down"></i></a>
+									<a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}">{{$categorie->libelle_categorie}} @if(count($sous_categories)>0)<i class="ion-ios-arrow-down"></i>@endif</a>
                                         <ul class="main-sub-menu">
-                                            <li><a href="">Au Togo </a></li>
-                                            <li><a href="">A l'extérieur </a></li>
+										@foreach($sous_categories as $sous_categorie)
+                                                    <li>
+													<a href="{{route('tri.produit.sous_categorie',[$categorie->id_categorie,$sous_categorie->id_sous_categorie,$sous_categorie->libelle_sous_categorie])}}">{{$sous_categorie->libelle_sous_categorie}}</a>
+													</li>
+                                        @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="">Sol </a></li>
-                                    <li><a href="">Mûr </a></li>
-                                    <li><a href="">Finition </a></li>
-                                    <li><a href="">contact </a></li>
+									@endforeach
+                                   <li><a href="">contact </a></li>
                                 </ul>
                             </div>
                             

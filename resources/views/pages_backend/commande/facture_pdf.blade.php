@@ -1,7 +1,18 @@
-@extends('header/header_back')
+<!doctype html>
+<html class="no-js " lang="fr">
 
-<!-- Main Content -->
-@section('content')
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="" content="">
+
+<title>CAGE E-Commerce - Administration</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="theme-blush">
 
 <style>
 
@@ -37,15 +48,6 @@
        
 	<div class="container">
     <div class="page-header">
-    <center>
-        <button class="btn btn-primary btn-sm" onclick="printContent('dataTable')">
-            <i class="zmdi zmdi-print"></i>  Imprimer
-        </button>
-   
-        <a href="{{route('download.facture',$user->id_user)}}" target="_blank"><button class="btn btn-warning btn-sm">
-            <i class="zmdi zmdi-download"></i>  Telecharger
-        </button></a>
-    </center>
     </div>
     <div class="container">
        <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
@@ -143,18 +145,3 @@
     </div>
 </section>
 
-       <script>
-            function printContent(id){
-                $("#print").hide();
-                //$("#retour").hide();
-                var restorepage = document.body.innerHTML;
-                var printContent = document.getElementById(id).innerHTML;
-                document.body.innerHTML = printContent;
-                window.print();
-                document.body.innerHTML = restorepage;
-                $("#print").show();
-                //$("#retour").show();
-            }
-        </script>
-
-@endsection()

@@ -52,6 +52,7 @@ Route::put('update/promotion/produit/{id}', 'ProduitController@updatePromotion')
 
 //Commande
 Route::get('/list/commande/attente', 'CommandeController@getAllCommandeUser');
+Route::get('/commande/download/facture/{id}/pdf', 'CommandeController@download_facture')->name('download.facture');
 Route::get('/statistique/stock', 'StockController@index');
 
 //Slider

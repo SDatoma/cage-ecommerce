@@ -3,7 +3,7 @@
 <div class="header-menu  d-xl-block d-none bg-light-gray">
                 <div class="container">
                     <div class="row mt-2">
-                        <div class="col-lg-2 custom-col-3">
+                        <!-- <div class="col-lg-2 custom-col-3">
                             <div class="header-menu-vertical bg-blue">
                                 <center><h4 class="menu-title be-af-none">Catégories</h4></center>
                                 <ul class="menu-content display-block">
@@ -22,15 +22,14 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                        <!-- sub menu -->
+                                      
                                     </li>
 								  @endforeach
 								</ul>
-                                <!-- menu content -->
+                              
                             </div>
-                            <!-- header menu vertical -->
-                        </div>
-                        <div class="col-lg-7 custom-col custom-col-3">
+                        </div> -->
+                        <div class="col-lg-8">
                         <!-- Slider Start -->
                             <div class="slider-area slider-height-2">
                                 <div class="hero-slider swiper-container">
@@ -84,7 +83,7 @@
                             </div>
                             <!-- Slider End -->
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <div class="banner-area banner-area-2">
                                 <div class="banner-wrapper mb-15px">
                                     <a href="#"><img src="/{{$sliders[0]->image_slider}}" alt="" height="195px"/></a>
