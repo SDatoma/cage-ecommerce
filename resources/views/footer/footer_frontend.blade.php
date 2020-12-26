@@ -6,7 +6,14 @@
 					<div class="col-xs-12 footer-grids">
 						<h3>Categories</h3>
 						<ul>
-							
+							<?php
+							  $categories = \App\Models\Categorie::All();
+							?>
+							@foreach($categories as $categorie)
+								<li>
+									<a href="">{{$categorie->libelle_categorie}}</a>
+								</li>
+							@endforeach
 						</ul>
 					</div>
 					<div class="clearfix"></div>

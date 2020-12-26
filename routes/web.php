@@ -26,6 +26,10 @@ Route::get('/detail-produit /{id}','ProduitController@detail_produit')->name('de
 
 Route::post('/recherche','IndexController@recherche_produit')->name('recherche.produit');
 
+Route::get('/connexion', function () {
+    return view('pages_frontend/connexion');
+});
+
 // ROUTE BACKEND
 Route::get('/admin', 'AdminController@index');
 
