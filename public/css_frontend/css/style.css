@@ -33,8 +33,8 @@ input[type="button"],input[type="submit"]{
     background-image: url('/css/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    height: 35px; /* Full-width */
+    width: 250px; /* Full-width */
+    height: 25px; /* Full-width */
     font-size: 16px; /* Increase font-size */
     border: 2px solid black; /* Add a grey border */
     margin-bottom: 8px; /* Add some space below the input */

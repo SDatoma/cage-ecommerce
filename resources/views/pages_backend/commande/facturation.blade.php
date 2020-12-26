@@ -36,22 +36,27 @@
     <div class="body_scroll">
        
 	<div class="container">
-    <!-- <div class="page-header">
-        <h1>Invoice Template </h1>
-    </div> -->
+    <div class="page-header">
+    <center>
+        <button class="btn btn-primary btn-sm" onclick="printContent('dataTable')">
+            <i class="zmdi zmdi-print"></i>  Imprimer
+        </button>
+    </center>
+    </div>
     <div class="container">
-        <div class="row">
+       <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+        <div class="row" id="dataTable">
             <div class="col-md-12 body-main">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4"> <img class="img" alt="Invoce Template" src="http://pngimg.com/uploads/shopping_cart/shopping_cart_PNG59.png" /><p style="margin-left:20px;font-size:15px">E-commerce</p>
+                        <div class="col-md-4"> <img class="img" alt="Invoce Template" src="{{asset('css_frontend/images/logo2.png')}}" /><p style="margin-left:20px;font-size:15px">E-commerce</p>
 						 </div>
 						
                         <div class="col-md-8 text-right">
-                            <h4 style="color: #F81D2D;"><strong>CAGE - ECOMMERCE</strong></h4>
-                            <p>221 ,Baker Street</p>
-                            <p>1800-234-124</p>
-                            <p>example@gmail.com</p>
+                            <h4 style="color: #F81D2D;"><strong>CAGE - BATIMENT</strong></h4>
+                            <p>Togo, Lomé, Agoè Démakpoè</p>
+                            <p>+228 70 45 37 85 | 96 35 80 90</p>
+                            <p>	cagetogo@gmail.com</p>
                         </div>
                     </div> <br />
                     <div class="row">
@@ -134,5 +139,18 @@
     </div>
 </section>
 
+       <script>
+            function printContent(id){
+                $("#print").hide();
+                //$("#retour").hide();
+                var restorepage = document.body.innerHTML;
+                var printContent = document.getElementById(id).innerHTML;
+                document.body.innerHTML = printContent;
+                window.print();
+                document.body.innerHTML = restorepage;
+                $("#print").show();
+                //$("#retour").show();
+            }
+        </script>
 
 @endsection()
