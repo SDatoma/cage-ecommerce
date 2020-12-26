@@ -51,9 +51,14 @@
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
                                                 <form action="#" method="post">
-                                                    <div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8"> <input type="text" name="user-civilite" placeholder="Mr/Mme" /> </div>
-                                                    <div class="col-lg-4">Nom d'utilisateur : </div> <div class="col-lg-8"> <input type="text" name="user-name" placeholder="Nom d'utilisateur" /> </div>
+                                                    <div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 
+													  <input type="radio" name="user-civilite" class="demo6" id="demo6-a" checked><label for="demo6-a">Mr</label>
+													  <input type="radio" name="user-civilite" class="demo6" id="demo6-b" ><label for="demo6-b">Mme</label>
+																									</div>
+                                                    <div class="col-lg-4">Nom : </div> <div class="col-lg-8"> <input type="text" name="user-name" placeholder="Nom " /> </div>
+                                                    <div class="col-lg-4">Prénom : </div> <div class="col-lg-8"> <input type="text" name="user-prenom" placeholder="Prénom " /> </div>
                                                     <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input type="password" name="user-password" placeholder="Mot de passe" /> </div>
+                                                    <div class="col-lg-4">Confirmer mot de passe : </div> <div class="col-lg-8"> <input type="password" name="user-password-confirm" placeholder="Confirmer mot de passe" /> </div>
                                                     <div class="col-lg-4">N° Téléphone : </div> <div class="col-lg-8"> <input name="user-telephone" placeholder="N° Téléphone" type="email" /> </div>
                                                     <div class="col-lg-4">Email : </div> <div class="col-lg-8"> <input name="user-email" placeholder="Email" type="email" /> </div>
                                                     <div class="button-box">

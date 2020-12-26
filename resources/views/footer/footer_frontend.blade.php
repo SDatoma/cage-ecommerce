@@ -11,7 +11,7 @@
 							?>
 							@foreach($categories as $categorie)
 								<li>
-									<a href="">{{$categorie->libelle_categorie}}</a>
+									<a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}">{{$categorie->libelle_categorie}}</a>
 								</li>
 							@endforeach
 						</ul>
