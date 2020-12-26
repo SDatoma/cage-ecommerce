@@ -58,11 +58,11 @@
 			<div class="col-md-8 header">
 				<!-- header lists -->
 				<ul >
-					<li style="width:200px">
+					<li style="width:150px">
 						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
 							<span class="fa fa-map-marker" aria-hidden="true"></span>Togo, Lomé, Agoè Démakpoè</a>
 					</li>
-					<li style="width:200px">
+					<li style="width:150px">
 						<a href="#" data-toggle="modal" data-target="#myModal1">
 							<span class="fa fa-truck" aria-hidden="true"></span>Livraison partout au Togo</a>
 					</li>
