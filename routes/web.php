@@ -59,7 +59,10 @@ Route::get('/statistique/stock', 'StockController@index');
 //Slider
 Route::get('/list/slider', 'SliderController@getAllSlider');
 
-
+//Emailing
+Route::get('/emailing', function () {
+    return view('pages_backend/emailing/list_message');
+});
 
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');

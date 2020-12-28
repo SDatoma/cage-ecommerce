@@ -76,7 +76,7 @@
 						<del> <span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span></del>
 						
 					</p>	
-						@else
+				@else
 						<p>
 					    <label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span>
 						</p>

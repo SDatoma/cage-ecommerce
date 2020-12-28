@@ -285,6 +285,7 @@
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Paramettre</span></a>
                 <ul class="ml-menu">
                     <li><a href="/list/slider">Image en slide</a></li>
+                    <li><a href="/emailing">Envoi d'email</a></li>
                     <li><a href="#">Liste des utilisateurs</a></li>                  
                 </ul>
             </li>
