@@ -42,7 +42,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+
+        $user->nom_user = $request->user-name;
+        $user->prenom_user = $request->user-prenom;
+        $user->email_user = $request->user-email;
+        
+		if($request->user-password-confirm == $request->user-password)
+		{
+		$user->password_user = $request->user-password;
+		}else{
+		return redirect('/connexion');	
+		}
+        $user->sexe_user = $request->user-civilite;
+        $user->telephone_user = $request->user-telephone;
+       
+        $user->save();
+		
+		Session()->flash('succes');
+			return redirect('/');
     }
 
     /**

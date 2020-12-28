@@ -50,8 +50,9 @@
                                     <div id="lg2" class="tab-pane">
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
-                                                <form action="#" method="post">
-                                                    <div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 
+                                                <form action="" method="post" enctype="multipart/form-data">
+                                                    {{csrf_field()}}
+													<div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 
 													  <input type="radio" name="user-civilite" class="demo6" id="demo6-a" checked><label for="demo6-a">Mr</label>
 													  <input type="radio" name="user-civilite" class="demo6" id="demo6-b" ><label for="demo6-b">Mme</label>
 																									</div>
