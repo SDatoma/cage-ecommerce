@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="col-md-7 single-right-left simpleCart_shelfItem">
-				<h3 style="font-size:20px">{{$produit->nom_produit}} </h3>
+				<h3 style="font-size:20px"> {{$produit->nom_produit}} </h3>
 				<div class="rating1">
 					<span class="starRating">
 						<input id="rating5" type="radio" name="rating" value="5">
@@ -65,29 +65,39 @@
 						<label for="rating1">1</label>
 					</span>
 				</div>
+				
+				@if($promotion)
+					<p><b style="color:red">En promotion {{$promotion->pourcentage_promotion ?? '0'}} % ; Code promo : {{$promotion->code_promotion ?? '0'}}</b> <br/>
+						<?php 
+						   $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
+						   $prix_ht_promo= $produit->prix_ht_produit - $reduction;
+						 ?>
+						<label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red">{{$prix_ht_promo}} F CFA</span>
+						<del> <span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span></del>
+						
+					</p>	
+						@else
+						<p>
+					    <label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span>
+						</p>
+				@endif
 				<p>
-					<span class="item_price">{{$produit->prix_ht_produit}} F CFA</span>
-				</p>
+				<label>QUANTITE DISPONIBLE :</label> <span class="item_price">{{$produit->quantite_produit}} </span> <br/>
+				<label>FOURNISSEUR :</label> <span class="item_price">{{$produit->nom_boutique}} </span> </p>
 				
 				<div class="product-single-w3l">
 					<p>
 						<i class="fa fa-hand-o-right" aria-hidden="true"></i>
-						<label>Description</label>
+						<label>DESCRIPTION</label>
 					</p>
-					<p>
-						<i class="fa fa-refresh" aria-hidden="true"></i>
-						{{$produit->description_produit}}
-					</p>
+					<p> {{$produit->description_produit}} </p>
 				</div>
 				<div class="product-single-w3l">
 					<p>
 						<i class="fa fa-hand-o-right" aria-hidden="true"></i>
-						<label>Caractéristiques</label>
+						<label>CARACTERISTIQUES</label>
 					</p>
-					<p>
-						<i class="fa fa-refresh" aria-hidden="true"></i>
-						{{$produit->caracteristique_produit}}
-					</p>
+					<p> {{$produit->caracteristique_produit}} </p>
 				</div>
 				<div class="occasion-cart">
 					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
