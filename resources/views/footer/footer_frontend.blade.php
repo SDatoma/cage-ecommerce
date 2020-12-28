@@ -1,6 +1,7 @@
 
 			<!-- footer third section -->
-			<div class="footer-info w3-agileits-info" style="">
+			<div class="footer-info w3-agileits-info">
+			<div class="container">
 				<!-- footer categories -->
 				<div class="col-sm-3 address-right">
 					<div class="col-xs-12 footer-grids">
@@ -99,12 +100,14 @@
 						<div class="clearfix"> </div>
 					</div>
 				</div>
+				</div>
 				<!-- //social icons -->
 				<div class="clearfix"></div>
 			</div>
 			<!-- //footer third section -->
 			<!-- footer fourth section (text) -->
 			<div class="agile-sometext">
+			<div class="container">
 				<!-- //brands -->
 				<!-- payment -->
 				<div class="sub-some child-momu">
@@ -129,6 +132,7 @@
 				</div>
 				<!-- //payment -->
 			</div>
+			</div><br/>
 			<!-- //footer fourth section (text) -->
 		</div>
 	</footer>
