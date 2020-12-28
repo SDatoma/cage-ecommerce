@@ -71,6 +71,15 @@ class CommandeController extends Controller
         return view('pages_backend/commande/list_commande_attente',compact('commandes'));
     }
 
+
+    public function getAllUser()
+    {
+          $users = DB::table('user')
+          ->get();
+
+        return view('pages_backend/commande/list_client',compact('users'));
+    }
+
     /**
      * Display the specified resource.
      *

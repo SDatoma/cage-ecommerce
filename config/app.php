@@ -165,7 +165,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Reliese\Coders\CodersServiceProvider::class,
-        // Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -234,7 +233,6 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        // 'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
     ],
 

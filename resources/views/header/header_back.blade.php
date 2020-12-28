@@ -310,6 +310,7 @@
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Gestion commande</span></a>
                 <ul class="ml-menu">
                     <li><a href="/list/commande/attente"> Commande en attente</a></li>
+                    <li><a href="/list/client">Liste des clients</a></li>
 
                 </ul>
             </li>
