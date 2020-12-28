@@ -341,7 +341,8 @@ Array.prototype.forEach.call(documents, function(document) {
         <script src="assets/js/plugins/plugins.min.js"></script> -->
 
         <!-- Main Activation JS -->
-        <script src="{{asset('css_front_end/assets/js/main.js')}}"></script>        
+        <script src="{{asset('css_front_end/assets/js/main.js')}}"></script>      
+  
 
 </body>
 

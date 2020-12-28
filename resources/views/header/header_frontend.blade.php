@@ -33,7 +33,6 @@
 	<link rel="stylesheet" href="{{asset('css_front_end/assets/css/vendor/vendor.min.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css_front_end/assets/css/plugins/plugins.min.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css_front_end/assets/css/style.min.css')}}">
-</head>
 
 <body>
 	<!-- top-header -->
@@ -72,7 +71,7 @@
 					<li style="width:260px">
 						<a href="/connexion">
 						<span class="fa fa-unlock-alt" aria-hidden="true"></span>Connexion /
-						<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Créer un compte
+						<span class="fa fa-pencil-square-o" aria-hidden="true"></span>Inscription
 						</a>
 					</li>
 				</ul>

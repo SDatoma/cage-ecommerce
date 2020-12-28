@@ -84,21 +84,6 @@
 				<p>
 				<label>QUANTITE DISPONIBLE :</label> <span class="item_price">{{$produit->quantite_produit}} </span> <br/>
 				<label>FOURNISSEUR :</label> <span class="item_price">{{$produit->nom_boutique}} </span> </p>
-				
-				<div class="product-single-w3l">
-					<p>
-						<i class="fa fa-hand-o-right" aria-hidden="true"></i>
-						<label>DESCRIPTION</label>
-					</p>
-					<p> {{$produit->description_produit}} </p>
-				</div>
-				<div class="product-single-w3l">
-					<p>
-						<i class="fa fa-hand-o-right" aria-hidden="true"></i>
-						<label>CARACTERISTIQUES</label>
-					</p>
-					<p> {{$produit->caracteristique_produit}} </p>
-				</div>
 				<div class="occasion-cart">
 					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 						<form action="#" method="post">
@@ -124,11 +109,137 @@
 		</div>
 	</div>
 	<!-- //Single Page -->
+	<!-- product details description area start -->
+            <div class="description-review-area mb-60px">
+                <div class="container">
+                    <div class="description-review-wrapper">
+                        <div class="description-review-topbar nav">
+                            <a data-toggle="tab" href="#des-details1">DESCRIPTION</a>
+                            <a class="active" data-toggle="tab" href="#des-details2">CARACTERISTIQUES</a>
+                            <a data-toggle="tab" href="#des-details3">COMMENTAIRES</a>
+                        </div>
+                        <div class="tab-content description-review-bottom">
+                            <div id="des-details2" class="tab-pane active">
+                                <div class="product-anotherinfo-wrapper">
+                                    <p> {{$produit->description_produit}} </p>
+                                </div>
+                            </div>
+                            <div id="des-details1" class="tab-pane">
+                                <div class="product-description-wrapper">
+                                    <p> {{$produit->caracteristique_produit}} </p>
+                                </div>
+                            </div>
+                            <div id="des-details3" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="review-wrapper">
+                                            <div class="single-review">
+                                                <div class="review-img">
+                                                    <img src="assets/images/review-image/1.png" alt="" />
+                                                </div>
+                                                <div class="review-content">
+                                                    <div class="review-top-wrap">
+                                                        <div class="review-left">
+                                                            <div class="review-name">
+                                                                <h4>White Lewis</h4>
+                                                            </div>
+                                                            <div class="rating-product">
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-left">
+                                                            <a href="#">Reply</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-bottom">
+                                                        <p>
+                                                            Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Suspendisse viverra ed viverra. Mauris ullarper euismod vehicula. Phasellus quam nisi, congue id nulla.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="single-review child-review">
+                                                <div class="review-img">
+                                                    <img src="assets/images/review-image/2.png" alt="" />
+                                                </div>
+                                                <div class="review-content">
+                                                    <div class="review-top-wrap">
+                                                        <div class="review-left">
+                                                            <div class="review-name">
+                                                                <h4>White Lewis</h4>
+                                                            </div>
+                                                            <div class="rating-product">
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                                <i class="ion-android-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-left">
+                                                            <a href="#">Reply</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-bottom">
+                                                        <p>Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Sus pen disse viverra ed viverra. Mauris ullarper euismod vehicula.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="ratting-form-wrapper pl-50">
+                                            <h3>Add a Review</h3>
+                                            <div class="ratting-form">
+                                                <form action="#">
+                                                    <div class="star-box">
+                                                        <span>Your rating:</span>
+                                                        <div class="rating-product">
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="rating-form-style mb-10">
+                                                                <input placeholder="Name" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="rating-form-style mb-10">
+                                                                <input placeholder="Email" type="email" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="rating-form-style form-submit">
+                                                                <textarea name="Your Review" placeholder="Message"></textarea>
+                                                                <input type="submit" value="Submit" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- product details description area end -->
 	<!-- special offers -->
 	<div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l" style="font-size:25px">Dans la même sous catégorie
+			<h3 class="tittle-w3l" style="font-size:25px">DANS LA MEME SOUS CATEGORIE
 				<span class="heading-style">
 					<i></i>
 					<i></i>

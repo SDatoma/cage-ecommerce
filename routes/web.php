@@ -26,9 +26,6 @@ Route::get('/detail-produit /{id}','ProduitController@detail_produit')->name('de
 
 Route::post('/recherche','IndexController@recherche_produit')->name('recherche.produit');
 
-Route::get('/connexion', function () {
-    return view('pages_frontend/connexion');
-});
 
 // ROUTE BACKEND
 Route::get('/admin', 'AdminController@index');
@@ -66,5 +63,6 @@ Route::resource('categorie', 'CategorieController');
 Route::resource('produit', 'ProduitController');
 Route::resource('stock', 'StockController');
 Route::resource('commande', 'CommandeController');
+///Route::resource('client', 'InscriptionController');
 Route::resource('slider', 'SliderController');
 
