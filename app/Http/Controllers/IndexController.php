@@ -32,6 +32,8 @@ class IndexController extends Controller
         
         $sous_categories = SousCategorie::all();
 
+        $id_categorie = 0;
+
         $sliders = DB::table('slider')
          ->where('etat_slider', '=', 1)
          ->orderBy('id_slider', 'desc')
@@ -44,7 +46,7 @@ class IndexController extends Controller
          ->limit(4)
          ->get();
         
-       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders'));
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders','id_categorie'));
 	
     }
 	

@@ -114,9 +114,9 @@
                 <div class="container">
                     <div class="description-review-wrapper">
                         <div class="description-review-topbar nav">
-                            <a data-toggle="tab" href="#des-details1">DESCRIPTION</a>
-                            <a class="active" data-toggle="tab" href="#des-details2">CARACTERISTIQUES</a>
-                            <a data-toggle="tab" href="#des-details3">COMMENTAIRES</a>
+                            <a data-toggle="tab" href="#des-details1" style="font-size:15px">DESCRIPTION</a>
+                            <a class="active" data-toggle="tab" href="#des-details2" style="font-size:15px">CARACTERISTIQUES</a>
+                            <a data-toggle="tab" href="#des-details3" style="font-size:15px">COMMENTAIRES</a>
                         </div>
                         <div class="tab-content description-review-bottom">
                             <div id="des-details2" class="tab-pane active">
@@ -239,7 +239,7 @@
 	<div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l" style="font-size:25px">DANS LA MEME SOUS CATEGORIE
+			<h3 class="tittle-w3l" style="font-size:25px">Produits de la meme categorie
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -342,10 +342,10 @@
 											</fieldset>
 										</form>
 									</div> </br>
-									@if($produit->stock_produit=="En stock")
-									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>{{$produit->stock_produit}}</b> </span>
+									@if($produit->quantite_produit>3)
+									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>
 									@else
-									<span class="item_price" style="font-size:15px;color:red"><b>{{$produit->stock_produit}}</b> </span>
+									<span class="item_price" style="font-size:15px;color:red"><b>En rupture</b> </span>
 									@endif
                                </div>
 							</div>
