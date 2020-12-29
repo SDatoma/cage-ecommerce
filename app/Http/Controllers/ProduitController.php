@@ -189,7 +189,9 @@ class ProduitController extends Controller
 	public function detail_produit($id)
     {
 		$promotion = Promotion::where(['id_produit' =>$id])->first() ;
-		
+        
+        $id_categorie = 0;
+
 		$produit = DB::table('produit')
         ->join('sous_categorie', 'produit.id_sous_categorie', '=', 'sous_categorie.id_sous_categorie')
         ->join('boutique', 'produit.id_boutique', '=', 'boutique.id_boutique')
@@ -223,7 +225,7 @@ class ProduitController extends Controller
          ->get();
 		
 		return view('pages_frontend/detail_produit',compact('promotion', 'nouveau_produits', 'produits_autres_cats', 'produits_idem_cats', 
-	   'produits_idem_ss_cats', 'sous_categories', 'produit', 'photo_produits'));
+	   'produits_idem_ss_cats', 'sous_categories', 'produit', 'photo_produits','id_categorie'));
     }
 
     /**
