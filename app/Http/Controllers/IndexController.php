@@ -28,9 +28,11 @@ class IndexController extends Controller
     {
         $categories = Categorie::all();
 		
-        $produits = Produit::where(['etat_produit' =>1])->get() ;
+        $produits = Produit::where(['etat_produit' =>1,'nouveau_produit' =>'Existant'])->get() ;
         
         $sous_categories = SousCategorie::all();
+
+        $id_categorie = 0;
 
         $sliders = DB::table('slider')
          ->where('etat_slider', '=', 1)
@@ -40,11 +42,10 @@ class IndexController extends Controller
         
          $nouveau_produits = DB::table('produit')
          ->where('produit.etat_produit', '=', 1)
-         ->orderBy('id_produit', 'desc')
-         ->limit(4)
+         ->where('produit.nouveau_produit', '=', 'Nouveau')
          ->get();
         
-       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders'));
+       return view('pages_frontend/index',compact('categories', 'produits', 'sous_categories','nouveau_produits','sliders','id_categorie'));
 	
     }
 	
@@ -98,6 +99,7 @@ class IndexController extends Controller
         ->where('produit.id_categorie', '=', $id_categorie)
         ->where('categorie.id_categorie', '=', $id_categorie)
         ->where('produit.etat_produit', '=', 1)
+        //->where('produit.nouveau_produit', '=', 'Existant')
 		->get();
 		
          return view('pages_frontend/categorie_produit',compact('categories','produits','id_categorie','categoriee'));
@@ -114,6 +116,7 @@ class IndexController extends Controller
         ->where('produit.id_sous_categorie', '=', $id_sous_categorie)
         ->where('sous_categorie.id_sous_categorie', '=', $id_sous_categorie)
         ->where('produit.etat_produit', '=', 1)
+        //->where('produit.nouveau_produit', '=', 'Existant')
 		->get();
 		
          return view('pages_frontend/sous_categorie_produit',compact('categories','produits','id_categorie','categoriee','sous_categoriee'));

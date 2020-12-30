@@ -273,10 +273,10 @@ if (Cookie::get('id_user')== null)
 											</fieldset>
 										</form>
 									</div> </br>
-									@if($produit->stock_produit=="En stock")
-									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>{{$produit->stock_produit}}</b> </span>
+									@if($produit->quantite_produit>3)
+									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>
 									@else
-									<span class="item_price" style="font-size:15px;color:red"><b>{{$produit->stock_produit}}</b> </span>
+									<span class="item_price" style="font-size:15px;color:red"><b>En rupture</b> </span>
 									@endif
 								</div>
 							</div>
@@ -299,7 +299,7 @@ if (Cookie::get('id_user')== null)
 											<a href="{{route('detail-produit.produit', $nouveau_produit->id_produit)}}" class="link-product-add-cart">Detail</a>
 										</div>
 									</div>
-									<span class="product-new-top">New</span>
+									<span class="product-new-top">Neuf</span>
 
 								</div>
 								<div class="item-info-product ">

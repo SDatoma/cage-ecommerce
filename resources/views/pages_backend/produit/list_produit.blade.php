@@ -68,8 +68,10 @@
                                         <td><span class="text-muted">{{$produit->quantite_produit ?? 0}}</span></td>
                                         <td>{{$produit->prix_ht_produit ?? '0'}} FCFA</td>
                                         <td>
-                                        @if($produit->stock_produit=="En stock") <span class="col-green" >En stock </span> 
-                                        @elseif($produit->stock_produit=="En rupture")<span class="col-red blink">En rupture</span>
+                                        @if($produit->quantite_produit>3) 
+                                        <span class="col-green" >En stock </span> 
+                                        @else
+                                        <span class="col-red blink">En rupture</span>
                                         @endif
                                         </td>
                                         <td>

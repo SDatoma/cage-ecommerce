@@ -73,22 +73,26 @@ if (Cookie::get('id_user')== null)
 				</div>
 				
 				@if($promotion)
-					<p><b style="color:red">En promotion {{$promotion->pourcentage_promotion ?? '0'}} % ; Code promo : {{$promotion->code_promotion ?? '0'}}</b> <br/>
+					<p><b style="color:red">En promotion {{$promotion->pourcentage_promotion ?? '0'}} % </b> <br/>
 						<?php 
 						   $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
 						   $prix_ht_promo= $produit->prix_ht_produit - $reduction;
 						 ?>
-						<label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red">{{$prix_ht_promo}} F CFA</span>
-						<del> <span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span></del>
+						<label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red"> {{$prix_ht_promo}} F CFA</span>
+						<del> <span class="item_price" style="font-size:15px;color:red"> {{$produit->prix_ht_produit}} F CFA</span></del>
 						
 					</p>	
-						@else
+				@else
 						<p>
-					    <label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red">{{$produit->prix_ht_produit}} F CFA</span>
+					    <label>PRIX_HT :</label><span class="item_price" style="font-size:15px;color:red"> {{$produit->prix_ht_produit}} F CFA</span>
 						</p>
 				@endif
 				<p>
-				<label>QUANTITE DISPONIBLE :</label> <span class="item_price">{{$produit->quantite_produit}} </span> <br/>
+				<label>QUANTITE DISPONIBLE :</label> @if($produit->quantite_produit>3)
+									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>
+									@else
+									<span class="item_price" style="font-size:15px;color:red"><b>En rupture</b> </span>
+									@endif <br/>
 				<label>FOURNISSEUR :</label> <span class="item_price">{{$produit->nom_boutique}} </span> </p>
 				<div class="occasion-cart">
 					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -120,9 +124,9 @@ if (Cookie::get('id_user')== null)
                 <div class="container">
                     <div class="description-review-wrapper">
                         <div class="description-review-topbar nav">
-                            <a data-toggle="tab" href="#des-details1">DESCRIPTION</a>
-                            <a class="active" data-toggle="tab" href="#des-details2">CARACTERISTIQUES</a>
-                            <a data-toggle="tab" href="#des-details3">COMMENTAIRES</a>
+                            <a data-toggle="tab" href="#des-details1" style="font-size:15px">DESCRIPTION</a>
+                            <a class="active" data-toggle="tab" href="#des-details2" style="font-size:15px">CARACTERISTIQUES</a>
+                            <a data-toggle="tab" href="#des-details3" style="font-size:15px">COMMENTAIRES</a>
                         </div>
                         <div class="tab-content description-review-bottom">
                             <div id="des-details2" class="tab-pane active">
@@ -245,7 +249,7 @@ if (Cookie::get('id_user')== null)
 	<div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l" style="font-size:25px">DANS LA MEME SOUS CATEGORIE
+			<h3 class="tittle-w3l" style="font-size:25px">Produits de la meme categorie
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -348,10 +352,10 @@ if (Cookie::get('id_user')== null)
 											</fieldset>
 										</form>
 									</div> </br>
-									@if($produit->stock_produit=="En stock")
-									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>{{$produit->stock_produit}}</b> </span>
+									@if($produit->quantite_produit>3)
+									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>
 									@else
-									<span class="item_price" style="font-size:15px;color:red"><b>{{$produit->stock_produit}}</b> </span>
+									<span class="item_price" style="font-size:15px;color:red"><b>En rupture</b> </span>
 									@endif
                                </div>
 							</div>

@@ -151,7 +151,7 @@
                                               $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();
                                              ?>
                                     <li class="menu-dropdown">
-									<a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}">{{$categorie->libelle_categorie}} @if(count($sous_categories)>0)<i class="ion-ios-arrow-down"></i>@endif</a>
+									<a href="{{route('tri.produit.categorie',[$categorie->id_categorie,$categorie->libelle_categorie])}}" @if($categorie->id_categorie==$id_categorie)style="color:red" @endif >{{$categorie->libelle_categorie}} @if(count($sous_categories)>0)<i class="ion-ios-arrow-down"></i>@endif</a>
                                         <ul class="main-sub-menu">
 										@foreach($sous_categories as $sous_categorie)
                                                     <li>

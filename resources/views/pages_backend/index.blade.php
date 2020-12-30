@@ -122,8 +122,8 @@
                                     <div class="state_w1 mb-1 mt-1">
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                            <center><h5>0</h5> </center>
-                                                <span>Queries</span>
+                                            <center><h5>{{$nombre_client}}</h5> </center>
+                                                <span>Clients</span>
                                             </div>
                                             
                                         </div>
@@ -134,7 +134,7 @@
                                         <div class="d-flex justify-content-between">
                                             <div>                            
                                             <center> <h5>0</h5>  </center>
-                                                <span>Invoices</span>
+                                                <span>Utilisateurs</span>
                                             </div>
                                         
                                         </div>

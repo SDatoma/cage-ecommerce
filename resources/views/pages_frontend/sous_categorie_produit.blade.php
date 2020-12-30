@@ -96,10 +96,10 @@ if (Cookie::get('id_user')== null)
 											</fieldset>
 										</form>
 									</div></br>
-                                    @if($produit->stock_produit=="En stock")
-									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>{{$produit->stock_produit}}</b> </span>
+									@if($produit->quantite_produit>3)
+									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>
 									@else
-									<span class="item_price" style="font-size:15px;color:red"><b>{{$produit->stock_produit}}</b> </span>
+									<span class="item_price" style="font-size:15px;color:red"><b>En rupture</b> </span>
 									@endif
 								</div>
 							</div>
