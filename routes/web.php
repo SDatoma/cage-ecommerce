@@ -30,9 +30,7 @@ Route::get('/contact', function () {
     return view('pages_frontend/contact');
 });
 
-Route::get('/login', function () {
-    return view('pages_frontend/connexion');
-});
+Route::get('/login','ConnexionController@index');
 
 Route::get('/deconnexion','ConnexionController@deconnection');
 

@@ -17,7 +17,8 @@ class ConnexionController extends Controller
      */
     public function index()
     {
-        //
+        $id_categorie=0;
+        return view('pages_frontend/connexion',compact('id_categorie'));
     }
 
     /**
