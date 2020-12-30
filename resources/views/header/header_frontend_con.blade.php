@@ -37,7 +37,7 @@
 <body>
 	<!-- top-header -->
 	<div class="header-most-top">
-		<p>Bienvenue sur la plateforme de vente en ligne de CAGE BÄTIMENT</p>
+		<p>Bienvenue <a href="" style="color:#ff5722">{{Cookie::get('prenom_user')}} {{Cookie::get('nom_user')}}</a> sur la plateforme de vente en ligne de CAGE BÄTIMENT</p>
 	</div>
 	<!-- //top-header -->
 	<!-- header-bot-->
@@ -57,21 +57,25 @@
 			<div class="col-md-8 header">
 				<!-- header lists -->
 				<ul >
-					<li style="width:150px">
+					<li>
 						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
 							<span class="fa fa-map-marker" aria-hidden="true"></span>Togo, Lomé, Agoè Démakpoè</a>
 					</li>
-					<li style="width:150px">
+					<li>
 						<a href="#" data-toggle="modal" data-target="#myModal1">
 							<span class="fa fa-truck" aria-hidden="true"></span>Livraison partout au Togo</a>
 					</li>
-					<li style="width:170px">
+					<li>
 						<span class="fa fa-phone" aria-hidden="true"></span> +228 70 45 37 85 | 96 35 80 90 |90 90 49 03
 					</li>
-					<li style="width:260px">
-						<a href="/login">
-						<span class="fa fa-unlock-alt" aria-hidden="true"></span>Connexion ou
-						<span class="fa fa-pencil-square-o" aria-hidden="true"></span>Inscription
+					<li style="color:#146cda">Bienvenue,
+						<h6><span class="fa fa-user-circle" aria-hidden="true"></span> {{Cookie::get('prenom_user')}} 
+						{{Cookie::get('nom_user')}} </h6>
+						
+					</li>
+					<li>
+						<a href="/deconnexion">
+						<span class="fa fa-power-off" aria-hidden="true"></span> (Déconnexion)
 						</a>
 					</li>
 				</ul>

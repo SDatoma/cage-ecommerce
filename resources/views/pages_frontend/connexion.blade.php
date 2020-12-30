@@ -1,4 +1,11 @@
-@include('header/header_frontend')
+
+<?php
+if (Cookie::get('id_user')== null)
+  {	?>
+	@include('header/header_frontend')
+<?php } else{?>
+	@include('header/header_frontend_con')
+<?php } ?>
 
 	<div class="services-breadcrumb">
 		<div class="agile_inner_breadcrumb">
@@ -29,16 +36,24 @@
                                     </a>
                                 </div>
                                 <div class="tab-content">
+								@if (Session::has('error'))
+									<div class="form-group">
+										<div class="alert alert-danger">
+											<center>{{ Session::pull('error') }}</center>
+										</div>
+									</div>
+								@endif
                                     <div id="lg1" class="tab-pane active">
                                         <div class="login-form-container">
                                             <div class="login-register-form"  style="color:#000; text-align : right;">
-                                                <form action="#" method="post">
-                                                    <div class="col-lg-4">Nom d'utilisateur : </div> <div class="col-lg-8"> <input type="text" name="user-name" placeholder="Nom d'utilisateur" /> </div>
-                                                    <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input type="password" name="user-password" placeholder="Mot de passe" /> </div>
+                                                <form action="{{route('connexion.store')}}" method="post" enctype="multipart/form-data">
+                                                     {{csrf_field()}}
+													<div class="col-lg-4">Nom d'utilisateur : </div> <div class="col-lg-8"> <input type="text" name="username" placeholder="Nom d'utilisateur" /> </div>
+                                                    <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input type="password" name="userpassword" placeholder="Mot de passe" /> </div>
                                                     <div class="button-box">
                                                         <div class="login-toggle-btn">
                                                             <input type="checkbox" />
-                                                            <a class="flote-none" href="javascript:void(0)">Se souvenir de moi</a>
+                                                            <a class="flote-none" href="javascript:void(0)">Se souvenir de moi</a> |
                                                             <a href="#">Mot de passe oublié ?</a>
                                                         </div>
                                                         <button type="submit"><span>Connexion</span></button>
@@ -50,25 +65,25 @@
                                     <div id="lg2" class="tab-pane">
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
-                                                <form action="" method="post" enctype="multipart/form-data">
+                                                <form action="{{route('client.store')}}" method="post" enctype="multipart/form-data">
                                                     {{csrf_field()}}
 													<div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 
-													  <input type="radio" name="user-civilite" class="demo6" id="demo6-a" checked><label for="demo6-a">Mr</label>
-													  <input type="radio" name="user-civilite" class="demo6" id="demo6-b" ><label for="demo6-b">Mme</label>
+													  <input type="radio" name="usercivilite" value="M" class="demo6" id="demo6-a" checked><label for="demo6-a">Mr</label>
+													  <input type="radio" name="usercivilite" value="F" class="demo6" id="demo6-b" ><label for="demo6-b">Mme</label>
 																									</div>
-                                                    <div class="col-lg-4">Nom : </div> <div class="col-lg-8"> <input type="text" name="user-name" placeholder="Nom " /> </div>
-                                                    <div class="col-lg-4">Prénom : </div> <div class="col-lg-8"> <input type="text" name="user-prenom" placeholder="Prénom " /> </div>
-                                                    <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input type="password" name="user-password" placeholder="Mot de passe" /> </div>
-                                                    <div class="col-lg-4">Confirmer mot de passe : </div> <div class="col-lg-8"> <input type="password" name="user-password-confirm" placeholder="Confirmer mot de passe" /> </div>
-                                                    <div class="col-lg-4">N° Téléphone : </div> <div class="col-lg-8"> <input name="user-telephone" placeholder="N° Téléphone" type="email" /> </div>
-                                                    <div class="col-lg-4">Email : </div> <div class="col-lg-8"> <input name="user-email" placeholder="Email" type="email" /> </div>
+                                                    <div class="col-lg-4">Nom : </div> <div class="col-lg-8"> <input required type="text" name="username" placeholder="Nom " /> </div>
+                                                    <div class="col-lg-4">Prénom : </div> <div class="col-lg-8"> <input required type="text" name="userprenom" placeholder="Prénom " /> </div>
+                                                    <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input required type="password" name="userpassword" placeholder="Mot de passe" /> </div>
+                                                    <div class="col-lg-4">Confirmer mot de passe : </div> <div class="col-lg-8"> <input required type="password" name="userpasswordconfirm" placeholder="Confirmer mot de passe" /> </div>
+                                                    <div class="col-lg-4">N° Téléphone : </div> <div class="col-lg-8"> <input required name="usertelephone" placeholder="N° Téléphone" type="numeric" /> </div>
+                                                    <div class="col-lg-4">Email : </div> <div class="col-lg-8"> <input required name="useremail" placeholder="Email" type="email" /> </div>
                                                     <div class="button-box">
                                                         <div class="login-toggle-btn">
-                                                            <input type="checkbox" />
+                                                            <input type="checkbox" name="usernews" value="1" />
                                                             <a class="flote-none" href="javascript:void(0)">Recevoir notre newsletter
 															Vous pouvez vous désinscrire à tout moment. <br/>Vous trouverez pour 
 														cela nos informations de contact dans les conditions d'utilisation du site.</a> <br/><br/>
-														<input type="checkbox" />
+														<input type="checkbox" name="usercondition" checked required />
                                                             <a class="flote-none" href="javascript:void(0)">J'accepte les conditions générales et 
 															la politique de confidentialité.</a>
                                                             

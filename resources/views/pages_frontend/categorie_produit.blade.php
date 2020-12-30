@@ -1,6 +1,11 @@
 
-@include('header/header_frontend')
-
+<?php
+if (Cookie::get('id_user')== null)
+  {	?>
+	@include('header/header_frontend')
+<?php } else{?>
+	@include('header/header_frontend_con')
+<?php } ?>
 
 <div class="header-menu ">
                 <div class="container">
