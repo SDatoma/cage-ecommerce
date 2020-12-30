@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 
-class UserController extends Controller
+class InscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,25 +42,86 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
-
-        $user->nom_user = $request->user-name;
-        $user->prenom_user = $request->user-prenom;
-        $user->email_user = $request->user-email;
-        
-		if($request->user-password-confirm == $request->user-password)
-		{
-		$user->password_user = $request->user-password;
-		}else{
-		return redirect('/connexion');	
-		}
-        $user->sexe_user = $request->user-civilite;
-        $user->telephone_user = $request->user-telephone;
-       
-        $user->save();
+		 $validator = Validator::make($request->all(), [
+            'username' => 'required|string',
+            'userprenom' => 'required|string',
+            'useremail' => 'required',
+            'usercivilite' => 'required',
+            'usertelephone' => 'required',
+            'usernews' => 'required',
+        ]);
 		
-		Session()->flash('succes');
-			return redirect('/');
+		if (strlen($request->userpassword) < 8) {
+            Session()->flash('error','Mot de passe trop cours !');
+            return back()->withErrors($validator)->withInput();
+        }
+		
+		if($request->userpassword != $request->userpasswordconfirm){
+			Session()->flash('error','Les mots de passe ne sont pas conforment ! Merci de re-saisir. ');	
+			return back()->withErrors($validator)->withInput();
+		}
+		
+		
+        //if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#', $request->userpassword)) {
+		
+				$user = new User();
+
+				$user->nom_user = $request->username;
+				$user->prenom_user = $request->userprenom;
+				$user->email_user = $request->useremail;
+				$user->password_user = $request->userpassword;
+				$user->sexe_user = $request->usercivilite;
+				$user->telephone_user = $request->usertelephone;
+				$user->ok_newsletter = $request->usernews;
+				$user->type_user = 1;
+			   
+				$user->save();
+				
+				Session()->flash('succes');
+				return redirect('/');
+				
+		/*if($user->save()){
+			
+			$presence_heure = DB::table('presences')
+			->latest('presences.id')
+			->first();
+			
+			$heure = $presence_heure->updated_at;
+			
+			$user = DB::table('users')
+			->where('users.id', '=', $presence_heure->user_id)
+			->first();
+			
+			$poste = $user->username;
+			
+			  $e_mail = $tele->email; //prend l'email de la table
+              $objet = "Alerte connexion eConvivial";
+			  $contenu = "Cher(ère),
+				Vous vous êtes connecté(e)s à votre compte Téléconseiller à 
+					ce jour " .$heure. " au poste " .$poste ;
+
+			  $from = "From: eCentre Convivial <togo@econvivial.org>\nMime-Version:";
+			  $from .= " 1.0\nContent-Type: text/html; charset=ISO-8859-1\n";
+			  // envoie du mail
+			  mail($e_mail, $objet, $contenu, $from);
+			
+            return redirect()->route("espacemembre-assistance-en-ligne")
+			->with(["message" => "Votre présence a été bien signalé dans le système"]);
+			//}
+        }else{
+            return redirect()
+			->back()
+			->with(["error" => "Impossible d'enrégistrer. Veuillez réessayer"])
+			->withInput();
+        }
+		*/		
+		//} else  {
+            
+		//	Session()->flash('error','Le mot de passe doit contenir des lettres masjuscules [A-Z], 
+		//	minuscules [a-z], des chiffres [0-9] et des caracteres speciaux (*\W@+/-). Merci de respecter. ');
+            
+        //    return redirect('/connexion');
+        //}
     }
 
     /**
