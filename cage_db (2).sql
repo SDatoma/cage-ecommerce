@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 25 déc. 2020 à 13:06
+-- Généré le :  mer. 30 déc. 2020 à 18:32
 -- Version du serveur :  10.1.29-MariaDB
 -- Version de PHP :  7.4.13
 
@@ -46,6 +46,7 @@ CREATE TABLE `boutique` (
   `id_boutique` int(11) NOT NULL,
   `nom_boutique` varchar(100) DEFAULT NULL,
   `description_boutique` text,
+  `photos_boutique` varchar(255) DEFAULT NULL,
   `ville_boutique` varchar(100) DEFAULT NULL,
   `pays_boutique` varchar(11) DEFAULT NULL,
   `nif_boutique` varchar(100) DEFAULT NULL,
@@ -62,10 +63,11 @@ CREATE TABLE `boutique` (
 -- Déchargement des données de la table `boutique`
 --
 
-INSERT INTO `boutique` (`id_boutique`, `nom_boutique`, `description_boutique`, `ville_boutique`, `pays_boutique`, `nif_boutique`, `contact_1_boutique`, `contact_2_boutique`, `email_boutique`, `slogan_boutique`, `id_role`, `password_boutique`, `etat_boutique`) VALUES
-(1, 'SEBI Inc', 'reteryty tytuuyuy  tuyu', 'Sokode', 'togo', 'null', 90454345, 54454342, 'fof@gmail.com', 'rtyytyt', NULL, NULL, 1),
-(2, 'Ets bamako', 'dfdgfghfh ghjgj', 'Sokode', 'togo', 'null', 90454345, 354565657, 'fofb@gmail.com', 'Vite vite', NULL, NULL, 1),
-(3, 'DC 10', 'ghghj ghgjhkhk tyuuyi', 'Accra', 'Ghana', 'null', 34566678, 54656788, 'fofbilaii@gmail.com', 'DOUCEMENT', NULL, NULL, 1);
+INSERT INTO `boutique` (`id_boutique`, `nom_boutique`, `description_boutique`, `photos_boutique`, `ville_boutique`, `pays_boutique`, `nif_boutique`, `contact_1_boutique`, `contact_2_boutique`, `email_boutique`, `slogan_boutique`, `id_role`, `password_boutique`, `etat_boutique`) VALUES
+(1, 'SEBI Inc', 'reteryty tytuuyuy  tuyu', 'files_upload/boutique/1.jpg', 'Sokode', 'togo', 'null', 90454345, 54454342, 'fof@gmail.com', 'rtyytyt', NULL, NULL, 1),
+(2, 'Ets bamako', 'dfdgfghfh ghjgj', 'files_upload/boutique/2.jpg', 'Sokode', 'togo', 'null', 90454345, 354565657, 'fofb@gmail.com', 'Vite vite', NULL, NULL, 1),
+(3, 'DC 10', 'ghghj ghgjhkhk tyuuyi', 'files_upload/boutique/3.jpg', 'Accra', 'Ghana', 'null', 34566678, 54656788, 'fofbilaii@gmail.com', 'DOUCEMENT', NULL, NULL, 1),
+(4, 'FOF B', 'tryyuyu huiuiuiu', 'files_upload/boutique/FOF B.jpg', 'lome', 'togo', 'null', 98787656, 90987873, 'fanaf@gmail.com', 'Document', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,8 @@ INSERT INTO `categorie` (`id_categorie`, `libelle_categorie`, `image_categorie`,
 (3, 'Ordinateur', 'files_upload/categorie/Ordinateur.jpg', 1),
 (4, 'Quincaillerie', 'files_upload/categorie/Quincaillerie.jpg', 1),
 (5, 'Plomberie', 'files_upload/categorie/Plomberie.jpg', 1),
-(6, 'Carreaux', 'files_upload/categorie/Carreaux.jpg', 1);
+(6, 'Carreaux', 'files_upload/categorie/Carreaux.jpg', 1),
+(7, 'FER', 'files_upload/categorie/FER.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -115,6 +118,19 @@ INSERT INTO `commande` (`id_commande`, `date_commande`, `etat_commande`, `refere
 (1, '2020-12-15 00:00:00', 0, '4rf3r43', 1, 1),
 (2, '2020-12-15 00:00:00', 0, 'd3ee45', 1, 2),
 (3, '2020-12-14 00:00:00', 0, '4t56r6', 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `envoi_mail`
+--
+
+CREATE TABLE `envoi_mail` (
+  `id_envoi_mail` int(11) NOT NULL,
+  `titre_mail` varchar(222) DEFAULT NULL,
+  `description_mail` text,
+  `etat_mail` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -172,7 +188,11 @@ INSERT INTO `photo_produit` (`id_photo_produit`, `photo_produit`, `id_produit`) 
 (15, 'files_upload/produit/unnamed (1).jpg', 6),
 (16, 'files_upload/produit/istockphoto-1152767923-612x612.jpg', 6),
 (17, 'files_upload/produit/8131ed447305eec5f3adc7c0295bf553_L.jpg', 7),
-(18, 'files_upload/produit/Elearning-cours-informatique-660x330.jpg', 7);
+(18, 'files_upload/produit/Elearning-cours-informatique-660x330.jpg', 7),
+(19, 'files_upload/produit/8131ed447305eec5f3adc7c0295bf553_L.jpg', 8),
+(20, 'files_upload/produit/crédit-photo-www.aeroschool.fr_.jpg', 9),
+(21, 'files_upload/produit/contact-us_0.jpg', 9),
+(22, 'files_upload/produit/unnamed (1).jpg', 9);
 
 -- --------------------------------------------------------
 
@@ -187,6 +207,7 @@ CREATE TABLE `produit` (
   `prix_ht_produit` int(11) DEFAULT NULL,
   `quantite_produit` int(11) DEFAULT NULL,
   `stock_produit` varchar(50) DEFAULT NULL,
+  `nouveau_produit` varchar(50) DEFAULT NULL,
   `etat_produit` int(1) DEFAULT NULL,
   `id_categorie` int(11) DEFAULT NULL,
   `id_sous_categorie` int(11) DEFAULT NULL,
@@ -199,14 +220,16 @@ CREATE TABLE `produit` (
 -- Déchargement des données de la table `produit`
 --
 
-INSERT INTO `produit` (`id_produit`, `nom_produit`, `description_produit`, `prix_ht_produit`, `quantite_produit`, `stock_produit`, `etat_produit`, `id_categorie`, `id_sous_categorie`, `id_boutique`, `caracteristique_produit`, `image_produit`) VALUES
-(1, 'Jus de citron bb', 'tytryutuy yuyuyu', 450, 30, 'En stock', 1, 1, 4, 3, 'ghghghjytuyuyu', 'files_upload/produit/1.jpg'),
-(2, 'Savon liquide propre', 'C\'est un bon produit propre', 500, 2, 'En rupture', 1, 2, 1, 2, 'tytyuyiuyi yiuojhjk hkhjkj', 'files_upload/produit/2.jpg'),
-(3, 'Portable Infinix', 'gghgjhgkkj', 30000, 24, 'En stock', 1, 1, 2, 2, 'hjhgkhjkjk', 'files_upload/produit/3.jpg'),
-(4, 'Cahier 100 p', 'fgfdhgfhjhjh gjhkh hkhk', 340, 32, 'En stock', 1, 2, 4, 2, 'rytyt tytuyiy gjhkjhkjkl', 'files_upload/produit/4.jpg'),
-(5, 'Lunette Recto', 'tyt tuyiuy jhk', 1330, 45, 'En rupture', 1, 1, 2, 3, 'rtrytuyi gjhkhl', 'files_upload/produit/5.jpg'),
-(6, 'Ampoule', 'fghfghgjhk  hjhk hjhk', 430, 27, 'En stock', 1, 3, 5, 1, 'tytuyuyi gjhk yuyiui', 'files_upload/produit/Ampoule.jpg'),
-(7, 'Lait caille', 'dfd fgfhghj jhjk', 1700, 50, 'En stock', 1, 3, 5, 1, 'ghghjtytu hghjj', 'files_upload/produit/Lait caille.jpg');
+INSERT INTO `produit` (`id_produit`, `nom_produit`, `description_produit`, `prix_ht_produit`, `quantite_produit`, `stock_produit`, `nouveau_produit`, `etat_produit`, `id_categorie`, `id_sous_categorie`, `id_boutique`, `caracteristique_produit`, `image_produit`) VALUES
+(1, 'Jus de citron bb', 'tytryutuy yuyuyu', 450, 30, 'En stock', 'Existant', 1, 1, 4, 3, 'ghghghjytuyuyu', 'files_upload/produit/1.jpg'),
+(2, 'Savon liquide propre', 'C\'est un bon produit propre', 500, 2, 'En rupture', 'Nouveau', 1, 2, 1, 2, 'tytyuyiuyi yiuojhjk hkhjkj', 'files_upload/produit/2.jpg'),
+(3, 'Portable Infinix', 'gghgjhgkkj', 30000, 24, 'En stock', 'Existant', 1, 1, 2, 2, 'hjhgkhjkjk', 'files_upload/produit/3.jpg'),
+(4, 'Cahier 100 p', 'fgfdhgfhjhjh gjhkh hkhk', 340, 32, 'En stock', 'Existant', 1, 2, 4, 2, 'rytyt tytuyiy gjhkjhkjkl', 'files_upload/produit/4.jpg'),
+(5, 'Lunette Recto', 'tyt tuyiuy jhk', 1330, 45, 'En rupture', 'Existant', 1, 1, 2, 3, 'rtrytuyi gjhkhl', 'files_upload/produit/5.jpg'),
+(6, 'Ampoule', 'fghfghgjhk  hjhk hjhk', 430, 3, 'En stock', 'Existant', 1, 3, 5, 1, 'tytuyuyi gjhk yuyiui', 'files_upload/produit/Ampoule.jpg'),
+(7, 'Lait caille', 'dfd fgfhghj jhjk', 1700, 50, 'En stock', 'Existant', 1, 3, 5, 1, 'ghghjtytu hghjj', 'files_upload/produit/Lait caille.jpg'),
+(8, 'Fer de 10', 'trtty jhjh', 2400, 28, 'En stock', 'Existant', 1, 7, 6, 4, 'rtrytu hjhjh', 'files_upload/produit/Fer de 10.jpg'),
+(9, 'Alcool 95 degre', 'dffdg fgghg gjgj', 2800, 6, 'En stock', 'Nouveau', 1, 7, 6, 1, 'fgfhghghj', 'files_upload/produit/Alcool 95 degre.jpg');
 
 -- --------------------------------------------------------
 
@@ -229,7 +252,8 @@ CREATE TABLE `promotion` (
 
 INSERT INTO `promotion` (`id_promotion`, `pourcentage_promotion`, `code_promotion`, `date_debut_promotion`, `date_fin_promotion`, `id_produit`) VALUES
 (4, 40, '7i6tx', '2020-12-14', '2020-12-26', 1),
-(5, 15, 'dezb4', '2020-12-16', '2020-12-26', 4);
+(5, 15, 'dezb4', '2020-12-16', '2020-12-26', 4),
+(6, 10, 'goypy', '2020-12-27', '2020-12-30', 2);
 
 -- --------------------------------------------------------
 
@@ -261,7 +285,9 @@ CREATE TABLE `slider` (
 
 INSERT INTO `slider` (`id_slider`, `image_slider`, `text_slider`, `etat_slider`) VALUES
 (1, 'files_upload/slider/1.jpg', 'fgfhhg hjhjhjhj ggfhghgj', 1),
-(3, 'files_upload/slider/retrt tyuyi.jpg', 'retrt tyuyi', 1);
+(3, 'files_upload/slider/retrt tyuyi.jpg', 'retrt tyuyi', 1),
+(4, 'files_upload/slider/rtryty.jpg', 'rtryty', 1),
+(5, 'files_upload/slider/hghghg hjkjk.jpg', 'hghghg hjkjk', 1);
 
 -- --------------------------------------------------------
 
@@ -285,7 +311,8 @@ INSERT INTO `sous_categorie` (`id_sous_categorie`, `libelle_sous_categorie`, `id
 (2, 'Riz blanc', 1, NULL),
 (3, 'Coctail', 2, NULL),
 (4, 'Fanta BB', 2, NULL),
-(5, 'Sumsung', 3, NULL);
+(5, 'Sumsung', 3, NULL),
+(6, 'Fer lisse', 7, 'files_upload/categorie/Fer lisse.jpg');
 
 -- --------------------------------------------------------
 
@@ -299,7 +326,7 @@ CREATE TABLE `user` (
   `prenom_user` varchar(100) DEFAULT NULL,
   `email_user` varchar(100) DEFAULT NULL,
   `password_user` varchar(100) DEFAULT NULL,
-  `sexe_user` varchar(1) DEFAULT NULL,
+  `sexe_user` varchar(20) DEFAULT NULL,
   `telephone_user` int(20) DEFAULT NULL,
   `id_role` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -309,8 +336,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nom_user`, `prenom_user`, `email_user`, `password_user`, `sexe_user`, `telephone_user`, `id_role`) VALUES
-(1, 'FOFANA', 'Bilali', 'fofb@gmail.com', 'fofb1234', 'm', 90345753, NULL),
-(2, 'ALASSANI', 'Mouhamed', 'alassani@gmail.com', '12345', 'f', 45433234, NULL);
+(1, 'FOFANA', 'Bilali', 'fofb@gmail.com', 'fofb1234', 'Masculin', 90345753, NULL),
+(2, 'ALASSANI', 'Mouhamed', 'alassani@gmail.com', '12345', 'Feminin', 45433234, NULL);
 
 --
 -- Index pour les tables déchargées
@@ -343,6 +370,12 @@ ALTER TABLE `commande`
   ADD PRIMARY KEY (`id_commande`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_produit` (`id_produit`);
+
+--
+-- Index pour la table `envoi_mail`
+--
+ALTER TABLE `envoi_mail`
+  ADD PRIMARY KEY (`id_envoi_mail`);
 
 --
 -- Index pour la table `ligne_commande`
@@ -414,19 +447,25 @@ ALTER TABLE `adresse`
 -- AUTO_INCREMENT pour la table `boutique`
 --
 ALTER TABLE `boutique`
-  MODIFY `id_boutique` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_boutique` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
   MODIFY `id_commande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `envoi_mail`
+--
+ALTER TABLE `envoi_mail`
+  MODIFY `id_envoi_mail` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `ligne_commande`
@@ -438,19 +477,19 @@ ALTER TABLE `ligne_commande`
 -- AUTO_INCREMENT pour la table `photo_produit`
 --
 ALTER TABLE `photo_produit`
-  MODIFY `id_photo_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_photo_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `promotion`
 --
 ALTER TABLE `promotion`
-  MODIFY `id_promotion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_promotion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `role`
@@ -462,13 +501,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT pour la table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `sous_categorie`
 --
 ALTER TABLE `sous_categorie`
-  MODIFY `id_sous_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_sous_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `user`
