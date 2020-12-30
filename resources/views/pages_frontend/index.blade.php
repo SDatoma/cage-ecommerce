@@ -292,7 +292,7 @@
 											<a href="{{route('detail-produit.produit', $nouveau_produit->id_produit)}}" class="link-product-add-cart">Detail</a>
 										</div>
 									</div>
-									<span class="product-new-top">New</span>
+									<span class="product-new-top">Neuf</span>
 
 								</div>
 								<div class="item-info-product ">

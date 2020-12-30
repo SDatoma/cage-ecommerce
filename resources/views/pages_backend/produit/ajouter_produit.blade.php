@@ -79,10 +79,10 @@
                                 </div>
 
                                 <div class="form-group form-float">
-                                   <select class="form-control show-tick ms select2" data-placeholder="Select"   name="stock_produit" required>
+                                   <select class="form-control show-tick ms select2" data-placeholder="Select"   name="nouveau_produit" required>
                                        <option value=""> CHOISISSEZ L'ETAT DU PRODUIT</option>
-                                       <option value="En stock"> En stock </option>
-                                       <option value="En rupture"> En rupture </option>
+                                       <option value="Nouveau"> Nouveau </option>
+                                       <option value="Existant">Existant</option>
                                     </select>
                                 </div>
                                

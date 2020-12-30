@@ -78,10 +78,10 @@
                                 </div>
 
                                 <div class="form-group form-float">
-                                   <select class="form-control show-tick ms select2" data-placeholder="Select"      name="stock_produit" required>
+                                   <select class="form-control show-tick ms select2" data-placeholder="Select"      name="nouveau_produit" required>
                                        <option value=""> CHOISISSEZ L'ETAT DU PRODUIT</option>
-                                       <option value="En stock" @if($produit->stock_produit== "En stock") selected @endif> En stock </option>
-                                       <option value="En rupture" @if($produit->stock_produit== "En rupture") selected @endif> En rupture </option>
+                                       <option value="Nouveau" @if($produit->nouveau_produit== "Nouveau") selected @endif> Nouveau</option>
+                                       <option value="Existant" @if($produit->nouveau_produit== "Existant") selected @endif> Existant </option>
                                     </select>
                                 </div>
                                 

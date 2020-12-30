@@ -88,7 +88,7 @@ class ProduitController extends Controller
         $produit->id_sous_categorie= $request->id_sous_categorie;
         $produit->id_categorie= $categorie->id_categorie;
         $produit->id_boutique= $request->id_boutique;
-        $produit->stock_produit= $request->stock_produit;
+        $produit->nouveau_produit= $request->nouveau_produit;
         $produit->image_produit=$file_name;
         $produit->etat_produit= 1 ;
 
@@ -218,10 +218,9 @@ class ProduitController extends Controller
 		->where('sous_categorie.id_categorie', '=', $produit->id_categorie)
 		->get();
 		
-		$nouveau_produits = DB::table('produit')
+		 $nouveau_produits = DB::table('produit')
          ->where('produit.etat_produit', '=', 1)
-         ->orderBy('id_produit', 'desc')
-         ->limit(4)
+         ->where('produit.nouveau_produit', '=', 'Nouveau')
          ->get();
 		
 		return view('pages_frontend/detail_produit',compact('promotion', 'nouveau_produits', 'produits_autres_cats', 'produits_idem_cats', 
@@ -276,7 +275,7 @@ class ProduitController extends Controller
         $produit->prix_ht_produit= $request->prix_produit;
         $produit->id_sous_categorie= $request->id_sous_categorie;
         $produit->id_boutique= $request->id_boutique;
-        $produit->stock_produit= $request->stock_produit;
+        $produit->nouveau_produit= $request->nouveau_produit;
         $produit->image_produit=$file_name;
         //$produit->etat_produit= 1 ;
 

@@ -8,6 +8,7 @@ use App\Models\Categorie;
 use App\Models\SousCategorie;
 use App\Models\Boutique;
 use App\Models\Commande;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -37,7 +38,9 @@ class AdminController extends Controller
 
         $commande_valider = Commande::where(['etat_commande' =>1])->count() ;
 
-        return view('pages_backend/index',compact('nombre_boutique','nombre_categorie','nombre_produit','nombre_sous_categorie','commande_en_attente','commande_valider'));
+        $nombre_client = user::all()->count() ;
+
+        return view('pages_backend/index',compact('nombre_boutique','nombre_categorie','nombre_produit','nombre_sous_categorie','commande_en_attente','commande_valider','nombre_client'));
     }
 
     /**
