@@ -93,6 +93,4 @@
         </div>
     </div>
 </section>
-
-
 @endsection()
