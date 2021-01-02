@@ -10,16 +10,19 @@ class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name = '';
-
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    private $first_name, $last_name, $titre_mail, $contenu_mail;
+    public function __construct($first_name, $last_name, $titre_mail, $contenu_mail)
     {
-        $this->name = 'John';
+        //
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+        $this->titre_mail = $titre_mail;
+        $this->contenu_mail = $contenu_mail;
     }
 
     /**
@@ -29,18 +32,12 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        $address = 'test@codebriefly.com';
-        $name = 'Test Mail';
-        $subject = 'Test Mail';
-    return $this->view('emails.test-mail')
-        ->from($address, $name)
-        ->cc($address, $name)
-        ->bcc($address, $name)
-        ->replyTo($address, $name)
-        ->subject($subject)
-        ->with([
-          'CustomOption' => 'CustomValue',
-          'CustomOption' => 'CustomValue'
+        return $this->from('cagebatiment@gmail.com')
+        ->markdown('emails.envoi_mail', [
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'titre_mail' => $this->titre_mail,
+            'contenu_mail' => $this->contenu_mail,
         ]);
     }
 }

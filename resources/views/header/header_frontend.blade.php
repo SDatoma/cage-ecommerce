@@ -145,7 +145,7 @@
                         <div class="col-lg-12">
                             <div class="header-horizontal-menu" >
                                 <ul class="menu-content" style="font-size:3px">
-                                    <li><a href="/" style="color:#ff5722"><i class="ion-ios-home" style="font-size:20px"></i> Accueil </a></li>
+                                    <li><a href="/" style="color:black"><i class="ion-ios-home" style="font-size:20px"></i> Accueil </a></li>
 									@foreach($categories as $categorie)
 								            <?php
                                               $sous_categories = \App\Models\SousCategorie::where(['id_categorie' =>$categorie->id_categorie])->get();

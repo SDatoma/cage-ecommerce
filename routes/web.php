@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 //TEST ENVOI MAIL 
 Route::get('/testmail','TestController@testmail');
+Route::post('/testmail','TestController@testmail1')->name('envoi.mail');
 
 // ROUTE FRONT-END
 Route::get('/', 'IndexController@index');

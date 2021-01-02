@@ -48,7 +48,7 @@ if (Cookie::get('id_user')== null)
                                             <div class="login-register-form"  style="color:#000; text-align : right;">
                                                 <form action="{{route('connexion.store')}}" method="post" enctype="multipart/form-data">
                                                      {{csrf_field()}}
-													<div class="col-lg-4">Nom d'utilisateur : </div> <div class="col-lg-8"> <input type="text" name="username" placeholder="Nom d'utilisateur" /> </div>
+													<div class="col-lg-4">Adresse email : </div> <div class="col-lg-8"> <input type="text" name="username" placeholder="Nom d'utilisateur" /> </div>
                                                     <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input type="password" name="userpassword" placeholder="Mot de passe" /> </div>
                                                     <div class="button-box">
                                                         <div class="login-toggle-btn">

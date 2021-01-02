@@ -61,8 +61,7 @@ class InscriptionController extends Controller
 			return back()->withErrors($validator)->withInput();
 		}
 		
-		
-        //if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#', $request->userpassword)) {
+		//if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#', $request->userpassword)){
 		
 				$user = new User();
 
@@ -73,7 +72,7 @@ class InscriptionController extends Controller
 				$user->sexe_user = $request->usercivilite;
 				$user->telephone_user = $request->usertelephone;
 				$user->ok_newsletter = $request->usernews;
-				$user->type_user = 1;
+				$user->type_user = 2;
 			   
 				$user->save();
 				

@@ -45,13 +45,13 @@
 
                         <div class="body">
                         <h5>ENVOYER UN NOUVEAU MESSAGE</h5>
-                        <form id="form_validation" method="POST" action="{{route('produit.store')}}" enctype="multipart/   form-data">
+                        <form id="form_validation" method="POST" action="{{route('envoi.mail')}}">
                             {{csrf_field()}}
                                 <div class="form-group form-float">
-                                    <input type="text" class="form-control" placeholder="Titre du message" name="nom_produit" value="{{ old('nom_produit') }}" required>
+                                    <input type="text" class="form-control" placeholder="Titre du message" name="titre_mail" value="{{ old('nom_produit') }}" required>
                                 </div>
                                 <div class="form-group form-float">
-                                    <textarea name="description_produit" cols="30" rows="5" placeholder="Description" class="form-control no-resize" required>{{ old('description_produit') }}</textarea>
+                                    <textarea name="description_mail" cols="30" rows="5" placeholder="Description" class="form-control no-resize" required>{{ old('description_produit') }}</textarea>
                                 </div>
 
                                 <center> <button class="btn btn-raised btn-primary waves-effect " type="submit">Envoyer</button> </center>

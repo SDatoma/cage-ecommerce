@@ -23,16 +23,32 @@
                                    <i class="zmdi zmdi-plus"></i> Modifier Promotion
                                </button>
                                @include('modals/modification/edit_promotion')
+
                             @endif
+
+                        
 
                     <button class="btn btn-primary btn-icon mobile_menu" type="button">
                     <i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
-                <!-- <div class="col-lg-5 col-md-6 col-sm-12">                
+                      <!-- <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
                 </div> -->
             </div>
         </div>
+                        @if(Session::has('succes'))
+                            <div class="form-group">
+                              <div class="alert alert-success text-center">
+                                  <p style="font-size:15px;text-aligne:center">{{Session::pull('succes')}} </p>
+                               </div>
+                            </div>
+                        @elseif(Session::has('error'))
+                            <div class="form-group">
+                              <div class="alert alert-danger text-center">
+                                  <p style="font-size:15px;text-aligne:center">{{Session::pull('error')}} </p>
+                               </div>
+                           </div>
+                        @endif
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-lg-12">

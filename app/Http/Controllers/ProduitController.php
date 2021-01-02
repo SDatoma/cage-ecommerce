@@ -131,12 +131,22 @@ class ProduitController extends Controller
     {
         $promotion = new Promotion();
         
-        $number_pays=$request->telephone;
+        $date_jour = date('Y-m-d');
+        
+        if($request->date_debut_promotion < $date_jour){
+            Session()->flash('error',"Date debut promotion invalide ( $request->date_debut_promotion )");
+            return redirect()->back();
+        }
+
+        if($request->date_fin_promotion < $request->date_debut_promotion){
+            Session()->flash('error',"Date fin promotion invalide ( $request->date_fin_promotion )");
+            return redirect()->back();
+        }
+         
         $chars = "abcdefghijkmnopqrstuvwxyz023456789";
          srand((double)microtime()*1000000);
          $i = 0 ;
          $code = '' ;
-
          while ($i <= 4) {
              $num = rand() % 33;
              $tmp = substr($chars, $num, 1);
