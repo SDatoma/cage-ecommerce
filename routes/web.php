@@ -27,9 +27,7 @@ Route::get('/detail-produit /{id}','ProduitController@detail_produit')->name('de
 
 Route::post('/recherche','IndexController@recherche_produit')->name('recherche.produit');
 
-Route::get('/contact', function () {
-    return view('pages_frontend/contact');
-});
+Route::get('/contact','IndexController@page_contact');
 
 Route::get('/login','ConnexionController@index');
 
