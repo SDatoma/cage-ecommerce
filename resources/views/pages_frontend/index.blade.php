@@ -361,11 +361,19 @@ if (Cookie::get('id_user')== null)
 	<div class="footer-top">
 		<div class="container-fluid">
 			<div class="col-xs-8 agile-leftmk">
+			@if (Session::has('succes'))
+				<div class="form-group">
+					<div class="alert alert-success">
+						<center>{{ Session::pull('succes') }}</center>
+					</div>
+				</div>
+			@endif
 				<h2>Faites livrer vos courses dans les magasins locaux</h2>
 				<p>Livraison gratuite sur votre première commande!</p>
-				<form action="#" method="post">
+				<form action="{{route('news.store')}}" method="post" enctype="multipart/form-data">
+                    {{csrf_field()}}
 					<input type="email" placeholder="Laissez nous votre E-mail" name="email" required="">
-					<input type="submit" value="Subscribe">
+					<input type="submit" value="Souscrire">
 				</form>
 				<div class="newsform-w3l">
 					<span class="fa fa-envelope-o" aria-hidden="true"></span>

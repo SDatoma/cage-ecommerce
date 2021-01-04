@@ -78,4 +78,5 @@ Route::resource('commande', 'CommandeController');
 Route::resource('client', 'InscriptionController');
 Route::resource('slider', 'SliderController');
 Route::resource('connexion', 'ConnexionController');
+Route::resource('news', 'NewsController');
 
