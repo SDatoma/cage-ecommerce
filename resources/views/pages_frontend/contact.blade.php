@@ -1,5 +1,3 @@
-
-
 <?php
 if (Cookie::get('id_user')== null)
   {	?>

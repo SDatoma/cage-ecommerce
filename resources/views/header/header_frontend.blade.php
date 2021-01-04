@@ -232,7 +232,7 @@
 						</ul>
 					</li>
 					@endforeach
-				   <li><a href="">contact </a></li>
+				   <li><a href="/contact">contact </a></li>
 				</ul>
             </div>
             <div class="offcanvas-social mt-30px">

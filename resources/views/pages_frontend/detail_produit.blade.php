@@ -73,7 +73,7 @@ if (Cookie::get('id_user')== null)
 				</div>
 				
 				@if($promotion)
-					<p><b style="color:red">En promotion {{$promotion->pourcentage_promotion ?? '0'}} % </b> <br/>
+					<p><b style="color:red">TAUX DE REDUCTION : {{$promotion->pourcentage_promotion ?? '0'}} % </b> <br/>
 						<?php 
 						   $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
 						   $prix_ht_promo= $produit->prix_ht_produit - $reduction;
@@ -88,7 +88,7 @@ if (Cookie::get('id_user')== null)
 						</p>
 				@endif
 				<p>
-				<label>QUANTITE DISPONIBLE :</label> @if($produit->quantite_produit>3)
+				<label>ETAT DU PRODUIT :</label> @if($produit->quantite_produit>3)
 									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>
 									@else
 									<span class="item_price" style="font-size:15px;color:red"><b>En rupture</b> </span>
