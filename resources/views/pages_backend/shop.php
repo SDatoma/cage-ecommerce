@@ -35,6 +35,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        ShoppingCart::associate('App\Models\Produit');
+
         ShoppingCart::add($request->id_produit,$request->nom_produit,1,$request->prix_produit);
         return redirect()->back();
     }
@@ -48,9 +50,11 @@ class CartController extends Controller
 
     public function getAll()
     {
+        $id_categorie=0;
         $items = ShoppingCart::all();
         
-        dd($items);
+        //dd($items);
+        return view('pages_frontend/panier',compact('items','id_categorie'));
     }
 
     /**
@@ -95,6 +99,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ShoppingCart::remove($id);
+        return redirect()->back();
     }
 }
