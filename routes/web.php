@@ -68,6 +68,7 @@ Route::get('/emailing', function () {
 });
 
 
+
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');
 Route::resource('cart', 'CartController');

@@ -103,3 +103,7 @@ class CartController extends Controller
         return redirect()->back();
     }
 }
+
+//cart
+Route::get('/empty', 'CartController@emptyCart');
+Route::get('/panier', 'CartController@getAll');
