@@ -225,6 +225,28 @@ if (Cookie::get('id_user')== null)
                                             <div class="ratting-form">
 											   <form  method="POST"  action="{{route('commentaire.store')}}">
                                                   {{csrf_field()}}
+												  @if(Cookie::get('id_user'))
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="rating-form-style mb-10">
+                                                                <input placeholder="nom" name="nom" value="{{Cookie::get('nom_user')}}" required="" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="rating-form-style mb-10">
+                                                                <input placeholder="Email"  value="{{Cookie::get('email_user')}}" name="email" required="" type="email" />
+                                                            </div>
+														</div>
+														<input  name="id_produit" value="{{$produit->id_produit}}" type="hidden"/>
+														<input type="hidden" class="form-control"  name="parent" required="" value="0" required="">
+                                                        <div class="col-md-12">
+                                                            <div class="rating-form-style form-submit">
+                                                                <textarea name="resume" required="" placeholder="Message"></textarea>
+                                                                <input type="submit" value="Poster"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+													@else
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="rating-form-style mb-10">
@@ -245,6 +267,7 @@ if (Cookie::get('id_user')== null)
                                                             </div>
                                                         </div>
                                                     </div>
+                                                  @endif
                                                 </form>
                                             </div>
                                         </div>
