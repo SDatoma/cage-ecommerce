@@ -144,16 +144,20 @@ if (Cookie::get('id_user')== null)
                             <div id="des-details3" class="tab-pane">
                                 <div class="row">
                                     <div class="col-lg-7">
+									     @if(count($commentaires)==0)
+                                          <h4 style="color:red"> Il n’y pas encore d’avis. </h4>
+									    @else
+									   @foreach($commentaires as $commentaire)
                                         <div class="review-wrapper">
                                             <div class="single-review">
                                                 <div class="review-img">
-                                                    <img src="assets/images/review-image/1.png" alt="" />
+												<img  class="img-circle" src="{{asset('css_frontend/images/avatar.jpg')}}" alt="" widht="100%" height="80px">
                                                 </div>
                                                 <div class="review-content">
                                                     <div class="review-top-wrap">
                                                         <div class="review-left">
                                                             <div class="review-name">
-                                                                <h4>White Lewis</h4>
+                                                                <h4>{{$commentaire->nom_commentaire}}</h4>
                                                             </div>
                                                             <div class="rating-product">
                                                                 <i class="ion-android-star"></i>
@@ -164,25 +168,29 @@ if (Cookie::get('id_user')== null)
                                                             </div>
                                                         </div>
                                                         <div class="review-left">
-                                                            <a href="#">Reply</a>
+														<a href="#" data-toggle="modal" data-target="#r{{$commentaire->id_commentaire}}">Reply</a>
+														@include('modals/ajout/add_commentaire')
                                                         </div>
                                                     </div>
                                                     <div class="review-bottom">
                                                         <p>
-                                                            Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Suspendisse viverra ed viverra. Mauris ullarper euismod vehicula. Phasellus quam nisi, congue id nulla.
+														{{$commentaire->resume_commentaire}}
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
+
+											@foreach($commentaires_parent as $parent)
+                                                @if($parent->commentaire_parent==$commentaire->id_commentaire)
                                             <div class="single-review child-review">
                                                 <div class="review-img">
-                                                    <img src="assets/images/review-image/2.png" alt="" />
+												<img  class="img-circle" src="{{asset('css_frontend/images/avatar.jpg')}}" alt="" widht="100%" height="80px">
                                                 </div>
                                                 <div class="review-content">
                                                     <div class="review-top-wrap">
                                                         <div class="review-left">
                                                             <div class="review-name">
-                                                                <h4>White Lewis</h4>
+                                                                <h4>{{$parent->nom_commentaire}}</h4>
                                                             </div>
                                                             <div class="rating-product">
                                                                 <i class="ion-android-star"></i>
@@ -192,47 +200,48 @@ if (Cookie::get('id_user')== null)
                                                                 <i class="ion-android-star"></i>
                                                             </div>
                                                         </div>
-                                                        <div class="review-left">
+                                                        <!-- <div class="review-left">
                                                             <a href="#">Reply</a>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="review-bottom">
-                                                        <p>Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Sus pen disse viverra ed viverra. Mauris ullarper euismod vehicula.</p>
+                                                        <p>{{$parent->resume_commentaire}}</p>
                                                     </div>
                                                 </div>
                                             </div>
+											 @endif
+											 </br>
+											@endforeach
+
                                         </div>
+										</br>
+										@endforeach
+										@endif
                                     </div>
+								    
                                     <div class="col-lg-5">
                                         <div class="ratting-form-wrapper pl-50">
-                                            <h3>Add a Review</h3>
+                                            <h3>Votre avis</h3> </br>
                                             <div class="ratting-form">
-                                                <form action="#">
-                                                    <div class="star-box">
-                                                        <span>Your rating:</span>
-                                                        <div class="rating-product">
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                        </div>
-                                                    </div>
+											   <form  method="POST"  action="{{route('commentaire.store')}}">
+                                                  {{csrf_field()}}
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="rating-form-style mb-10">
-                                                                <input placeholder="Name" type="text" />
+                                                                <input placeholder="nom" name="nom" required="" type="text" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="rating-form-style mb-10">
-                                                                <input placeholder="Email" type="email" />
+                                                                <input placeholder="Email" name="email" required="" type="email" />
                                                             </div>
-                                                        </div>
+														</div>
+														<input  name="id_produit" value="{{$produit->id_produit}}" type="hidden"/>
+														<input type="hidden" class="form-control"  name="parent" required="" value="0" required="">
                                                         <div class="col-md-12">
                                                             <div class="rating-form-style form-submit">
-                                                                <textarea name="Your Review" placeholder="Message"></textarea>
-                                                                <input type="submit" value="Submit" />
+                                                                <textarea name="resume" required="" placeholder="Message"></textarea>
+                                                                <input type="submit" value="Poster"/>
                                                             </div>
                                                         </div>
                                                     </div>

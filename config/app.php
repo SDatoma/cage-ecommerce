@@ -165,6 +165,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Reliese\Coders\CodersServiceProvider::class,
+        Overtrue\LaravelShoppingCart\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -178,8 +179,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Darryldecode\Cart\CartServiceProvider::class,
-        Overtrue\LaravelShoppingCart\ServiceProvider::class,
 
     ],
 
@@ -235,8 +234,7 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
-        'ShoppingCart'      => Overtrue\LaravelShoppingCart\Facade::class,
+        'ShoppingCart' => Overtrue\LaravelShoppingCart\Facade::class,
 
     ],
 

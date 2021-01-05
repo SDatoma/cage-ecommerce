@@ -8,6 +8,7 @@ use App\Models\PhotoProduit;
 use App\Models\Boutique;
 use App\Models\Promotion;
 use App\Models\SousCategorie;
+use App\Models\Commentaire;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -232,9 +233,23 @@ class ProduitController extends Controller
          ->where('produit.etat_produit', '=', 1)
          ->where('produit.nouveau_produit', '=', 'Nouveau')
          ->get();
+
+         $commentaires = DB::table('commentaire')
+                ->where('id_produit', '=', $id)
+                ->where('commentaire.commentaire_parent', '=', 0)
+                ->orderBy('commentaire.id_commentaire', 'asc')
+                ->get();
+
+
+         $commentaires_parent = DB::table('commentaire')
+         ->where('id_produit', '=', $id)
+         ->where('commentaire.commentaire_parent', '!=', 0)
+         ->orderBy('commentaire.id_commentaire', 'asc')
+         ->get();
+
 		
 		return view('pages_frontend/detail_produit',compact('promotion', 'nouveau_produits', 'produits_autres_cats', 'produits_idem_cats', 
-	   'produits_idem_ss_cats', 'sous_categories', 'produit', 'photo_produits','id_categorie'));
+	   'produits_idem_ss_cats', 'sous_categories', 'produit', 'photo_produits','id_categorie','commentaires','commentaires_parent'));
     }
 
     /**

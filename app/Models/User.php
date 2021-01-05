@@ -20,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $sexe_user
  * @property int|null $telephone_user
  * @property int|null $id_role
+ * @property int|null $ok_newsletter
+ * @property int|null $type_user
  * 
  * @property Role $role
  * @property Collection|Adresse[] $adresses
@@ -35,7 +37,9 @@ class User extends Model
 
 	protected $casts = [
 		'telephone_user' => 'int',
-		'id_role' => 'int'
+		'id_role' => 'int',
+		'ok_newsletter' => 'int',
+		'type_user' => 'int'
 	];
 
 	protected $fillable = [
@@ -45,7 +49,9 @@ class User extends Model
 		'password_user',
 		'sexe_user',
 		'telephone_user',
-		'id_role'
+		'id_role',
+		'ok_newsletter',
+		'type_user'
 	];
 
 	public function role()

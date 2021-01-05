@@ -67,10 +67,9 @@ Route::get('/emailing', function () {
     return view('pages_backend/emailing/list_message');
 });
 
-
-
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');
+Route::resource('commentaire', 'CommentaireController');
 Route::resource('cart', 'CartController');
 Route::resource('categorie', 'CategorieController');
 Route::resource('produit', 'ProduitController');
