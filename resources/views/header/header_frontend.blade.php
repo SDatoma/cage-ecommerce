@@ -90,13 +90,13 @@
 				<!-- cart details -->
 				<div class="top_nav_right">
 					<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="display" value="1">
+						 <a href="/panier">
 							<button class="w3view-cart" type="submit" name="submit" value="" style="height:30px;width:40px">
 								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-							</button><strong style="color:black"> Panier : 0 Produits - 0 FCFA </strong>
-						</form>
+							</button>
+						 </a>
+							<strong style="color:black"> Panier : {{ShoppingCart::countRows() ?? '0'}} Produits - {{ShoppingCart::total() ?? '0'}} FCFA </strong>
+						
 					</div>
 				</div>
 				<!-- //cart details -->

@@ -86,18 +86,15 @@ if (Cookie::get('id_user')== null)
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item 
 									hvr-outline-out">
-										<form action="#" method="post">
+                                       <form  method="POST" action="{{route('cart.store')}}">
+                                         {{csrf_field()}}
 											<fieldset>
-												<input type="hidden" name="cmd" value="_cart" />
-												<input type="hidden" name="add" value="1" />
+												<input type="hidden" name="id_produit" value="{{$produit->id_produit}}"/>
+												<input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}"/>
 												<input type="hidden" name="business" value=" " />
 												<input type="hidden" name="item_name" value="Almonds, 100g" />
-												<input type="hidden" name="amount" value="149.00" />
-												<input type="hidden" name="discount_amount" value="1.00" />
-												<input type="hidden" name="currency_code" value="USD" />
-												<input type="hidden" name="return" value=" " />
-												<input type="hidden" name="cancel_return" value=" " />
-												<i class="fa fa-cart-arrow-down" aria-hidden="true"></i> <input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
+												<input type="hidden" name="prix_produit" value="{{$produit->prix_ht_produit}}"/>
+												<i class="fa fa-cart-arrow-down"></i> <input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
 											</fieldset>
 										</form>
 									</div></br>

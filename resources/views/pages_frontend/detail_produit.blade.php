@@ -98,20 +98,17 @@ if (Cookie::get('id_user')== null)
 				<label>FOURNISSEUR :</label> <span class="item_price">{{$produit->nom_boutique}} </span> </p>
 				<div class="occasion-cart">
 					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-						<form action="#" method="post">
-							<fieldset>
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="add" value="1" />
-								<input type="hidden" name="business" value=" " />
-								<input type="hidden" name="item_name" value="Zeeba Premium Basmati Rice - 5 KG" />
-								<input type="hidden" name="amount" value="950.00" />
-								<input type="hidden" name="discount_amount" value="1.00" />
-								<input type="hidden" name="currency_code" value="USD" />
-								<input type="hidden" name="return" value=" " />
-								<input type="hidden" name="cancel_return" value=" " />
-								<input type="submit" name="submit" value="Ajouter au panier" class="button" />
-							</fieldset>
-						</form>
+					                  <form  method="POST"  action="{{route('cart.store')}}">
+                                         {{ csrf_field() }}
+											<fieldset>
+												<input type="hidden" name="id_produit" value="{{$produit->id_produit}}"/>
+												<input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}"/>
+												<input type="hidden" name="business" value=" " />
+												<input type="hidden" name="item_name" value="Almonds, 100g" />
+												<input type="hidden" name="prix_produit" value="{{$produit->prix_ht_produit}}"/>
+												<i class="fa fa-cart-arrow-down"></i> <input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
+											</fieldset>
+										</form>
 					</div>
 
 				</div>
@@ -221,7 +218,7 @@ if (Cookie::get('id_user')== null)
 								    
                                     <div class="col-lg-5">
                                         <div class="ratting-form-wrapper pl-50">
-                                            <h3>Votre avis</h3> </br>
+                                            <h2>Votre avis</h2> </br>
                                             <div class="ratting-form">
 											   <form  method="POST"  action="{{route('commentaire.store')}}">
                                                   {{csrf_field()}}

@@ -67,6 +67,10 @@ Route::get('/emailing', function () {
     return view('pages_backend/emailing/list_message');
 });
 
+//cart
+Route::get('/empty', 'CartController@emptyCart');
+Route::get('/panier', 'CartController@getAll');
+
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');
 Route::resource('commentaire', 'CommentaireController');
