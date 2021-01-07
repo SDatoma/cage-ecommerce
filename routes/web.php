@@ -70,6 +70,10 @@ Route::get('/emailing', function () {
 //cart
 Route::get('/empty', 'CartController@emptyCart');
 Route::get('/panier', 'CartController@getAll');
+Route::get('/checkout', function () {
+    $id_categorie=0;
+    return view('pages_frontend/checkout',compact('id_categorie'));
+});
 
 //LES RESOURCES
 Route::resource('fournisseur', 'FournisseurController');
