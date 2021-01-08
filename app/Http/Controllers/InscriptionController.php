@@ -51,6 +51,14 @@ class InscriptionController extends Controller
             'usernews' => 'required',
         ]);
 		
+		$verification_email = User::where(['email_user' =>$request->useremail])->first() ;
+		
+		if ($verification_email) {
+
+            Session()->flash('error',"Ce mail existe déjà sous un compte, Merci d'utiliser un autre. ");
+            return back()->withErrors($validator)->withInput();
+        }
+		
 		if (strlen($request->userpassword) < 8) {
             Session()->flash('error','Mot de passe trop cours !');
             return back()->withErrors($validator)->withInput();
@@ -61,67 +69,48 @@ class InscriptionController extends Controller
 			return back()->withErrors($validator)->withInput();
 		}
 		
-		//if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#', $request->userpassword)){
+		//if (preg_match  ){
 		
-				$user = new User();
+		$user = new User();
 
-				$user->nom_user = $request->username;
-				$user->prenom_user = $request->userprenom;
-				$user->email_user = $request->useremail;
-				$user->password_user = $request->userpassword;
-				$user->sexe_user = $request->usercivilite;
-				$user->telephone_user = $request->usertelephone;
-				$user->ok_newsletter = $request->usernews;
-				$user->type_user = 2;
-			   
-				$user->save();
-				
-				Session()->flash('succes');
-				return redirect('/');
-				
-		/*if($user->save()){
-			
-			$presence_heure = DB::table('presences')
-			->latest('presences.id')
-			->first();
-			
-			$heure = $presence_heure->updated_at;
-			
-			$user = DB::table('users')
-			->where('users.id', '=', $presence_heure->user_id)
-			->first();
-			
-			$poste = $user->username;
-			
-			  $e_mail = $tele->email; //prend l'email de la table
-              $objet = "Alerte connexion eConvivial";
-			  $contenu = "Cher(ère),
-				Vous vous êtes connecté(e)s à votre compte Téléconseiller à 
-					ce jour " .$heure. " au poste " .$poste ;
-
-			  $from = "From: eCentre Convivial <togo@econvivial.org>\nMime-Version:";
-			  $from .= " 1.0\nContent-Type: text/html; charset=ISO-8859-1\n";
-			  // envoie du mail
-			  mail($e_mail, $objet, $contenu, $from);
-			
-            return redirect()->route("espacemembre-assistance-en-ligne")
-			->with(["message" => "Votre présence a été bien signalé dans le système"]);
-			//}
-        }else{
-            return redirect()
-			->back()
-			->with(["error" => "Impossible d'enrégistrer. Veuillez réessayer"])
-			->withInput();
-        }
-		*/		
-		//} else  {
-            
-		//	Session()->flash('error','Le mot de passe doit contenir des lettres masjuscules [A-Z], 
-		//	minuscules [a-z], des chiffres [0-9] et des caracteres speciaux (*\W@+/-). Merci de respecter. ');
-            
-        //    return redirect('/connexion');
-        //}
+		$user->nom_user = $request->username;
+		$user->prenom_user = $request->userprenom;
+		$user->email_user = $request->useremail;
+		$user->password_user = $request->userpassword;
+		$user->sexe_user = $request->usercivilite;
+		$user->telephone_user = $request->usertelephone;
+		$user->ok_newsletter = $request->usernews;
+		$user->type_user = 2;
+	   
+		$user->save();
+		
+		return $this->connexion_auto($request->useremail, $request->userpassword);
+		
     }
+	
+	public function connexion_auto($email, $passe){
+		
+		$result = User::where(['email_user' => $email, 'password_user' => $passe])->first();
+
+        /* verifie si le les identifiant de l'utilisateur sont null il envoi erruer*/
+      
+        if ($result == null) {
+            Session()->flash('error','Nom d\'utilisateur ou mot de passe incorrecte ');
+            return redirect()->back();
+            /* si non il envoi les resultats de la requete */
+        }  
+		
+		if ($result->type_user == 2 ){
+            //**** mise en cookie des données de l'utilisateur**//
+
+            Cookie::queue('email_user', $result->email_user , 5000);
+            Cookie::queue('nom_user', $result->nom_user , 5000);
+            Cookie::queue('prenom_user', $result->prenom_user , 5000);
+            Cookie::queue('id_user', $result->id_user , 5000);
+            
+            return redirect()->to('/');
+		}
+	}
 
     /**
      * Display the specified resource.

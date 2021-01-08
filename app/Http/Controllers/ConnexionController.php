@@ -52,18 +52,6 @@ class ConnexionController extends Controller
             /* si non il envoi les resultats de la requete */
         }  
 		
-		/*if ($result->email_user == null) {
-            Session()->flash('error','Cette adresse mail n\'est pas enrégistrer dans le système, merci de revérifier. ');
-            return redirect()->back();
-            /* si non il envoi les resultats de la requete */
-        //} 
-		
-		/*if ($result->password_user == null) {
-            Session()->flash('error','Mot de passe saisi est incorrecte, merci de réessayer. ');
-            return redirect()->back();
-            /* si non il envoi les resultats de la requete */
-        //} 
-		
 		if ($result->type_user == 2 ){
             //**** mise en cookie des données de l'utilisateur**//
 
