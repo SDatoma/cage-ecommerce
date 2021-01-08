@@ -18,7 +18,7 @@ if (Cookie::get('id_user')== null)
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">Détails de facturation</h4>
 										</div>
-										<form  method="POST"  action="{{route('cart.store')}}">
+										<form  method="POST"  action="{{route('commande.store')}}">
 										 {{ csrf_field() }}
 										 
                                         <div class="tax-wrapper">
@@ -27,28 +27,42 @@ if (Cookie::get('id_user')== null)
                                                     <label>
                                                         * Nom
                                                     </label>
-                                                    <input type="text" name="" value="{{Cookie::get('nom_user') ?? ''}}" required="" />
+                                                    <input type="text" name="" value="{{Cookie::get('nom_user') ?? ''}}" />
 												</div>
 												
 												<div class="tax-select mb-25px">
                                                     <label>
                                                         * Prenom
                                                     </label>
-                                                    <input type="text" name="" value="{{Cookie::get('prenom_user') ?? ''}}" required="" />
+                                                    <input type="text" name="" value="{{Cookie::get('prenom_user') ?? ''}}" />
 												</div>
 
 												<div class="tax-select mb-25px">
                                                     <label>
                                                         * Email
                                                     </label>
-                                                    <input type="email" name="" value="{{Cookie::get('email_user') ?? ''}}" required="" />
+                                                    <input type="email" name="" value="{{Cookie::get('email_user') ?? ''}}" />
+												</div>
+
+												<div class="tax-select mb-25px">
+                                                    <label>
+													   * Pays
+                                                    </label>
+                                                    <input type="text" />
+												</div>
+
+												<div class="tax-select mb-25px">
+                                                    <label>
+													   * Ville
+                                                    </label>
+                                                    <input type="text" name=""/>
 												</div>
 												
 												<div class="tax-select mb-25px">
                                                     <label>
                                                         * Telephone
                                                     </label>
-                                                    <input type="text" name="" value="{{Cookie::get('telephone_user') ?? ''}}" required="" />
+                                                    <input type="text" name="" />
 												</div>
 												
                                                 <!-- <button class="cart-btn-2" type="submit">Get A Quote</button> -->

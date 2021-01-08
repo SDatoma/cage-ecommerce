@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $quantite_commande
  * @property int|null $prix_commande
  * @property int|null $id_commande
+ * @property string|null $reference_commande
+ * @property int|null $id_produit
  * 
  * @property Commande $commande
  *
@@ -29,13 +31,16 @@ class LigneCommande extends Model
 	protected $casts = [
 		'quantite_commande' => 'int',
 		'prix_commande' => 'int',
-		'id_commande' => 'int'
+		'id_commande' => 'int',
+		'id_produit' => 'int'
 	];
 
 	protected $fillable = [
 		'quantite_commande',
 		'prix_commande',
-		'id_commande'
+		'id_commande',
+		'reference_commande',
+		'id_produit'
 	];
 
 	public function commande()

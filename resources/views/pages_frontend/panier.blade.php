@@ -95,7 +95,12 @@ if (Cookie::get('id_user')== null)
                                             </ul>
                                         </div> -->
                                         <h4 class="grand-totall-title">Net a payer<span>{{ShoppingCart::totalPrice() ?? '0'}} FCFA</span></h4>
+                                        @if(Cookie::get('id_user'))
                                         <a href="/checkout">Valider la commande</a>
+                                        @else
+                                        <a href="#" data-toggle="modal" data-target="#inscription">Valider la commande</a>
+                                        @include('modals/ajout/message_inscription')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
