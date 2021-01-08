@@ -90,7 +90,7 @@ if (Cookie::get('id_user')== null)
 												<input type="hidden" name="item_name" value="Almonds, 100g" />
 											@if($promotion)
 										    <?php 
-										    $reduction= ($nouveau_produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
+										    $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
 										    $prix_ht_promo= $produit->prix_ht_produit - $reduction;
 										    ?>
 											<input type="hidden" name="prix_produit" value="$prix_ht_promo"/>

@@ -48,7 +48,7 @@ if (Cookie::get('id_user')== null)
                                                     <label>
                                                         * Telephone
                                                     </label>
-                                                    <input type="text" name="" required="" />
+                                                    <input type="text" name="" value="{{Cookie::get('telephone_user') ?? ''}}" required="" />
 												</div>
 												
                                                 <!-- <button class="cart-btn-2" type="submit">Get A Quote</button> -->
@@ -64,28 +64,28 @@ if (Cookie::get('id_user')== null)
                                         <div class="discount-code">
 										       <div class="tax-select mb-25px">
                                                     <label>
-                                                        * Nom
+                                                        Nom
                                                     </label>
                                                     <input type="text"/>
 												</div>
 
 												<div class="tax-select mb-25px">
                                                     <label>
-                                                        * Prenom
+                                                        Prenom
                                                     </label>
                                                     <input type="text" />
 												</div>
 
 												<div class="tax-select mb-25px">
                                                     <label>
-                                                        * Pays
+                                                        Pays
                                                     </label>
                                                     <input type="text" />
 												</div>
 
 												<div class="tax-select mb-25px">
                                                     <label>
-                                                        * Ville
+                                                        Ville
                                                     </label>
                                                     <input type="text" />
 												</div>
