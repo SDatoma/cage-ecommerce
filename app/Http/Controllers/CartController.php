@@ -88,7 +88,8 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        ShoppingCart::update($id, $request->quantite);
+        return redirect()->back();
     }
 
     /**

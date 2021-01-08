@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Produit;
+use App\Models\Commande;
+use App\Models\LigneCommande;
+use ShoppingCart;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -44,7 +47,48 @@ class CommandeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         // Recupration de la date du jour
+         $date_jour=date('Y-m-d');
+
+         $chars = "abcdefghijkmnopqrstuvwxyz023456789";
+         srand((double)microtime()*1000000);
+         $i = 0 ;
+         $code = '' ;
+         while ($i <= 4) {
+             $num = rand() % 33;
+             $tmp = substr($chars, $num, 1);
+             $code = $code . $tmp;
+             $i++;
+         }
+
+         $commande = new Commande();
+         
+         $commande->reference_commande= $code;
+         $commande->date_commande= $date_jour;
+         $commande->etat_commande= 0;
+         $commande->id_user= Cookie::get('id_user');
+    
+         $commande->save();
+
+         $items = ShoppingCart::all();
+
+         foreach($items as $item){
+           
+            $ligne_commande = new LigneCommande();
+         
+         $ligne_commande->reference_commande= $code;
+         $ligne_commande->quantite_commande= $item->qty;
+         $ligne_commande->prix_commande= $item->total;
+         $ligne_commande->id_commande= $commande->id_commande;
+         $ligne_commande->id_produit= $item->id;
+    
+         $ligne_commande->save();
+
+         }
+
+         ShoppingCart::destroy();
+ 
+         return redirect()->to('/');
     }
 
 

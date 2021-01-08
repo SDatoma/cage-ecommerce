@@ -59,6 +59,7 @@ class ConnexionController extends Controller
             Cookie::queue('nom_user', $result->nom_user , 5000);
             Cookie::queue('prenom_user', $result->prenom_user , 5000);
             Cookie::queue('id_user', $result->id_user , 5000);
+            Cookie::queue('telephone_user', $result->telephone_user , 5000);
             
             return redirect()->to('/');
          
@@ -84,6 +85,10 @@ class ConnexionController extends Controller
     public function deconnection()
     {
         Cookie::queue(Cookie::forget('id_user'));
+        Cookie::queue(Cookie::forget('nom_user'));
+        Cookie::queue(Cookie::forget('prenom_user'));
+        Cookie::queue(Cookie::forget('email_user'));
+        Cookie::queue(Cookie::forget('telephone_user'));
 
         return $this->logout();
     }
