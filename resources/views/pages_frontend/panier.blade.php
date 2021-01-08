@@ -94,7 +94,7 @@ if (Cookie::get('id_user')== null)
                                                 <li><input type="checkbox" /> Taxe <span>0%</span></li>
                                             </ul>
                                         </div> -->
-                                        <h4 class="grand-totall-title">Net a payer<span>{{ShoppingCart::totalPrice() ?? '0'}} FCFA</span></h4>
+                                        <h4 class="grand-totall-title">Net a payer<span>{{ShoppingCart::total() ?? '0'}} FCFA</span></h4>
                                         @if(Cookie::get('id_user'))
                                         <a href="/checkout">Valider la commande</a>
                                         @else

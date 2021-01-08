@@ -8,6 +8,8 @@ use App\Models\Produit;
 use App\Models\Commande;
 use App\Models\LigneCommande;
 use ShoppingCart;
+use Mail;
+use App\Mail\TestMail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -49,6 +51,9 @@ class CommandeController extends Controller
     {
          // Recupration de la date du jour
          $date_jour=date('Y-m-d');
+         $nom_user= Cookie::get('nom_user');
+         $prenom_user= Cookie::get('prenom_user');
+         $email_user= Cookie::get('email_user');
 
          $chars = "abcdefghijkmnopqrstuvwxyz023456789";
          srand((double)microtime()*1000000);
@@ -85,6 +90,8 @@ class CommandeController extends Controller
          $ligne_commande->save();
 
          }
+
+         Mail::to($email_user)->send(new TestMail($nom_user, $prenom_user, $request->titre_mail,$request->description_mail));
 
          ShoppingCart::destroy();
  
