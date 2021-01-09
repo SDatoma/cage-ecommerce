@@ -1,8 +1,18 @@
 @extends('header/header_back')
-
-
 <!-- Main Content -->
 @section('content')
+
+<style>
+.blink {
+  animation: blink 1s infinite;
+}
+@keyframes blink { 
+  0% { opacity:0; }
+  50% { opacity:1; } 
+  100% { opacity:0; }
+}
+</style>
+
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
@@ -37,26 +47,43 @@
                                 <table class="table table-bordered table-striped table-hover theme-color dataTable js-exportable">
                                     <thead>
                                         <tr>
+                                            <th>REFERENCE</th>
                                             <th>NOM & PRENOM</th>
-                                            <th>NOMBRE DE PRODUIT COMMANDE</th>
-                                            <th>ACTION</th>
+                                            <th>NOMBRE DE PRODUIT</th>
+                                            <th>DATE COMMANDE</th>
+                                            <th>ETAT</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                                     @foreach($commandes as $commande)
+                                       <?php
+
+                                             $user = \App\Models\User::where(['id_user' =>$commande->id_user])->first() ;
+
+                                             $produit_total_commande = DB::table('ligne_commande')
+                                             ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+                                             //->join('user', 'user.id_user', '=', 'commande.id_user')
+                                             ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+                                             ->where('commande.id_user', '=', $commande->id_user)
+                                             ->where('commande.reference_commande', '=', $commande->reference_commande)
+                                             ->where('commande.etat_commande', '=', 0)
+                                             ->count('ligne_commande.id_produit');
+                                       ?>
                                         <tr>
-                                            <td>{{$commande->nom_user}} {{$commande->prenom_user}}</td>
-                                            <td>{{$commande->nombre_produit}}</td>
+                                            <td>{{$commande->reference_commande}}</td>
+                                            <td>{{$user->nom_user}} {{$user->prenom_user}}</td>
+                                            <td>{{$produit_total_commande}}</td>
+                                            <td>{{$commande->date_commande}}</td>
+                                            <td><strong class="col-red blink">En attente de livraison</strong></td>
                                             <td>
-                                            <a href="{{route('commande.show',$commande->id_user)}}">
-                                            <button class="btn btn-succes btn-sm" title="Voir commande" data-toggle="modal" data-target="#"><i class="zmdi zmdi-eye"></i></i></button> 
+                                            <a href="{{route('voir.facture',[$commande->id_user,$commande->reference_commande])}}">
+                                            <button class="btn btn-succes btn-sm" title="Voir facture" data-toggle="modal" data-target="#"><i class="zmdi zmdi-eye"></i></i></button> 
                                             </a>
                                           </td>
                                           
                                         </tr>
-                                       
-                                    @endforeach  
+                                     @endforeach  
                                     </tbody>
                                 </table>
                             </div>

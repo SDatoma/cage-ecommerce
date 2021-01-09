@@ -101,23 +101,19 @@ class CommandeController extends Controller
 
     public function getAllCommandeUser()
     {
-        //   $commandes = DB::table('commande')
-        //  ->join('produit', 'commande.id_produit', '=', 'produit.id_produit')
-        //  ->join('user', 'commande.id_user', '=', 'user.id_user')
-        //  ->where('commande.id_user', '=', $id_user)
-        //  ->where('commande.etat_commande', '=', 0)
-        //  ->distinct('commande.id_user')
-        //  ->get();
+          $commandes = DB::table('commande')
+          ->where('commande.etat_commande', '=', 0)
+          ->get();
 
-        $sql = ("SELECT count(commande.id_produit) as nombre_produit, user.nom_user as nom_user,
-		user.prenom_user as prenom_user ,user.id_user as id_user
-		FROM commande, user, produit
-        WHERE produit.id_produit = commande.id_produit
-        AND user.id_user = commande.id_user 
-		AND commande.etat_commande = 0 
-		GROUP BY user.nom_user, prenom_user,user.id_user");
+        // $sql = ("SELECT count(ligne_commande.id_produit) as nombre_produit, user.nom_user as nom_user,
+		// user.prenom_user as prenom_user ,user.id_user as id_user
+		// FROM commande,ligne_commande, user, produit
+        // WHERE produit.id_produit = ligne_commande.id_produit
+        // AND user.id_user = commande.id_user 
+		// AND commande.etat_commande = 0 
+		// GROUP BY user.nom_user, prenom_user,user.id_user");
 		
-		$commandes=DB::select(DB::raw($sql));
+		// $commandes=DB::select(DB::raw($sql));
 
         return view('pages_backend/commande/list_commande_attente',compact('commandes'));
     }
@@ -139,26 +135,41 @@ class CommandeController extends Controller
      */
     public function show($id)
     {
+        
+    }
+
+
+    public function voirFacture($id,$reference_commande)
+    {
         $user = User::where(['id_user' =>$id])->first() ;
+        // $sql = ("SELECT count(ligne_commande.prix_commande) as prix_net,ligne_commande.quantite_commande as quantite,ligne_commande.prix_commande as prix_total,produit.nom_produit as nom_produit ,produit.prix_ht_produit as prix_ht_produit
+		// FROM commande, user, produit,ligne_commande
+        // WHERE commande.id_user= $id
+		// AND produit.id_produit = ligne_commande.id_produit
+        // AND ligne_commande.reference_commande = '".$reference_commande."'
+        // AND user.id_user = commande.id_user 
+		// AND commande.etat_commande = 0 
+		// GROUP BY user.nom_user, prenom_user,ligne_commande.quantite_commande,ligne_commande.prix_commande,produit.nom_produit,produit.prix_ht_produit");
+		
+        // $commandes=DB::select(DB::raw($sql));
+        
+        $commandes = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        //->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.reference_commande', '=', $reference_commande)
+        ->where('commande.etat_commande', '=', 0)
+        ->get();
 
         $prix_total = DB::table('ligne_commande')
         ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
-        ->join('user', 'user.id_user', '=', 'commande.id_user')
-        ->join('produit', 'produit.id_produit', '=', 'commande.id_produit')
+        //->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
         ->where('commande.id_user', '=', $id)
+        ->where('commande.reference_commande', '=', $reference_commande)
         ->where('commande.etat_commande', '=', 0)
-        ->SUM('ligne_commande.prix_commande');
-        
-        $sql = ("SELECT count(ligne_commande.prix_commande) as prix_net,ligne_commande.quantite_commande as quantite,ligne_commande.prix_commande as prix_total,produit.nom_produit as nom_produit ,produit.prix_ht_produit as prix_ht_produit
-		FROM commande, user, produit,ligne_commande
-        WHERE commande.id_user= $id
-		AND produit.id_produit = commande.id_produit
-        AND ligne_commande.id_commande = commande.id_commande
-        AND user.id_user = commande.id_user 
-		AND commande.etat_commande = 0 
-		GROUP BY user.nom_user, prenom_user,ligne_commande.quantite_commande,ligne_commande.prix_commande,produit.nom_produit,produit.prix_ht_produit");
-		
-		$commandes=DB::select(DB::raw($sql));
+        ->sum('ligne_commande.prix_commande');
 
         return view('pages_backend/commande/facturation',compact('commandes','user','prix_total'));
     }

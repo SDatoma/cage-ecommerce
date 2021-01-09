@@ -98,9 +98,9 @@
 							@foreach($commandes as $commande)
                                 <tr>
                                     <td class="col-md-5">{{$commande->nom_produit}}</td>
-									<td class="col-md-5">{{$commande->quantite}}</td>
-									<td class="col-md-5">{{$commande->prix_ht_produit}}</td>
-                                    <td class="col-md-5">{{$commande->prix_total}}</td>
+									<td class="col-md-5">{{$commande->quantite_commande}}</td>
+									<td class="col-md-5"><?php echo  $commande->prix_commande/$commande->quantite_commande ?></td>
+                                    <td class="col-md-5">{{$commande->prix_commande}}</td>
                                 </tr>
                             @endforeach  
                                 <tr class="pull-right">
