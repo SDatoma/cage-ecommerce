@@ -9,7 +9,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                <h5>MODIFICATION DU PRODUIT</h5>
+                <h5>MODIFICATION DU PRODUIT <strong style="color:red;font-size:25px">&nbsp;&nbsp;{{$produit->nom_produit}} </strong></h5>
                     <!--<ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>

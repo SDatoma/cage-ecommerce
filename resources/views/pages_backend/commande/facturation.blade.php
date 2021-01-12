@@ -66,7 +66,7 @@
                     <div class="row">
                         
                         <div class="col-md-12 text-center float">
-                            <h2><u>FACTURE N 108</u></h2> 
+                            <h2><u>FACTURE N 0001</u></h2> 
                         </div>
                         <div class="col-md-8 text-left">
                             <h4 style="color: black;"><strong>{{$user->nom_user}} {{$user->prenom_user}}</strong></h4>

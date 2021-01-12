@@ -105,24 +105,23 @@ class CommandeController extends Controller
           ->where('commande.etat_commande', '=', 0)
           ->get();
 
-        // $sql = ("SELECT count(ligne_commande.id_produit) as nombre_produit, user.nom_user as nom_user,
-		// user.prenom_user as prenom_user ,user.id_user as id_user
-		// FROM commande,ligne_commande, user, produit
-        // WHERE produit.id_produit = ligne_commande.id_produit
-        // AND user.id_user = commande.id_user 
-		// AND commande.etat_commande = 0 
-		// GROUP BY user.nom_user, prenom_user,user.id_user");
-		
-		// $commandes=DB::select(DB::raw($sql));
-
         return view('pages_backend/commande/list_commande_attente',compact('commandes'));
+    }
+
+
+    public function getAllCommandeValider()
+    {
+          $commandes = DB::table('commande')
+          ->where('commande.etat_commande', '=', 1)
+          ->get();
+
+        return view('pages_backend/commande/list_commande_valider',compact('commandes'));
     }
 
 
     public function getAllUser()
     {
-          $users = DB::table('user')
-          ->get();
+          $users = DB::table('user')->get();
 
         return view('pages_backend/commande/list_client',compact('users'));
     }
@@ -142,17 +141,12 @@ class CommandeController extends Controller
     public function voirFacture($id,$reference_commande)
     {
         $user = User::where(['id_user' =>$id])->first() ;
-        // $sql = ("SELECT count(ligne_commande.prix_commande) as prix_net,ligne_commande.quantite_commande as quantite,ligne_commande.prix_commande as prix_total,produit.nom_produit as nom_produit ,produit.prix_ht_produit as prix_ht_produit
-		// FROM commande, user, produit,ligne_commande
-        // WHERE commande.id_user= $id
-		// AND produit.id_produit = ligne_commande.id_produit
-        // AND ligne_commande.reference_commande = '".$reference_commande."'
-        // AND user.id_user = commande.id_user 
-		// AND commande.etat_commande = 0 
-		// GROUP BY user.nom_user, prenom_user,ligne_commande.quantite_commande,ligne_commande.prix_commande,produit.nom_produit,produit.prix_ht_produit");
-		
-        // $commandes=DB::select(DB::raw($sql));
-        
+
+        $etat_commande = Commande::where(['reference_commande' =>$reference_commande])->first() ;
+
+        if($etat_commande->etat_commande == 0)
+        {
+
         $commandes = DB::table('ligne_commande')
         ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
         //->join('user', 'user.id_user', '=', 'commande.id_user')
@@ -172,6 +166,30 @@ class CommandeController extends Controller
         ->sum('ligne_commande.prix_commande');
 
         return view('pages_backend/commande/facturation',compact('commandes','user','prix_total'));
+
+        }else{
+
+            $commandes = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        //->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.reference_commande', '=', $reference_commande)
+        ->where('commande.etat_commande', '=', 1)
+        ->get();
+
+        $prix_total = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        //->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.reference_commande', '=', $reference_commande)
+        ->where('commande.etat_commande', '=', 1)
+        ->sum('ligne_commande.prix_commande');
+
+        return view('pages_backend/commande/facturation',compact('commandes','user','prix_total'));
+
+        }
     }
 
 
@@ -235,6 +253,11 @@ class CommandeController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $commande = Commande::where(['id_commande' =>$id])->first() ;
+
+         $commande->etat_commande=1;
+         $commande->save();
+
+        return redirect()->back();
     }
 }

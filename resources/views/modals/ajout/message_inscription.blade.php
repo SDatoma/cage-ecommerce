@@ -5,7 +5,7 @@
         <div class="modal-content">
           <!--Header-->
           <div class="modal-header">
-          <center>  <p class="modal-title w-100" id="myModalLabel"><strong>Connectez-vous ou inscrivez-vous</strong></p> <!center>
+          <center>  <p class="modal-title w-100" id="myModalLabel"><strong style="color:black">Connectez-vous ou inscrivez-vous</strong></p> </center>
             <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button> -->
@@ -14,7 +14,7 @@
           <div class="modal-body">
           <center>
           <a href="/login">
-               <button type="button" style="background-color:#2d709a;color:white" class="btn">Créer un compte</button>
+               Créer un compte
           </a></br></br>
           <a href="/login">
             Se connecter

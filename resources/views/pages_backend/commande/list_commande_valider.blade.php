@@ -2,23 +2,12 @@
 <!-- Main Content -->
 @section('content')
 
-<style>
-.blink {
-  animation: blink 1s infinite;
-}
-@keyframes blink { 
-  0% { opacity:0; }
-  50% { opacity:1; } 
-  100% { opacity:0; }
-}
-</style>
-
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                       <h5>LISTE DES COMMANDES EN ATTENTE</h5>
+                       <h5>LISTE DES COMMANDES DEJA VALIDER</h5>
                     <!-- 
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
@@ -67,7 +56,7 @@
                                              ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
                                              ->where('commande.id_user', '=', $commande->id_user)
                                              ->where('commande.reference_commande', '=', $commande->reference_commande)
-                                             ->where('commande.etat_commande', '=', 0)
+                                             ->where('commande.etat_commande', '=', 1)
                                              ->count('ligne_commande.id_produit');
                                        ?>
                                         <tr>
@@ -75,16 +64,16 @@
                                             <td>{{$user->nom_user}} {{$user->prenom_user}}</td>
                                             <td>{{$produit_total_commande}}</td>
                                             <td>{{$commande->date_commande}}</td>
-                                            <td><strong class="col-red blink">En attente de livraison</strong></td>
+                                            <td><strong class="col-green">Valider</strong></td>
                                             <td>
                                             <a href="{{route('voir.facture',[$commande->id_user,$commande->reference_commande])}}">
                                             <button class="btn btn-succes btn-sm" title="Voir facture" data-toggle="modal" data-target="#"><i class="zmdi zmdi-eye"></i></i></button> 
                                             </a>
-                                            <button class="btn btn-warning btn-sm" title="Valider" data-toggle="modal" data-target="#vc{{$commande->id_commande}}"><i class="zmdi zmdi-plus"></i></button> 
+                                            
                                           </td>
                                           
                                         </tr>
-                                        @include('modals/suppression/valider_commande')
+                                       
                                      @endforeach  
                                     </tbody>
                                 </table>

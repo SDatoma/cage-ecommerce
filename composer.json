@@ -19,7 +19,8 @@
         "maatwebsite/excel": "^3.1",
         "overtrue/laravel-shopping-cart": "^2.0",
         "phpoffice/phpexcel": "^1.8",
-        "reliese/laravel": "^0.0.16"
+        "reliese/laravel": "^0.0.16",
+        "khill/lavacharts" : "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

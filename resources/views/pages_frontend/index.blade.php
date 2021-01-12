@@ -263,8 +263,6 @@ if (Cookie::get('id_user')== null)
 											<fieldset>
 												<input type="hidden" name="id_produit" value="{{$produit->id_produit}}"/>
 												<input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}"/>
-												<input type="hidden" name="business" value=" " />
-												<input type="hidden" name="item_name" value="Almonds, 100g" />
 											@if($promotion)
 										    <?php 
 										    $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
