@@ -17,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/testmail','TestController@testmail');
 Route::post('/testmail','TestController@testmail1')->name('envoi.mail');
 
+Route::get('/mon-compte', function () {
+    $id_categorie=0;
+    return view('pages_frontend/mon_compte',compact('id_categorie'));
+});
+
+Route::get('/detail-profil-client/{id}','InscriptionController@show_profil_client')->name('profil.client');
+
+//Route::get('/detail-profil-client/{id}','InscriptionController@update_password')->name('update.client');
+
+
 // ROUTE FRONT-END
 Route::get('/', 'IndexController@index');
 Route::get('/tri-categorie-{id_categorie}-produit-{libelle_categorie}', 'IndexController@tri_produit_par_categorie')->name('tri.produit.categorie');

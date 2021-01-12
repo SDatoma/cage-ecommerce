@@ -111,6 +111,17 @@ class InscriptionController extends Controller
             return redirect()->to('/');
 		}
 	}
+	
+	//
+	public function show_profil_client($id)
+    { 
+        $user = DB::table('user')
+        ->where('user.id_user', '=', $id)
+        ->orderBy('user.id_user', 'asc')
+        ->first();
+
+        return view('pages_frontend/mon_compte',compact('user'));
+    }
 
     /**
      * Display the specified resource.
@@ -143,7 +154,64 @@ class InscriptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+		if($request->id = 1){
+		$user = User::where(['id_user' =>$id])->first() ;
+		 
+		$user->nom_user = $request->username;
+		$user->prenom_user = $request->userprenom;
+		$user->email_user = $request->useremail;
+		$user->telephone_user = $request->usertelephone;
+		$user->type_user = 2;
+		
+		$user->save();
+		
+		return redirect()->back();
+		
+		}
+		
+		if($request->id = 2){
+			$user = User::where(['id_user' =>$id])->first() ;
+			
+			if (strlen($request->userpassword) < 8) {
+            Session()->flash('error','Mot de passe trop cours !');
+            return redirect()->back();
+        }
+		
+		if($request->userpassword != $request->userpasswordconfirm){
+			Session()->flash('error','Les mots de passe ne sont pas conforment ! Merci de re-saisir. ');	
+			return redirect()->back();
+		}
+		
+		$user->password_user = $request->userpassword;
+		
+		$user->save();
+		
+		return redirect()->back();
+		}else{
+			
+		}
+    }
+	
+	public function update_password(Request $request, $id)
+    {
+		$user = User::where(['id_user' =>$id])->first() ;
+		
+		if (strlen($request->userpassword) < 8) {
+            Session()->flash('error','Mot de passe trop cours !');
+            return redirect()->back();
+        }
+		
+		if($request->userpassword != $request->userpasswordconfirm){
+			Session()->flash('error','Les mots de passe ne sont pas conforment ! Merci de re-saisir. ');	
+			return redirect()->back();
+		}
+		
+		$user->password_user = $request->userpassword;
+	   
+		$user->save();
+		
+		return redirect()->back();
+		
     }
 
 
