@@ -69,9 +69,10 @@
 						<span class="fa fa-phone" aria-hidden="true"></span> +228 70 45 37 85 | 96 35 80 90 |90 90 49 03
 					</li>
 					<li style="color:#146cda">Bienvenue,
-						<h6><span class="fa fa-user-circle" aria-hidden="true"></span> {{Cookie::get('prenom_user')}} 
-						{{Cookie::get('nom_user')}} </h6>
-						
+						<a href="{{route('profil.client',[Cookie::get('id_user')])}}">
+							<h6><span class="fa fa-user-circle" aria-hidden="true"></span> {{Cookie::get('prenom_user')}} 
+							{{Cookie::get('nom_user')}} </h6>
+						</a>
 					</li>
 					<li>
 						<a href="/deconnexion">
