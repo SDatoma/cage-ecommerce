@@ -61,7 +61,7 @@ class ConnexionController extends Controller
             Cookie::queue('id_user', $result->id_user , 5000);
             Cookie::queue('telephone_user', $result->telephone_user , 5000);
             
-            return redirect()->to('/');
+            return redirect()->to('/mes-informations');
          
         }else if($result->type_user == 1 ){
 			

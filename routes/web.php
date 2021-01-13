@@ -17,14 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/testmail','TestController@testmail');
 Route::post('/testmail','TestController@testmail1')->name('envoi.mail');
 
-Route::get('/mon-compte', function () {
+Route::get('/mes-informations', function () {
     $id_categorie=0;
     return view('pages_frontend/mon_compte',compact('id_categorie'));
 });
 
 Route::get('/detail-profil-client/{id}','InscriptionController@show_profil_client')->name('profil.client');
 
-//Route::get('/detail-profil-client/{id}','InscriptionController@update_password')->name('update.client');
+Route::get('/info_personel/{id}','InscriptionController@show_profil_client')->name('info.client');
+
+Route::get('/detail-info-client/{id}','InscriptionController@show_info_client')->name('info.perso');
+
+Route::get('/changer-passe/{id}','InscriptionController@passe_client')->name('client.page_passe');
+
+Route::get('/mot-de-passe-client/{id}','InscriptionController@update_passe_client')->name('client.passe_update');
+
+Route::get('/affiche-adresse/{id}','AdresseController@show_adresse_client')->name('client.adresse');
 
 
 // ROUTE FRONT-END
@@ -99,4 +107,5 @@ Route::resource('client', 'InscriptionController');
 Route::resource('slider', 'SliderController');
 Route::resource('connexion', 'ConnexionController');
 Route::resource('news', 'NewsController');
+Route::resource('adresse', 'AdresseController');
 
