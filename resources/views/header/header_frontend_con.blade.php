@@ -75,6 +75,9 @@
 						</a>
 					</li>
 					<li>
+						<a href="/" style="color:#146cda">
+						<span class="fa fa-user" aria-hidden="true"></span> <b>Mon compte</b>
+						</a> <br/> <br/>
 						<a href="/deconnexion">
 						<span class="fa fa-power-off" aria-hidden="true"></span> (Déconnexion)
 						</a>
