@@ -33,7 +33,8 @@ if (Cookie::get('id_user')== null)
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
 	                            <div class="row">
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
-                                    <div class="cart-tax">
+                                    <a href="{{route('info.perso',[Cookie::get('id_user')])}}">
+									<div class="cart-tax">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
                                         </div>
@@ -44,8 +45,10 @@ if (Cookie::get('id_user')== null)
                                             </div>
                                         </div>
                                     </div>
+									</a>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
+									<a href="{{route('client.page_passe',[Cookie::get('id_user')])}}">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
@@ -57,8 +60,10 @@ if (Cookie::get('id_user')== null)
                                             </div>
                                         </div>
                                     </div>
+									</a>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
+								<a href="{{route('client.adresse',[Cookie::get('id_user')])}}">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
@@ -70,6 +75,7 @@ if (Cookie::get('id_user')== null)
                                             </div>
                                         </div>
                                     </div>
+								</a>
                                 </div> 
                                 </div> 
                                 </div> 
@@ -93,17 +99,19 @@ if (Cookie::get('id_user')== null)
                                 </div>
 								
                                 <div class="col-lg-6 col-md-6 mb-lm-30px">
-                                    <div class="discount-code-wrapper">
+                                    <a href="/deconnexion">
+									<div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray"></h4>
                                         </div>
                                         <div class="discount-code">
                                             <center><p><i class="fa fa-unlock-alt" style="color:#000; font-size:100px"></i></p></center>
                                             <div class="tax-select-wrapper">
-                                                <center><button class="cart-btn-2" type="submit">DECONNEXION</button></center>
+                                                <center><button class="cart-btn-2" style="background-color:#dd4b39" type="submit">DECONNEXION</button></center>
                                             </div>
                                         </div>
                                     </div>
+									</a>
                                 </div>
                                 </div>
                                 </div>
@@ -118,237 +126,6 @@ if (Cookie::get('id_user')== null)
             </div>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!-- account area start 
-            <div class="checkout-area mtb-60px">
-                <div class="container">
-                    <div class="row">
-                        <div class="ml-auto mr-auto col-lg-9">
-                            <div class="checkout-wrapper">
-                                <div id="faq" class="panel-group">
-                                    <div class="panel panel-default single-my-account">
-                                        <div class="panel-heading my-account-title">
-                                            <h3 class="panel-title"><span>1 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-1">Modifier mes informations personnelles </a></h3>
-                                        </div>
-                                        <div id="my-account-1" class="panel-collapse collapse show">
-                                            <div class="panel-body">
-											@if (Session::has('error'))
-												<div class="form-group">
-													<div class="alert alert-danger">
-														<center>{{ Session::pull('error') }}</center>
-													</div>
-												</div>
-											@endif
-											<form class="form-horizontal" method="POST"  action="{{route('client.update',$user->id_user)}}" enctype="multipart/form-data">
-												<input type="numeric" name="id" value="1" hidden />
-													{{ method_field('PUT') }}
-													 {{ csrf_field() }}
-                                                <div class="myaccount-info-wrapper">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="billing-info">
-                                                                <label>Nom</label>
-                                                                <input type="text" name="username" value="{{$user->nom_user}}"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="billing-info">
-                                                                <label>Prénom</label>
-                                                                <input type="text" name="userprenom" value="{{$user->prenom_user}}"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="billing-info">
-                                                                <label>Adresse email</label>
-                                                                <input type="email" name="useremail" value="{{$user->email_user}}" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="billing-info">
-                                                                <label>N° Téléphone</label>
-                                                                <input type="text" name="usertelephone" value="{{$user->telephone_user}}" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="billing-back-btn">
-                                                        <div class="billing-back">
-                                                            <a href="#"><i class="icon-arrow-up-circle"></i> Retour</a>
-                                                        </div>
-                                                        <div class="billing-btn">
-                                                            <button type="submit">Valider</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-											</form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default single-my-account">
-                                        <div class="panel-heading my-account-title">
-                                            <h3 class="panel-title"><span>2 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-2">Changer de mot de passe </a></h3>
-                                        </div>
-                                        <div id="my-account-2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-											@if (Session::has('error'))
-												<div class="form-group">
-													<div class="alert alert-danger">
-														<center>{{ Session::pull('error') }}</center>
-													</div>
-												</div>
-											@endif
-											<form class="form-horizontal" method="POST"  action="{{route('client.update',$user->id_user)}}" enctype="multipart/form-data">
-												 <input type="numeric" name="id" value="2" hidden />
-													{{ method_field('PUT') }}
-													 {{ csrf_field() }}
-                                                <div class="myaccount-info-wrapper">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="billing-info">
-                                                                <label>Nouveau mot de passe</label>
-                                                                <input type="password" name="userpassword"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="billing-info">
-                                                                <label>Confirmer le mot de passe</label>
-                                                                <input type="password" name="userpasswordconfirm"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="billing-back-btn">
-                                                        <div class="billing-back">
-                                                            <a href="#"><i class="icon-arrow-up-circle"></i> Retour</a>
-                                                        </div>
-                                                        <div class="billing-btn">
-                                                            <button type="submit">Valider</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-											</form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default single-my-account">
-                                        <div class="panel-heading my-account-title">
-                                            <h3 class="panel-title"><span>3 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-3">Modifier vos adresses </a></h3>
-                                        </div>
-                                        <div id="my-account-3" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <div class="myaccount-info-wrapper">
-                                                    <div class="account-info-wrapper">
-                                                        <h4>Address Book Entries</h4>
-                                                    </div>
-                                                    <div class="entries-wrapper">
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
-                                                                <div class="entries-info text-center">
-                                                                    <p>Jone Deo</p>
-                                                                    <p>hastech</p>
-                                                                    <p>28 Green Tower,</p>
-                                                                    <p>Street Name.</p>
-                                                                    <p>New York City,</p>
-                                                                    <p>USA</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
-                                                                <div class="entries-edit-delete text-center">
-                                                                    <a class="edit" href="#">Edit</a>
-                                                                    <a href="#">Delete</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="billing-back-btn">
-                                                        <div class="billing-back">
-                                                            <a href="#"><i class="icon-arrow-up-circle"></i> Retour</a>
-                                                        </div>
-                                                        <div class="billing-btn">
-                                                            <button type="submit">Valider</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default single-my-account">
-                                        <div class="panel-heading my-account-title">
-                                            <h3 class="panel-title"><span>4 .</span> <a href="wishlist.html">Consulter l'historique de mes achats </a></h3>
-                                        </div>
-                                    </div>
-									
-									<div class="row">
-				<div class="col-lg-6">
-					<div class="card">
-						<a href="#">
-						<!-- Image à la une 
-						<div class="card-image">
-						<center><img src="{{asset('css_frontend/images/logo-avatar')}}" width=250 alt="info" />
-						</div></center>
-						<!-- Fin de l'image à la une -->
-
-						<!-- Corp de notre carte
-						<div class="card-body">
-								<h5>
-								Modifier mes informations personnelles </h5>
-                                  
-						</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="card">
-					<a href="#">
-						<!-- Image à la une 
-						<div class="card-image"><br/>
-						<center><img src="{{asset('css_frontend/images/passe.jpg')}}" width=250 alt="info" />
-						</div></center>
-						<!-- Fin de l'image à la une 
-
-						<!-- Corp de notre carte 
-						<div class="card-body">
-								<h5>
-								Changer de mot de passe </h5>
-                                  
-						</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="card">
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="card">
-					</div>
-				</div>
-			</div>
-									
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					
-					
-	
-					
-                </div>
-            </div>
-            <!-- account area end -->
-			
-			
 	<!-- footer --><div class="product-single-w3l"></div>
 	<footer>
 		<div class="container">

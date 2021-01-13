@@ -122,6 +122,16 @@ class InscriptionController extends Controller
 
         return view('pages_frontend/mon_compte',compact('user'));
     }
+	
+	public function show_info_client($id)
+    { 
+        $user = DB::table('user')
+        ->where('user.id_user', '=', $id)
+        ->orderBy('user.id_user', 'asc')
+        ->first();
+
+        return view('pages_frontend/info_personel',compact('user'));
+    }
 
     /**
      * Display the specified resource.
@@ -154,45 +164,38 @@ class InscriptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-		if($request->id = 1){
+		
 		$user = User::where(['id_user' =>$id])->first() ;
 		 
 		$user->nom_user = $request->username;
 		$user->prenom_user = $request->userprenom;
 		$user->email_user = $request->useremail;
+		$user->sexe_user = $request->usercivilite;
 		$user->telephone_user = $request->usertelephone;
 		$user->type_user = 2;
 		
 		$user->save();
 		
+		Session()->flash('success','Félicitation, informations modifiées avec succès. ');	
 		return redirect()->back();
 		
-		}
-		
-		if($request->id = 2){
-			$user = User::where(['id_user' =>$id])->first() ;
-			
-			if (strlen($request->userpassword) < 8) {
-            Session()->flash('error','Mot de passe trop cours !');
-            return redirect()->back();
-        }
-		
-		if($request->userpassword != $request->userpasswordconfirm){
-			Session()->flash('error','Les mots de passe ne sont pas conforment ! Merci de re-saisir. ');	
-			return redirect()->back();
-		}
-		
-		$user->password_user = $request->userpassword;
-		
-		$user->save();
-		
-		return redirect()->back();
-		}else{
-			
-		}
     }
 	
-	public function update_password(Request $request, $id)
+	
+	//
+	public function passe_client($id)
+    { 
+        $user = DB::table('user')
+        ->where('user.id_user', '=', $id)
+        ->orderBy('user.id_user', 'asc')
+        ->first();
+
+        return view('pages_frontend/changer_passe',compact('user'));
+    }
+	
+	
+	//
+	public function update_passe_client(Request $request, $id)
     {
 		$user = User::where(['id_user' =>$id])->first() ;
 		
@@ -206,16 +209,24 @@ class InscriptionController extends Controller
 			return redirect()->back();
 		}
 		
+		if($request->lastuserpassword == $user->password_user)
+		{
+		
 		$user->password_user = $request->userpassword;
 	   
 		$user->save();
 		
+		Session()->flash('success','Félicitation, Mot de passe changer avec succès. ');	
 		return redirect()->back();
 		
+		}else{
+			Session()->flash('error','L\'ancien mot de passe saisie n\'est pas correcte ! Merci de re-saisir. ');	
+			return redirect()->back();
+		}
     }
 
 
-    public function update_sous_categorie(Request $request, $id)
+    public function update_adresse(Request $request, $id)
     {
         //
     }
