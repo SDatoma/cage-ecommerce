@@ -16,14 +16,14 @@ class TestMail extends Mailable
      *
      * @return void
      */
-    private $first_name, $last_name, $titre_mail, $contenu_mail;
-    public function __construct($first_name, $last_name, $titre_mail, $contenu_mail)
+    private $first_name, $last_name, $email, $telephone;
+    public function __construct($first_name, $last_name, $email, $telephone)
     {
         //
         $this->first_name = $first_name;
         $this->last_name = $last_name;
-        $this->titre_mail = $titre_mail;
-        $this->contenu_mail = $contenu_mail;
+        $this->email = $email;
+        $this->telephone = $telephone;
        
     }
 
@@ -38,8 +38,8 @@ class TestMail extends Mailable
         ->markdown('emails.email_facture', [
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
-            'titre_mail' => $this->titre_mail,
-            'contenu_mail' => $this->contenu_mail,
+            'email' => $this->email,
+            'telephone' => $this->telephone,
         ]);
     }
 }

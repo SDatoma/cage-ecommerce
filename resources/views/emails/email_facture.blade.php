@@ -1,17 +1,17 @@
 @component('mail::message')
-<b style="color:black"><center>FACTURE </center></b>
-
-{{$first_name}} {{$last_name}} 
+<b style="color:blue"><center>FACTURE N° 0001 </center></b>
+</br>
+<strong>
+<p >{{$first_name}} {{$last_name}}</p>
+</br>
+<p>{{$email}}</p>
+</br>
+<p>{{$telephone}}</p>
+</br>
+<p>Pays</p>
 <br>
-Adresse mail
-<br>
-Telephone
-<br>
-Pays
-<br>
-Ville
-<br>
-
+<p>Ville</p>
+</strong>
 @component('mail::table')
 | Nom produit       | Quantite         | Prix unitaire         | Total         |
 | :--------- | :------------- |:------------- |:------------- |
@@ -21,15 +21,15 @@ Ville
 @endforeach
 @endcomponent
 
-# Sous Total  : {{ShoppingCart::total() ?? '0'}} FCFA
-</br></br>
-# Frais de livraison  : 0 FCFA 
-</br></br>
-# Prix total : {{ShoppingCart::total() ?? '0'}} FCFA
+<p>Sous Total  : <strong>{{ShoppingCart::total() ?? '0'}} FCFA</strong></p>
 </br>
+<p>Frais de livraison  :<strong> 0 FCFA </strong></p>
+</br>
+<p>Prix total :<strong style="color:red"> {{ShoppingCart::total() ?? '0'}} FCFA</strong></p>
+</br>
+
 <p style="float:right">Signature</p>
 <br><br>
-
 <p style="float: right">L'équipe de Cage Batiment,</p>
 {{-- Thanks,<br>
 {{ config('app.name') }} --}}

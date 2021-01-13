@@ -275,7 +275,7 @@
                 <div class="user-info">
                     <a class="image" href="profile.html"><img src="{{asset('css_backend/assets/images/profile_av.jpg')}}" alt="User"></a>
                     <div class="detail">
-                        <br/><small><h6>{{Cookie::get('prenom_user')}}  {{Cookie::get('nom_user')}} </h6></small>
+                        <br/><small><h6>Nom et Prenom</h6></small>
                         <small><a href="/deconnexion">Deconnexion</a></small>                       
                     </div>
                 </div>

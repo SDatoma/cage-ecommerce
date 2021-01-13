@@ -51,9 +51,9 @@ class CommandeController extends Controller
     {
          // Recupration de la date du jour
          $date_jour=date('Y-m-d');
-         $nom_user= Cookie::get('nom_user');
-         $prenom_user= Cookie::get('prenom_user');
-         $email_user= Cookie::get('email_user');
+         $id_user= Cookie::get('id_user');
+        
+         $user = User::where(['id_user' =>$id_user])->first() ;
 
          $chars = "abcdefghijkmnopqrstuvwxyz023456789";
          srand((double)microtime()*1000000);
@@ -91,7 +91,7 @@ class CommandeController extends Controller
 
          }
 
-         Mail::to($email_user)->send(new TestMail($nom_user, $prenom_user, $request->titre_mail,$request->description_mail));
+         Mail::to($user->email_user)->send(new TestMail($user->nom_user, $user->prenom_user, $user->email_user,$user->telephone_user));
 
          ShoppingCart::destroy();
  

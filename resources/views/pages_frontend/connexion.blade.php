@@ -70,7 +70,7 @@ if (Cookie::get('id_user')== null)
 													<div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 
 													  <input type="radio" name="usercivilite" value="M" class="demo6" id="demo6-a" checked><label for="demo6-a">Mr</label>
 													  <input type="radio" name="usercivilite" value="F" class="demo6" id="demo6-b" ><label for="demo6-b">Mme</label>
-																									</div>
+													</div></br></br></br>
                                                     <div class="col-lg-4">Nom : </div> <div class="col-lg-8"> <input required type="text" name="username" placeholder="Nom " /> </div>
                                                     <div class="col-lg-4">Prénom : </div> <div class="col-lg-8"> <input required type="text" name="userprenom" placeholder="Prénom " /> </div>
                                                     <div class="col-lg-4">Mot de passe : </div> <div class="col-lg-8"> <input required type="password" name="userpassword" placeholder="Mot de passe" /> </div>
