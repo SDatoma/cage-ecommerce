@@ -23,7 +23,76 @@ if (Cookie::get('id_user')== null)
 	</div>
 	<!-- //page -->
 	
-	<!-- account area start -->
+	
+	 <!-- Breadcrumb Area End-->
+            <!-- cart area start -->
+            <div class="cart-main-area mtb-60px">
+                <div class="container">
+                    <h3 class="cart-page-title"></h3>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+	                            <div class="row">
+                                <div class="col-lg-4 col-md-6 mb-lm-30px">
+                                    <div class="cart-tax">
+                                        <div class="title-wrap">
+                                            <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
+                                        </div>
+                                        <div class="tax-wrapper">
+                                            <center><p><i class="fa fa-user-circle" style="color:#000; font-size:100px"></i></p></center>
+                                            <div class="tax-select-wrapper">
+                                                <center><button class="cart-btn-2" type="submit">INFORMATIONS PERSONNELLES</button></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-lm-30px">
+                                    <div class="discount-code-wrapper">
+                                        <div class="title-wrap">
+                                            <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
+                                        </div>
+                                        <div class="discount-code">
+                                            <center><p><i class="fa fa-key" style="color:#000; font-size:100px"></i></p></center>
+                                            <div class="tax-select-wrapper">
+                                                <center><button class="cart-btn-2" type="submit">CHANGER MOT DE PASSE</button></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-lm-30px">
+                                    <div class="discount-code-wrapper">
+                                        <div class="title-wrap">
+                                            <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
+                                        </div>
+                                        <div class="discount-code">
+                                            <center><p><i class="fa fa-map-marker" style="color:#000; font-size:100px"></i></p></center>
+                                            <div class="tax-select-wrapper">
+                                                <center><button class="cart-btn-2" type="submit">ADRESSE DE LIVRAISON</button></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- account area start 
             <div class="checkout-area mtb-60px">
                 <div class="container">
                     <div class="row">
@@ -179,14 +248,67 @@ if (Cookie::get('id_user')== null)
                                             <h3 class="panel-title"><span>4 .</span> <a href="wishlist.html">Consulter l'historique de mes achats </a></h3>
                                         </div>
                                     </div>
+									
+									<div class="row">
+				<div class="col-lg-6">
+					<div class="card">
+						<a href="#">
+						<!-- Image à la une 
+						<div class="card-image">
+						<center><img src="{{asset('css_frontend/images/logo-avatar')}}" width=250 alt="info" />
+						</div></center>
+						<!-- Fin de l'image à la une -->
+
+						<!-- Corp de notre carte
+						<div class="card-body">
+								<h5>
+								Modifier mes informations personnelles </h5>
+                                  
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="card">
+					<a href="#">
+						<!-- Image à la une 
+						<div class="card-image"><br/>
+						<center><img src="{{asset('css_frontend/images/passe.jpg')}}" width=250 alt="info" />
+						</div></center>
+						<!-- Fin de l'image à la une 
+
+						<!-- Corp de notre carte 
+						<div class="card-body">
+								<h5>
+								Changer de mot de passe </h5>
+                                  
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="card">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="card">
+					</div>
+				</div>
+			</div>
+									
                                 </div>
                             </div>
                         </div>
                     </div>
+					
+					
+	
+					
                 </div>
             </div>
             <!-- account area end -->
-	
+			
+			
 	<!-- footer --><div class="product-single-w3l"></div>
 	<footer>
 		<div class="container">
