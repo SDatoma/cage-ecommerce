@@ -73,6 +73,7 @@ if (Cookie::get('id_user')== null)
                 </div>
             </div>
             <!-- login area end -->
+<div class="product-single-w3l"></div>
 
 	<footer>
 		<div class="container">
