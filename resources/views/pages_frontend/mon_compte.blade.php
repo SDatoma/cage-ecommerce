@@ -70,7 +70,47 @@ if (Cookie::get('id_user')== null)
                                             </div>
                                         </div>
                                     </div>
+                                </div> 
+                                </div> 
+                                </div> 
+                                </div> 
+								
+								 <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="row">
+                                <div class="col-lg-6 col-md-6 mb-lm-30px">
+                                    <div class="discount-code-wrapper">
+                                        <div class="title-wrap">
+                                            <h4 class="cart-bottom-title section-bg-gray">HISTORIQUE</h4>
+                                        </div>
+                                        <div class="discount-code">
+                                            <center><p><i class="fa fa-cart-arrow-down" style="color:#000; font-size:100px"></i></p></center>
+                                            <div class="tax-select-wrapper">
+                                                <center><button class="cart-btn-2" type="submit">CONSULTER MES ACHATS</button></center>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+								
+                                <div class="col-lg-6 col-md-6 mb-lm-30px">
+                                    <div class="discount-code-wrapper">
+                                        <div class="title-wrap">
+                                            <h4 class="cart-bottom-title section-bg-gray"></h4>
+                                        </div>
+                                        <div class="discount-code">
+                                            <center><p><i class="fa fa-unlock-alt" style="color:#000; font-size:100px"></i></p></center>
+                                            <div class="tax-select-wrapper">
+                                                <center><button class="cart-btn-2" type="submit">DECONNEXION</button></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+								
+								
+                                           
+								
                             </div>
                         </div>
                     </div>
@@ -316,148 +356,4 @@ if (Cookie::get('id_user')== null)
 			
 	@include('footer/footer_frontend')
 	
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="{{asset('css_frontend/js/jquery-2.1.4.min.js')}}"></script>
-	<!-- //jquery -->
-
-	<!-- popup modal (for signin & signup)-->
-	<script src="{{asset('css_frontend/js/jquery.magnific-popup.js')}}"></script>
-	<script>
-		$(document).ready(function () {
-			$('.popup-with-zoom-anim').magnificPopup({
-				type: 'inline',
-				fixedContentPos: false,
-				fixedBgPos: true,
-				overflowY: 'auto',
-				closeBtnInside: true,
-				preloader: false,
-				midClick: true,
-				removalDelay: 300,
-				mainClass: 'my-mfp-zoom-in'
-			});
-
-		});
-	</script>
-	<!-- Large modal -->
-	<!-- <script>
-		$('#').modal('show');
-	</script> -->
-	<!-- //popup modal (for signin & signup)-->
-
-	<!-- cart-js -->
-	<script src="{{asset('css_frontend/js/minicart.js')}}"></script>
-	<script>
-		paypalm.minicartk.render(); //use only unique class names other than paypal1.minicart1.Also Replace same class name in css and minicart.min.js
-
-		paypalm.minicartk.cart.on('checkout', function (evt) {
-			var items = this.items(),
-				len = items.length,
-				total = 0,
-				i;
-
-			// Count the number of each item in the cart
-			for (i = 0; i < len; i++) {
-				total += items[i].get('quantity');
-			}
-
-			if (total < 1) {
-				alert('Ajouter au moins 1 produit dans le panier. Merci');
-				evt.preventDefault();
-			}
-		});
-	</script>
-	<!-- //cart-js -->
-
-
-	<!-- smoothscroll -->
-	<script src="{{asset('css_frontend/js/SmoothScroll.min.js')}}"></script>
-	<!-- //smoothscroll -->
-
-	<!-- start-smooth-scrolling -->
-	<script src="{{asset('css_frontend/js/move-top.js')}}"></script>
-	<script src="{{asset('css_frontend/js/easing.js')}}"></script>
-	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script>
-	<!-- //end-smooth-scrolling -->
-
-	<!-- smooth-scrolling-of-move-up -->
-	<script>
-		$(document).ready(function () {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
-
-		});
-	</script>
-	<!-- //smooth-scrolling-of-move-up -->
-
-	<!-- imagezoom -->
-	<script src="{{asset('css_frontend/js/imagezoom.js')}}"></script>
-	<!-- //imagezoom -->
-
-	<!-- FlexSlider -->
-	<script src="{{asset('css_frontend/js/jquery.flexslider.js')}}"></script>
-	<script>
-		// Can also be used with $(document).ready()
-		$(window).load(function () {
-			$('.flexslider').flexslider({
-				animation: "slide",
-				controlNav: "thumbnails"
-			});
-		});
-	</script>
-	<!-- //FlexSlider-->
-
-	<!-- flexisel (for special offers) -->
-	<script src="{{asset('css_frontend/js/jquery.flexisel.js')}}"></script>
-	<script>
-		$(window).load(function () {
-			$("#flexiselDemo1").flexisel({
-				visibleItems: 3,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: {
-					portrait: {
-						changePoint: 480,
-						visibleItems: 1
-					},
-					landscape: {
-						changePoint: 640,
-						visibleItems: 2
-					},
-					tablet: {
-						changePoint: 768,
-						visibleItems: 2
-					}
-				}
-			});
-
-		});
-	</script>
-	<!-- //flexisel (for special offers) -->
-
-	<!-- for bootstrap working -->
-	<script src="{{asset('css_frontend/js/bootstrap.js')}}"></script>
-	<!-- //for bootstrap working -->
-	<!-- //js-files -->
+	
