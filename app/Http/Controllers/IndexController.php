@@ -142,8 +142,9 @@ class IndexController extends Controller
         ->get();
         
         $id_categorie=0 ;
+        $mot_cle=$request->recherche;
 		
-         return view('pages_frontend/resultat_recherche',compact('categories','produits','id_categorie'));
+         return view('pages_frontend/resultat_recherche',compact('categories','produits','id_categorie','mot_cle'));
 	
     }
 

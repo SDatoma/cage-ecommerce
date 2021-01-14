@@ -36,17 +36,17 @@ if (Cookie::get('id_user')== null)
                               
                             </div>
                         </div> -->
-                        <div class="col-lg-8">
+                        <div class="col-lg-7">
                         <!-- Slider Start -->
                             <div class="slider-area slider-height-2">
                                 <div class="hero-slider swiper-container">
                                     <div class="swiper-wrapper">
                                         <!-- Single Slider  -->
-                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_front_end/assets/images/slider-image/sample-3.jpg')}});">
+                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_frontend/images/image1.jpg')}});">
                                             <div class="container align-self-center">
-                                                <div class="slider-content-1 slider-animated-1 text-left pl-60px">
-                                                    <span class="animated color-white">GALAXY WATCH</span>
-                                                    <h1 class="animated color-white">
+                                                <div class="slider-content-1 slider-animated-1 text-left pl-60px" >
+                                                    <span class="animated color-white" style="color:black">GALAXY WATCH</span>
+                                                    <h1 class="animated color-white" style="color:black">
                                                         Pre-Order <br />
                                                         <strong>Exclusive</strong>
                                                     </h1>
@@ -55,11 +55,11 @@ if (Cookie::get('id_user')== null)
                                             </div>
                                         </div>
                                         <!-- Single Slider  -->
-                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_front_end/assets/images/slider-image/sample-4.jpg')}});">
+                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_frontend/images/image2.jpg')}});">
                                             <div class="container align-self-center">
                                                 <div class="slider-content-1 slider-animated-1 text-left pl-60px">
-                                                    <span class="animated color-white">BT HEADPHONE</span>
-                                                    <h1 class="animated color-white">
+                                                    <span class="animated color-white" style="color:black">BT HEADPHONE</span>
+                                                    <h1 class="animated color-white" style="color:black">
                                                         Headset <br />
                                                         <strong>Hyper X</strong>
                                                     </h1>
@@ -70,11 +70,11 @@ if (Cookie::get('id_user')== null)
                                         <!-- Single Slider  -->
 
 										<!-- Single Slider  -->
-                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_front_end/assets/images/slider-image/sample-3.jpg')}});">
+                                        <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_frontend/images/image3.jpg')}});">
                                             <div class="container align-self-center">
-                                                <div class="slider-content-1 slider-animated-1 text-left pl-60px">
-                                                    <span class="animated color-white">GALAXY WATCH</span>
-                                                    <h1 class="animated color-white">
+                                                <div class="slider-content-1 slider-animated-1 text-left pl-60px" >
+                                                    <span class="animated color-white" style="color:black">GALAXY WATCH</span>
+                                                    <h1 class="animated color-white" style="color:black">
                                                         Pre-Order <br />
                                                         <strong>Exclusive</strong>
                                                     </h1>
@@ -90,13 +90,13 @@ if (Cookie::get('id_user')== null)
                             </div>
                             <!-- Slider End -->
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <div class="banner-area banner-area-2">
                                 <div class="banner-wrapper mb-15px">
-                                    <a href="#"><img src="/{{$sliders[0]->image_slider}}" alt="" height="195px"/></a>
+                                    <a href="#"><img src="/{{$sliders[0]->image_slider}}" alt="" widht="100%" height="200px"/></a>
                                 </div>
                                 <div class="banner-wrapper">
-                                    <a href="#"><img src="/{{$sliders[1]->image_slider}}" alt="" height="226px"/></a>
+                                    <a href="#"><img src="/{{$sliders[1]->image_slider}}" alt="" widht="100%" height="220px"/></a>
                                 </div>
                             </div>
                         </div>

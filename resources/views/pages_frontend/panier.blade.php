@@ -54,7 +54,7 @@ if (Cookie::get('id_user')== null)
                                                     <form method="POST" action="{{route('cart.destroy',$item->__raw_id)}}">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" class=""><i class="icon-close"></i></button>
+                                                        <button type="submit" class="" style="color:red"><i class="icon-close"></i></button>
                                                    </form>
                                                 </td>
                                             </tr>

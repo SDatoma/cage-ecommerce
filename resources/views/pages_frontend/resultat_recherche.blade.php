@@ -41,7 +41,7 @@ if (Cookie::get('id_user')== null)
                             <!-- header menu vertical -->
                         </div>
                         <div class="col-md-10">
-                        <h3 class="tittle-w3l1" style="font-size:20px;margin-top:12px">RESULTATS DE LA RECHERCHE @if(count($produits)!=0) ( <strong style="color:red;font-size:17px">{{count($produits)}} produit(s) trouvé(s)</strong>) @endif
+                        <h3 class="tittle-w3l1" style="font-size:20px;margin-top:12px">RESULTATS DE LA RECHERCHE  " {{$mot_cle}} " @if(count($produits)!=0) ( <strong style="color:red;font-size:17px">{{count($produits)}} produit(s) trouvé(s)</strong>) @endif
                            <div class="pull-right">
                                <!-- <label>Recherches : </label> -->
                                <input type="text" id="recherche" class="col-md-8 ml-2 form" placeholder="Rechercher...">
