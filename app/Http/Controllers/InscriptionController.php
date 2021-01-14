@@ -115,20 +115,14 @@ class InscriptionController extends Controller
 	//
 	public function show_profil_client($id)
     { 
-        $user = DB::table('user')
-        ->where('user.id_user', '=', $id)
-        ->orderBy('user.id_user', 'asc')
-        ->first();
+        $user = User::where(['id_user' =>$id])->first() ;
 
         return view('pages_frontend/mon_compte',compact('user'));
     }
 	
 	public function show_info_client($id)
     { 
-        $user = DB::table('user')
-        ->where('user.id_user', '=', $id)
-        ->orderBy('user.id_user', 'asc')
-        ->first();
+        $user = User::where(['id_user' =>$id])->first() ;
 
         return view('pages_frontend/info_personel',compact('user'));
     }
@@ -172,11 +166,10 @@ class InscriptionController extends Controller
 		$user->email_user = $request->useremail;
 		$user->sexe_user = $request->usercivilite;
 		$user->telephone_user = $request->usertelephone;
-		$user->type_user = 2;
 		
 		$user->save();
 		
-		Session()->flash('success','Félicitation, informations modifiées avec succès. ');	
+		Session()->flash('success','Informations modifiées avec succès.');	
 		return redirect()->back();
 		
     }
@@ -187,7 +180,7 @@ class InscriptionController extends Controller
     { 
         $user = DB::table('user')
         ->where('user.id_user', '=', $id)
-        ->orderBy('user.id_user', 'asc')
+       // ->orderBy('user.id_user', 'asc')
         ->first();
 
         return view('pages_frontend/changer_passe',compact('user'));
