@@ -113,16 +113,20 @@ class InscriptionController extends Controller
 	}
 	
 	//
-	public function show_profil_client($id)
+	public function show_profil_client()
     { 
-        $user = User::where(['id_user' =>$id])->first() ;
+        $id_user= Cookie::get('id_user');
+
+        $user = User::where(['id_user' =>$id_user])->first() ;
 
         return view('pages_frontend/mon_compte',compact('user'));
     }
 	
-	public function show_info_client($id)
+	public function show_info_client()
     { 
-        $user = User::where(['id_user' =>$id])->first() ;
+        $id_user= Cookie::get('id_user');
+
+        $user = User::where(['id_user' =>$id_user])->first() ;
 
         return view('pages_frontend/info_personel',compact('user'));
     }
@@ -176,12 +180,11 @@ class InscriptionController extends Controller
 	
 	
 	//
-	public function passe_client($id)
+	public function passe_client()
     { 
-        $user = DB::table('user')
-        ->where('user.id_user', '=', $id)
-       // ->orderBy('user.id_user', 'asc')
-        ->first();
+        $id_user= Cookie::get('id_user');
+
+        $user = User::where(['id_user' =>$id_user])->first() ;
 
         return view('pages_frontend/changer_passe',compact('user'));
     }

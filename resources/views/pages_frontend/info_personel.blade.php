@@ -49,7 +49,6 @@ if (Cookie::get('id_user')== null)
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
                                                 <form class="form-horizontal" method="POST"  action="{{route('client.update',$user->id_user)}}" enctype="multipart/form-data">
-													
 													{{ method_field('PUT') }}
 													 {{ csrf_field() }}
 													<div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 

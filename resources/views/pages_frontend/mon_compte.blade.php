@@ -33,7 +33,7 @@ if (Cookie::get('id_user')== null)
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
 	                            <div class="row">
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
-                                    <a href="{{route('info.perso',[Cookie::get('id_user')])}}">
+                                    <a href="{{route('info.perso')}}">
 									<div class="cart-tax">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
@@ -48,7 +48,7 @@ if (Cookie::get('id_user')== null)
 									</a>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
-									<a href="{{route('client.page_passe',[Cookie::get('id_user')])}}">
+									<a href="{{route('client.page_passe')}}">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>

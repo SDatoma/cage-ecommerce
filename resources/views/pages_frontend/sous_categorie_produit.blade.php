@@ -46,7 +46,7 @@ if (Cookie::get('id_user')== null)
 						NOM DE LA SOUS CATEGORIE : <strong style="color:blue">{{$sous_categoriee->libelle_sous_categorie}}</strong> </h3>
 						<img src="/{{$sous_categoriee->image_sous_categorie}}" height=150 width=200 class="thumbnail" alt=""> 
 						<br/><h3 class="tittle-w3l1" style="font-size:15px;  margin-bottom:-10px">
-						PRODUITS DE LA MËME SOUS CATEGORIE QUE <strong style="color:blue;">{{$sous_categoriee->libelle_sous_categorie}}</strong></h3>
+						PRODUITS DE LA MEME SOUS CATEGORIE QUE <strong style="color:blue;">{{$sous_categoriee->libelle_sous_categorie}}</strong></h3>
                            <div class="pull-right">
                                <!-- <span>Recherches :dfdgf </span> -->
                                <input type="text" id="recherche" class="col-md-8 ml-2 form" placeholder="Rechercher...">

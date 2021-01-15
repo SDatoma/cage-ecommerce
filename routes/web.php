@@ -22,15 +22,15 @@ Route::get('/mes-informations', function () {
     return view('pages_frontend/mon_compte',compact('id_categorie'));
 });
 
-Route::get('/detail-profil-client/{id}','InscriptionController@show_profil_client')->name('profil.client');
+Route::get('/detail-profil-client','InscriptionController@show_profil_client')->name('profil.client');
 
-Route::get('/info_personel/{id}','InscriptionController@show_profil_client')->name('info.client');
+Route::get('/info_personel','InscriptionController@show_profil_client')->name('info.client');
 
-Route::get('/detail-info-client/{id}','InscriptionController@show_info_client')->name('info.perso');
+Route::get('/detail-info-client','InscriptionController@show_info_client')->name('info.perso');
 
-Route::get('/changer-passe/{id}','InscriptionController@passe_client')->name('client.page_passe');
+Route::get('/changer-passe','InscriptionController@passe_client')->name('client.page_passe');
 
-Route::get('/mot-de-passe-client/{id}','InscriptionController@update_passe_client')->name('client.passe_update');
+Route::put('/mot-de-passe-client/{id}','InscriptionController@update_passe_client')->name('client.passe_update');
 
 Route::get('/affiche-adresse/{id}','AdresseController@show_adresse_client')->name('client.adresse');
 

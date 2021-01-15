@@ -50,9 +50,8 @@ if (Cookie::get('id_user')== null)
                                     <div id="lg1" class="tab-pane active">
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
-                                                <form class="form-horizontal" method="POST"  action="{{route('client.passe_update',$user->id_user)}}" enctype="multipart/form-data">
-													
-													{{ method_field('GET') }}
+                                                <form class="form-horizontal" method="POST"  action="{{route('client.passe_update',$user->id_user)}}">
+													{{ method_field('put') }}
 													 {{ csrf_field() }}
 													 
                                                     <div class="col-lg-4">Ancien mot de passe : </div> <div class="col-lg-8"> <input required type="password" name="lastuserpassword" /> </div>
