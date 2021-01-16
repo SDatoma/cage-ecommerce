@@ -161,7 +161,7 @@
                                         </ul>
                                     </li>
 									@endforeach
-                                   <li><a href="/contact">contact </a></li>
+                                   <li><a href="/contact" style="color:black">contact </a></li>
                                 </ul>
                             </div>
                             

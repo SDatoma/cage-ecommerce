@@ -81,7 +81,7 @@ if (Cookie::get('id_user')== null)
                         <div class="col-lg-8 col-md-8">
                             <div class="contact-form">
                                 <div class="contact-title mb-30">
-                                    <h2>Entrer en contact</h2>
+                                    <h2>Contacter Nous...</h2>
                                 </div>
                                 <form class="contact-form-style" id="contact-form" action="" method="post">
                                     <div class="row">
