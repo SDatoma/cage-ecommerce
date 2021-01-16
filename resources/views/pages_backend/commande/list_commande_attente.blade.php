@@ -18,7 +18,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                       <h5>LISTE DES COMMANDES EN ATTENTE</h5>
+                       <h5><strong>LISTE DES COMMANDES EN ATTENTE</strong></h5>
                     <!-- 
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
@@ -49,9 +49,10 @@
                                         <tr>
                                             <th>REFERENCE</th>
                                             <th>NOM & PRENOM</th>
-                                            <th>NOMBRE DE PRODUIT</th>
-                                            <th>DATE COMMANDE</th>
-                                            <th>ETAT</th>
+                                            <th>PRODUITS</th>
+                                            <th>DATE</th>
+                                            <th>ETAT COMMANDE</th>
+                                            <th>ACTION</th>
                                         </tr>
                                     </thead>
                                     

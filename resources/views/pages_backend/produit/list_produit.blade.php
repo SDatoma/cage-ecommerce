@@ -18,17 +18,11 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h5>CATALOGUE DES PRODUITS</h5>
-                    <!-- <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item">eCommerce</li>
-                        <li class="breadcrumb-item active">Product List</li>
-                    </ul> -->
+                    <h5><strong>CATALOGUE DES PRODUITS</strong></h5>
+                   
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
-                <!-- <div class="col-lg-5 col-md-6 col-sm-12">                
-                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                </div> -->
+               
             </div>
         </div>
         <div class="container-fluid">

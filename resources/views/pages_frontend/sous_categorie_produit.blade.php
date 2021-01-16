@@ -44,7 +44,7 @@ if (Cookie::get('id_user')== null)
                         <h3 class="tittle-w3l1" style="font-size:15px; margin-bottom:-10px">
 						NOM DE LA CATEGORIE : {{$categoriee->libelle_categorie}} ===>>
 						NOM DE LA SOUS CATEGORIE : <strong style="color:blue">{{$sous_categoriee->libelle_sous_categorie}}</strong> </h3>
-						<img src="/{{$sous_categoriee->image_sous_categorie}}" height=150 width=200 class="thumbnail" alt=""> 
+						<img src="{{$sous_categoriee->image_sous_categorie}}" height=150 width=200 class="thumbnail" alt=""> 
 						<br/><h3 class="tittle-w3l1" style="font-size:15px;  margin-bottom:-10px">
 						PRODUITS DE LA MEME SOUS CATEGORIE QUE <strong style="color:blue;">{{$sous_categoriee->libelle_sous_categorie}}</strong></h3>
                            <div class="pull-right">

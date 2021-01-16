@@ -194,9 +194,9 @@ class CategorieController extends Controller
             $image->resize(600, null, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            Image::make($image)->save('files_upload/categorie/'.$request->libelle_sous_categorie.'.jpg');
+            Image::make($image)->save('files_upload/categorie/'.$id.'.jpg');
 
-            $file_name ='files_upload/categorie/'.$request->libelle_sous_categorie.'.jpg';
+            $file_name ='files_upload/categorie/'.$id.'.jpg';
 
           }else{
 
@@ -204,7 +204,7 @@ class CategorieController extends Controller
          }
 
         $sous_categorie->libelle_sous_categorie=$request->libelle_sous_categorie;
-        $sous_categorie->image_sous_categorie=$request->$file_name;
+        $sous_categorie->image_sous_categorie=$file_name;
          
         $sous_categorie->save();
 
