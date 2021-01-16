@@ -87,14 +87,13 @@ if (Cookie::get('id_user')== null)
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item 
 									hvr-outline-out">
-									   <form  method="POST"  action="{{route('cart.store')}}">
-                                         {{ csrf_field() }}
+									@if($produit->quantite_produit>3)
+									    <form  method="POST"  action="{{route('cart.store')}}">
+                                           {{csrf_field()}}
 											<fieldset>
 												<input type="hidden" name="id_produit" value="{{$produit->id_produit}}"/>
 												<input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}"/>
-												<input type="hidden" name="business" value=" " />
-												<input type="hidden" name="item_name" value="Almonds, 100g" />
-												@if($promotion)
+											@if($promotion)
 										    <?php 
 										    $reduction= ($produit->prix_ht_produit*$promotion->pourcentage_promotion)/100 ; 
 										    $prix_ht_promo= $produit->prix_ht_produit - $reduction;
@@ -104,6 +103,9 @@ if (Cookie::get('id_user')== null)
 												<i class="fa fa-cart-arrow-down"></i> <input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
 											</fieldset>
 										</form>
+									@else
+									<i class="fa fa-cart-arrow-down"></i> <input type="submit" name="submit"  style="font-size:10px;background-color:#a9a9a9" value="Ajouter au panier" class="button cart-resp" />
+									@endif
 									</div></br>
 									@if($produit->quantite_produit>3)
 									<i class="fa fa-check" aria-hidden="true"></i> <span class="item_price" style="font-size:15px;color:black"><b>En Stock</b> </span>

@@ -66,13 +66,15 @@ if (Cookie::get('id_user')== null)
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="cart-shiping-update-wrapper">
-                                            <div class="cart-shiping-update">
-                                                <a href="/">Continuer l'achat</a>
-                                            </div>
                                             <div class="cart-clear">
                                                 <!-- <button>Mettre a jour le panier</button> -->
                                                 <a href="/empty">Supprimer le panier</a>
                                             </div>
+
+                                            <div class="cart-shiping-update">
+                                                <a href="/">Continuer l'achat</a>
+                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -81,9 +83,7 @@ if (Cookie::get('id_user')== null)
                                 <div class="col-lg-2 col-md-6 mb-lm-30px">
                                     
                                 </div>
-                                <div class="col-lg-2 col-md-6 mb-lm-30px">
-                                    
-                                </div>
+                                
                                 <div class="col-lg-7 col-md-12 mt-md-30px">
                                     <div class="grand-totall">
                                         <!-- <h5>Total Produit<span> {{ShoppingCart::countRows() ?? '0'}}</span></h5> -->

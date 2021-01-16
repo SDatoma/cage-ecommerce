@@ -258,7 +258,7 @@ if (Cookie::get('id_user')== null)
 									hvr-outline-out">
 									@if($produit->quantite_produit>3)
 									    <form  method="POST"  action="{{route('cart.store')}}">
-                                         {{csrf_field()}}
+                                           {{csrf_field()}}
 											<fieldset>
 												<input type="hidden" name="id_produit" value="{{$produit->id_produit}}"/>
 												<input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}"/>
@@ -273,7 +273,7 @@ if (Cookie::get('id_user')== null)
 											</fieldset>
 										</form>
 									@else
-									<i class="fa fa-cart-arrow-down"></i> <input type="submit" name="submit"  style="font-size:10px" value="Ajouter au panier" class="button cart-resp" />
+									<i class="fa fa-cart-arrow-down"></i> <input type="submit" name="submit"  style="font-size:10px;background-color:#a9a9a9" value="Ajouter au panier" class="button cart-resp" />
 									@endif
 									</div> </br>
 									@if($produit->quantite_produit>3)
