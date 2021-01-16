@@ -40,14 +40,13 @@ if (Cookie::get('id_user')== null)
 						<ul class="slides">
 							<li data-thumb="/{{$produit->image_produit}}" style="height:300px; width:300px">
 								<div class="thumb-image">
-									<img src="/{{$produit->image_produit}}" data-imagezoom="true" class="img-responsive" alt=""></div>
+									<img src="/{{$produit->image_produit}}" style="height:300px; width:300px" data-imagezoom="true" class="img-responsive" alt=""></div>
 							</li>
-							
 							@foreach($photo_produits as $photo_produit)
 								<li data-thumb="/{{$photo_produit->photo_produit}}">
 									<div class="thumb-image">
 										<img src="/{{$photo_produit->photo_produit}}" 
-										data-imagezoom="true" class="img-responsive" alt="" > 
+										data-imagezoom="true" class="img-responsive" alt=""> 
 									</div>
 								</li>
                             @endforeach
@@ -90,7 +89,7 @@ if (Cookie::get('id_user')== null)
 											<fieldset>
 												<input type="hidden" name="id_produit" value="{{$produit->id_produit}}"/>
 												<input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}"/>
-												<input type="hidden" name="business" value=" " />
+												<input type="hidden" name="business" value="" />
 												<input type="hidden" name="item_name" value="Almonds, 100g" />
 											@if($promotion)
 										    <?php 
