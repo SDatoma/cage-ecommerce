@@ -77,7 +77,9 @@ class IndexController extends Controller
 		$id_categorie=0 ;
 		
 		return view('pages_frontend/politique_confidentialite',compact('id_categorie'));
-	}
+    }
+    
+    
 	
 	
     /**

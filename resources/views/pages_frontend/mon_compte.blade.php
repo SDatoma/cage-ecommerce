@@ -21,11 +21,7 @@ if (Cookie::get('id_user')== null)
 			</div>
 		</div>
 	</div>
-	<!-- //page -->
-	
-	
-	 <!-- Breadcrumb Area End-->
-            <!-- cart area start -->
+
             <div class="cart-main-area mtb-60px">
                 <div class="container">
                     <h3 class="cart-page-title"></h3>
@@ -80,8 +76,8 @@ if (Cookie::get('id_user')== null)
                                 </div> 
                                 </div> 
                                 </div> 
-								
-								 <div class="row">
+								</br>
+				    <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="row">
                                 <div class="col-lg-6 col-md-6 mb-lm-30px">
@@ -113,19 +109,14 @@ if (Cookie::get('id_user')== null)
                                     </div>
 									</a>
                                 </div>
-                                </div>
-                                </div>
+                             </div>
+                           </div>
 								
-								
-                                           
-								
-                            </div>
+						  </div>
                         </div>
                     </div>
                 </div>
             </div>
-	
-	
 	<!-- footer --><div class="product-single-w3l"></div>
 	<footer>
 		<div class="container">

@@ -24,12 +24,12 @@ if (Cookie::get('id_user')== null)
             <!-- contact area start -->
  <div class="contact-area ml-5" style="margin-top:20px; margin-bottom:-150px">
  <center> <h4>POLITIQUE DE CONFIDENTIALITE</h4></center> </br>                  
-<h4 style="color:#9d71be">Informatique et liberté</h5> 
+<h4 style="color:blue">Informatique et liberté</h5> 
 <p style="color:black">
-Vous disposez d'un droit d'accès et de rectification aux données vous concernant conformément à la loi. Vous pouvez exercer ce droit en envoyant un courrier à l'adresse suivante : 05 BP 1144 Lomé 05 ou directement sur notre site www. En vous inscrivant sur ce site, vous vous engagez à nous fournir des informations sincères et véritables vous concernant. En fonction de vos choix émis lors de la création ou de la consultation de votre compte, vous serez susceptible de recevoir des offres de notre société. Si vous ne le souhaitez plus, vous pouvez à tout moment nous en faire la demande via notre espace client ou en nous écrivant à l'adresse ci-dessus.
+Vous disposez d'un droit d'accès et de rectification aux données vous concernant conformément à la loi. Vous pouvez exercer ce droit en envoyant un courrier à l'adresse suivante : 05 BP 1144 Lomé 05 ou directement sur notre site <strong style="color:red">www.</strong> En vous inscrivant sur ce site, vous vous engagez à nous fournir des informations sincères et véritables vous concernant. En fonction de vos choix émis lors de la création ou de la consultation de votre compte, vous serez susceptible de recevoir des offres de notre société. Si vous ne le souhaitez plus, vous pouvez à tout moment nous en faire la demande via notre espace client ou en nous écrivant à l'adresse ci-dessus.
 </p></br></br>
 
-<h4 style="color:#9d71be">Cookies</h4>
+<h4 style="color:blue">Cookies</h4>
 <p style="color:black">
 Pour des besoins de statistiques et d'affichage nous vous informons que des cookies enregistrent certaines informations qui sont stockées dans la mémoire de votre disque dur. Ces cookies nous permettent aussi de vous proposer les offres les plus adaptées à vos besoins et cela en fonction des produits que vous avez déjà sélectionnés lors de précédentes visites. Ces cookies ne contiennent pas d'informations confidentielles vous concernant.
 Propriété intellectuelle

@@ -126,6 +126,13 @@ class CommandeController extends Controller
         return view('pages_backend/commande/list_client',compact('users'));
     }
 
+    public function checkout(){
+		
+		$id_categorie=0 ;
+		
+		return view('pages_frontend/checkout',compact('id_categorie'));
+	}
+
     /**
      * Display the specified resource.
      *
