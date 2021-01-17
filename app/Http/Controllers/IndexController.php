@@ -63,6 +63,20 @@ class IndexController extends Controller
 		$id_categorie=0 ;
 		
 		return view('pages_frontend/contact',compact('id_categorie'));
+    }
+    
+    public function condition_general(){
+		
+		$id_categorie=0 ;
+		
+		return view('pages_frontend/condition_generale',compact('id_categorie'));
+    }
+    
+    public function politique_confidentialite(){
+		
+		$id_categorie=0 ;
+		
+		return view('pages_frontend/politique_confidentialite',compact('id_categorie'));
 	}
 	
 	

@@ -47,6 +47,10 @@ Route::post('/recherche','IndexController@recherche_produit')->name('recherche.p
 
 Route::get('/contact','IndexController@page_contact');
 
+Route::get('/condition-general','IndexController@condition_general');
+
+Route::get('/politique-confidentialite','IndexController@politique_confidentialite');
+
 Route::get('/login','ConnexionController@index');
 
 Route::get('/deconnexion','ConnexionController@deconnection');

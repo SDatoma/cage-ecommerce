@@ -23,25 +23,21 @@
 				<!-- quick links -->
 				<div class="col-sm-3 address-right">
 					<div class="col-xs-12 footer-grids">
-						<h3>Liens personnalisés</h3>
+						<h3>Notre societé</h3>
 						<ul>
+						
 							<li>
-								<a href="">A propos</a>
+								<a href="/politique-confidentialite">Politique de confidentialité</a>
 							</li>
+							
 							<li>
-								<a href="">Politique de confidentialité</a>
-							</li>
-							<li>
-								<a href="">Les promotions</a>
-							</li>
-							<li>
-								<a href="">Nouveaux produits</a>
+								<a href="/condition-general">Conditions generales de vente ( CGV )</a>
 							</li>
 							<li>
 								<a href="">Les meilleures ventes</a>
 							</li>
 							<li>
-								<a href="">Contact</a>
+								<a href="/contact">Contact</a>
 							</li>
 						</ul>
 					</div>
