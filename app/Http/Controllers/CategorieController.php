@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Alert;
 
 class CategorieController extends Controller
 {
@@ -75,8 +76,7 @@ class CategorieController extends Controller
 
         $categorie->save();
 
-        Session()->flash('succes',"Enregistrement effectuer avec succè");
-        return redirect()->back();
+        return back()->with('success', 'Enregistrement effectuer avec succè');
     }
 
  // Enregistrement de sous categorie
@@ -105,8 +105,8 @@ class CategorieController extends Controller
 
         $sous_categorie->save();
 
-        Session()->flash('succes'," Sous categorie enregistrement effectuer avec succè");
-        return redirect()->back();
+        //Session()->flash('succes'," Sous categorie enregistrement effectuer avec succè");
+        return back()->with('success', 'Sous categorie enregistrement effectuer avec succè');
     }
 
 
@@ -179,8 +179,7 @@ class CategorieController extends Controller
          
         $categorie->save();
 
-        Session()->flash('succes',"Modification effectuée avec succè");
-        return redirect()->back();
+        return back()->with('success', 'Modification effectuée avec succè');
     }
 
 
@@ -208,8 +207,7 @@ class CategorieController extends Controller
          
         $sous_categorie->save();
 
-        Session()->flash('succes',"Modification effectuée avec succès");
-        return redirect()->back();
+        return back()->with('success', 'Modification effectuée avec succè');
     }
 	
 	
@@ -228,8 +226,6 @@ class CategorieController extends Controller
         $categorie->etat_categorie= 0;
          
         $categorie->save();
-
-        Session()->flash('error',"Suppression effectuée avec succè");
-        return redirect()->back();
+        return back()->with('success', 'Suppression effectuée avec succè');
     }
 }

@@ -118,8 +118,8 @@ if (Cookie::get('id_user')== null)
                 <div class="container">
                     <div class="description-review-wrapper">
                         <div class="description-review-topbar nav">
-                            <a data-toggle="tab" href="#des-details1" style="font-size:15px">DESCRIPTION</a>
-                            <a class="active" data-toggle="tab" href="#des-details2" style="font-size:15px">CARACTERISTIQUES</a>
+                            <a class="active" data-toggle="tab" href="#des-details1" style="font-size:15px">DESCRIPTION</a>
+                            <a  data-toggle="tab" href="#des-details2" style="font-size:15px">CARACTERISTIQUES</a>
                             <a data-toggle="tab" href="#des-details3" style="font-size:15px">COMMENTAIRES</a>
                         </div>
                         <div class="tab-content description-review-bottom">
