@@ -163,7 +163,7 @@ class ProduitController extends Controller
 
         $promotion->save();
 
-        Session()->flash('succes',"Promotion enregistree avec succè");
+        Session()->flash('succes',"Promotion enregistrée avec succès");
         return redirect()->back();
 
     }

@@ -32,7 +32,7 @@ Route::get('/changer-passe','InscriptionController@passe_client')->name('client.
 
 Route::put('/mot-de-passe-client/{id}','InscriptionController@update_passe_client')->name('client.passe_update');
 
-Route::get('/affiche-adresse/{id}','AdresseController@show_adresse_client')->name('client.adresse');
+Route::get('/affiche-adresse','AdresseController@show_adresse_client')->name('client.adresse');
 
 
 // ROUTE FRONT-END
@@ -54,6 +54,8 @@ Route::get('/politique-confidentialite','IndexController@politique_confidentiali
 Route::get('/login','ConnexionController@index');
 
 Route::get('/deconnexion','ConnexionController@deconnection');
+
+Route::get('/histotique-achats', 'CommandeController@historique_achat');
 
 // ROUTE BACKEND
 Route::get('/admin', 'AdminController@index');
@@ -109,4 +111,5 @@ Route::resource('slider', 'SliderController');
 Route::resource('connexion', 'ConnexionController');
 Route::resource('news', 'NewsController');
 Route::resource('adresse', 'AdresseController');
+Route::resource('message', 'ContactController');
 

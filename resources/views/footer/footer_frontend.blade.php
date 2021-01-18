@@ -5,7 +5,7 @@
 				<!-- footer categories -->
 				<div class="col-sm-3 address-right">
 					<div class="col-xs-12 footer-grids">
-						<h3>Categories</h3>
+						<h3>Catégories</h3>
 						<ul>
 							<?php
 							  $categories = \App\Models\Categorie::All();
@@ -65,34 +65,15 @@
 				<!-- //quick links -->
 				<!-- social icons -->
 				<div class="col-sm-3 footer-grids  w3l-socialmk">
-					<h3>Follow Us on</h3>
-					<div class="social">
-						<ul>
-							<li>
-								<a class="icon fb" href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a class="icon tw" href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a class="icon gp" href="#">
-									<i class="fa fa-google-plus"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+					<h3>Télécharger l'application sur</h3>
 					<div class="agileits_app-devices">
-						<h5>Télécharger notre application sur</h5>
+						<h5></h5>
 						<a href="#">
 							<img src="{{asset('css_frontend/images/1.png')}}" alt="">
 						</a>
-						<a href="#">
+						<!--a href="#">
 							<img src="{{asset('css_frontend/images/2.png')}}" alt="">
-						</a>
+						</a-->
 						<div class="clearfix"> </div>
 					</div>
 				</div>
