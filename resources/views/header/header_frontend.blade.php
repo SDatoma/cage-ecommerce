@@ -94,9 +94,9 @@
 							<button class="w3view-cart" type="submit" name="submit" value="" style="height:30px;width:40px">
 								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 							</button>
-						 </a>
+						 
 							<strong style="color:black"> Panier : {{ShoppingCart::countRows() ?? '0'}} Produits - {{ShoppingCart::total() ?? '0'}} FCFA </strong>
-						
+						</a>
 					</div>
 				</div>
 				<!-- //cart details -->

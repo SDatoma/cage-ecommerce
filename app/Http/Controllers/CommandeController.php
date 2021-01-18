@@ -124,13 +124,36 @@ class CommandeController extends Controller
 		$id_user= Cookie::get('id_user');
 		
           $commandes = DB::table('commande')
-		  ->join('ligne_commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
-		  ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
           ->where('commande.id_user', '=', $id_user)
           ->get();
 		  
-
         return view('pages_frontend/mes_achats',compact('commandes'));
+    }
+	
+	public function detail_historique($id,$reference_commande)
+    {
+        $user = User::where(['id_user' =>$id])->first() ;
+
+        $etat_commande = Commande::where(['reference_commande' =>$reference_commande])->first() ;
+
+        $commandes = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        //->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.reference_commande', '=', $reference_commande)
+        ->get();
+
+        $prix_total = DB::table('ligne_commande')
+        ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+        //->join('user', 'user.id_user', '=', 'commande.id_user')
+        ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+        ->where('commande.id_user', '=', $id)
+        ->where('commande.reference_commande', '=', $reference_commande)
+        ->sum('ligne_commande.prix_commande');
+
+        return view('pages_frontend/details-historique-achats',compact('commandes','user','prix_total'));
+
     }
  
 
