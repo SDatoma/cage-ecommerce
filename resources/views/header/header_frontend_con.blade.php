@@ -297,4 +297,5 @@
             </div>
         </div>
     </div>
+	@include('sweetalert::alert')
     <!-- Mobile Header Section End -->
