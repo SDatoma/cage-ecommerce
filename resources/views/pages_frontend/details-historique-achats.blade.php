@@ -1,4 +1,3 @@
-
 <?php
 if (Cookie::get('id_user')== null)
   {	?>
@@ -6,6 +5,19 @@ if (Cookie::get('id_user')== null)
 <?php } else{?>
 	@include('header/header_frontend_con')
 <?php } ?>
+
+<style>
+.body-main {
+     background: #ffffff;
+     border-bottom: 15px solid #1E1F23;
+     border-top: 15px solid #1E1F23;
+     margin-top: 30px;
+     margin-bottom: 30px;
+     padding: 40px 30px !important;
+     position: relative;
+     font-size: 10px
+ }
+</style>
 
 	<div class="services-breadcrumb">
 		<div class="agile_inner_breadcrumb">
@@ -28,10 +40,10 @@ if (Cookie::get('id_user')== null)
                    <center> <h3 class="cart-page-title">Détail historique de la commande</h3>
                     <div class="row"></center>
                      
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="container"><br/>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+		<div class="container"><br/>
         <div class="product-sec1">
-                               <div class="container">
+        <div class="container">
         <div class="row" id="dataTable">
             <div class="col-md-12 body-main">
                 <div class="col-md-12">
@@ -50,6 +62,7 @@ if (Cookie::get('id_user')== null)
                         
                         <div class="col-md-12 text-center float">
                             <h2><u>FACTURE N° 2021/00001</u></h2> 
+                            </br></br></br>
                         </div>
                         <div class="col-md-8 text-left">
                             <h4 style="color: black;"><strong>{{$user->nom_user}} {{$user->prenom_user}}</strong></h4>
@@ -59,7 +72,7 @@ if (Cookie::get('id_user')== null)
                         </div>
                     </div> <br />
                     <div>
-                        <table class="table table-striped table-bordered">
+                        <table class="table table-striped table-bordered" >
                             <thead>
                                 <tr>
                                     <th>
@@ -85,10 +98,24 @@ if (Cookie::get('id_user')== null)
 									<td>{{$commande->prix_ht_produit}}</td>
                                     <td>{{$commande->prix_ht_produit*$commande->quantite_commande}}</td>
                                 </tr>
-                            @endforeach  
+                            @endforeach 
+                                
+                               <tr scope="col" colspan="5" rowspan="1" class="text-center">
+									<th colspan="3"  style="font-size:17px;"> SOUS TOTAL</th>
+									<th colspan="2"  style="font-size:17px;"> <?php echo $prix_total?> F CFA</th>
+								</tr>
                                 <tr scope="col" colspan="5" rowspan="1" class="text-center">
-									<th colspan="3"  style="font-size:20px;"> TOTAL A PAYER</th>
-									<th colspan="2"  style="font-size:20px;"> <?php echo $prix_total+1000 ?> F CFA</th>
+									<th colspan="3"  style="font-size:17px;">TAXE</th>
+									<th colspan="2"  style="font-size:17px;"> 0 %</th>
+								</tr>
+                                <tr scope="col" colspan="5" rowspan="1" class="text-center">
+									<th colspan="3"  style="font-size:17px;">FRAIS DE LIVRAISON</th>
+									<th colspan="2"  style="font-size:17px;"> 0 F CFA</th>
+								</tr>
+
+                                <tr scope="col" colspan="5" rowspan="1" class="text-center">
+									<th colspan="3"  style="font-size:20px; color:red"> TOTAL A PAYER</th>
+									<th colspan="2"  style="font-size:20px;"> <?php echo $prix_total?> F CFA</th>
 								</tr>
                             </tbody>
                         </table>
@@ -96,7 +123,7 @@ if (Cookie::get('id_user')== null)
                     <div>
                         <div class="col-md-12">
                             <p  class="text-left" style="font-size:18px; text-align: right; margin-top:40px">
-									 <i>La présente facture est arrêtée à la somme de <b style="font-size:20px;"><?php echo int2str($prix_total+1000)?> F CFA</b> </i></p>
+									 <i>La présente facture est arrêtée à la somme de <b style="font-size:20px;color:red; "><?php echo int2str($prix_total+1000)?> F CFA</b> </i></p>
 										
 									<p  class="text-right" style="text-align: right; margin-top:40px">
 									 Fait à Lomé, le <?php setlocale(LC_TIME, "fr_FR","French");

@@ -129,7 +129,6 @@ Toute réclamation non effectuée dans les règles définies ci-dessus et dans l
 </p></br></br>
 <h4 style="color:blue">8.4 : RETOUR DE COMMANDE</h5>
 <p style="color:black; text-align:justify">
-
 Le produit à échanger ou à rembourser devra être retourné au vendeur dans son ensemble et dans son emballage d’origine, selon les modalités suivantes :</br>
 -	Toute réclamation ou retour non effectué dans les règles définies ci-dessus et dans les délais impartis ne pourra être pris en compte et dégagera CAGE de toute responsabilité vis-à-vis du client.
 </br>
@@ -137,12 +136,10 @@ Le produit à échanger ou à rembourser devra être retourné au vendeur dans s
 </p></br></br>
 <h4 style="color:blue">ARTICLE 9 : INDISPONIBILITÉ DES PRODUITS ET REMBOURSEMENT</h5>
 <p style="color:black; text-align:justify">
-
 En cas d’indisponibilité d’un produit commandé, le client en sera informé par courrier <strong style="color:red">électronique</strong>.
 </p></br></br>
 <h4 style="color:blue">ARTICLE 10. DROIT DE RÉTRACTATION</h5>
 <p style="color:black; text-align:justify">
-
 Le client peut faire valoir son droit de rétractation et de retour du produit dans un délai de 5 jours ouvrables suivant la livraison.
 Le client fera valoir son droit de rétractation en contactant le service client : <strong style="color:red">email</strong>
 Après avoir communiqué sa décision de se rétracter, le client dispose alors de 5 jours pour renvoyer ou restituer les biens.
@@ -155,7 +152,6 @@ CAGE remboursera le client de la totalité des sommes versées dans les 15 jours
 </p></br></br>
 <h4 style="color:blue">ARTICLE 11. PROTECTION DES DONNÉES</h5>
 <p style="color:black; text-align:justify">
-
 CAGE conservera dans ses systèmes informatiques et dans des conditions raisonnables de sécurité une preuve de la transaction comprenant le bon de commande et la facture.
 CAGE garantit à son client de la protection des données personnelles de ce dernier.
 Le client a un droit d’accès, de modification et de suppression des informations collectées, notamment en s’adressant à cet effet au service client : <strong style="color:red">email</strong>
