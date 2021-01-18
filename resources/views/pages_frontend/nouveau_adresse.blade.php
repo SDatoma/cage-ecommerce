@@ -28,7 +28,7 @@ if (Cookie::get('id_user')== null)
                             <div class="login-register-wrapper">
                                 <div class="login-register-tab-list nav">
                                     <a class="active" data-toggle="tab" href="#lg1">
-                                        <h4>Vous, n'avez ajouter aucune adresse, ajouter donc une </h4>
+                                        <h4>Vous, n'avez pas ajouter d'adresse, merci d'ajouter une </h4>
                                     </a>
                                 </div>
                                 <div class="tab-content">
