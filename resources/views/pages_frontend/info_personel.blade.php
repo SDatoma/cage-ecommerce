@@ -39,7 +39,8 @@ if (Cookie::get('id_user')== null)
 											<center>{{ Session::pull('error') }}</center>
 										</div>
 									</div>
-								@else
+									@endif
+								@if (Session::has('success'))
 									<div class="form-group">
 										<div class="alert alert-success">
 											<center>{{ Session::pull('success') }}</center>
@@ -54,7 +55,7 @@ if (Cookie::get('id_user')== null)
 													<div class="col-lg-4">Civilité (Mr/Mme) : </div> <div class="col-lg-8" style="text-align : left;"> 
 													  <input type="radio" name="usercivilite" value="{{$user->sexe_user}}" class="demo6" id="demo6-a" checked><label for="demo6-a">Mr</label>
 													  <input type="radio" name="usercivilite" value="{{$user->sexe_user}}" class="demo6" id="demo6-b" ><label for="demo6-b">Mme</label>
-																									</div>
+													</div> </br></br>
                                                     <div class="col-lg-4">Nom : </div> <div class="col-lg-8"> <input required type="text" value="{{$user->nom_user}}" name="username" /> </div>
                                                     <div class="col-lg-4">Prénom : </div> <div class="col-lg-8"> <input required type="text" name="userprenom" value="{{$user->prenom_user}}" /> </div>
                                                     <div class="col-lg-4">N° Téléphone : </div> <div class="col-lg-8"> <input required name="usertelephone" value="{{$user->telephone_user}}" type="numeric" /> </div>

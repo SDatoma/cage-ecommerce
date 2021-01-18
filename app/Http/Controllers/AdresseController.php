@@ -95,12 +95,11 @@ class AdresseController extends Controller
 		$adresse->ville_adresse = $request->ville;
 		$adresse->pays_adresse = $request->pays;
 		$adresse->description_adresse = $request->description;
-		$adresse->id_user = Cookie::get('id_user');
+		//$adresse->id_user = Cookie::get('id_user');
 		
 		$adresse->save();
 		
-		Session()->flash('success','Félicitation, informations modifiées avec succès. ');	
-		return redirect()->back();
+        return back()->with('success', 'Modification effectuée avec succè');
     }
 
     /**

@@ -40,7 +40,8 @@ if (Cookie::get('id_user')== null)
 											<center>{{ Session::pull('error') }}</center>
 										</div>
 									</div>
-								@else
+								@endif
+								@if (Session::has('success'))
 									<div class="form-group">
 										<div class="alert alert-success">
 											<center>{{ Session::pull('success') }}</center>

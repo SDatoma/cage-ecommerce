@@ -51,7 +51,9 @@ if (Cookie::get('id_user')== null)
                                                 <td class="product-name"><a href="#">{{$commande->quantite_commande}} </a></td>
                                                 <td class="product-name"><a href="#">{{$commande->prix_commande}} F CFA </a></td>
 												<td class="product-name"><a href="#">
-												<?php echo $new_date_format = date('d-m-Y', strtotime($commande->date_commande)); ?>
+                                                <?php 
+                                                echo $new_date_format = date('d-m-Y', strtotime($commande->date_commande)); 
+                                                ?>
 												</a></td>
 												<td class="product-subtotal">
 												@if($commande->etat_commande == 0)

@@ -39,7 +39,8 @@ if (Cookie::get('id_user')== null)
 											<center>{{ Session::pull('error') }}</center>
 										</div>
 									</div>
-								@else
+									@endif
+								@if (Session::has('success'))
 									<div class="form-group">
 										<div class="alert alert-success">
 											<center>{{ Session::pull('success') }}</center>
@@ -49,7 +50,6 @@ if (Cookie::get('id_user')== null)
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
                                                 <form class="form-horizontal" method="POST"  action="{{route('adresse.update',$adresse->id_adresse)}}" enctype="multipart/form-data">
-													
 													{{ method_field('PUT') }}
 													 {{ csrf_field() }}
 													 

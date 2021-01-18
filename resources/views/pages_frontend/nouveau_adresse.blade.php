@@ -48,11 +48,9 @@ if (Cookie::get('id_user')== null)
 								@endif
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
-                                                <form class="form-horizontal" method="POST"  action="{{route('adresse.store')}}" enctype="multipart/form-data">
-													
-													 {{ csrf_field() }}
-													 
-                                                    <div class="col-lg-4">Ville : </div> <div class="col-lg-8"> <input required type="text" name="ville" /> </div>
+                                            <form class="form-horizontal" method="POST"  action="{{route('adresse.store')}}" >
+													{{ csrf_field() }}
+													<div class="col-lg-4">Ville : </div> <div class="col-lg-8"> <input required type="text" name="ville" /> </div>
                                                     <div class="col-lg-4">Pays : </div> <div class="col-lg-8"> <input required type="text" name="pays" value="TOGO" /> </div>
                                                     <div class="col-lg-4">Description précise : </div> <div class="col-lg-8"> <input required name="description" type="numeric" /> </div>
                                                     <div class="button-box">
