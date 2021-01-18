@@ -36,7 +36,7 @@ if (Cookie::get('id_user')== null)
                               
                             </div>
                         </div> -->
-                        <div class="col-lg-7">
+                        <div class="col-lg-8">
                         <!-- Slider Start -->
                             <div class="slider-area slider-height-2">
                                 <div class="hero-slider swiper-container">
@@ -45,10 +45,10 @@ if (Cookie::get('id_user')== null)
                                         <div class="swiper-slide bg-img d-flex" style="background-image: url({{asset('css_frontend/images/image1.jpg')}});">
                                             <div class="container align-self-center">
                                                 <div class="slider-content-1 slider-animated-1 text-left pl-60px" >
-                                                    <span class="animated color-white" style="color:black">GALAXY WATCH</span>
+                                                    <span class="animated color-white" style="color:black">PAYER DANS NOS MAGASINS</span>
                                                     <h1 class="animated color-white" style="color:black">
-                                                        Pre-Order <br />
-                                                        <strong>Exclusive</strong>
+                                                        Commande <br />
+                                                        <strong>Livraison</strong>
                                                     </h1>
                                                     <!-- <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a> -->
                                                 </div>
@@ -90,7 +90,7 @@ if (Cookie::get('id_user')== null)
                             </div>
                             <!-- Slider End -->
                         </div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-4">
                             <div class="banner-area banner-area-2">
                                 <div class="banner-wrapper mb-15px">
                                     <a href="#"><img src="/{{$sliders[0]->image_slider}}" alt="" widht="100%" height="200px"/></a>
@@ -291,7 +291,7 @@ if (Cookie::get('id_user')== null)
 					<!-- //third section (oils) -->
 					<!-- fourth section (noodles) -->
 					<div class="product-sec1">
-						<h3 class="heading-tittle" style="font-size:25px">Nouvelles Arrivées</h3>
+						<h3 class="heading-tittle" style="font-size:25px">Nouvaux produits</h3>
                         @foreach($nouveau_produits as $nouveau_produit)
 						<div class="col-md-3 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
@@ -385,8 +385,8 @@ if (Cookie::get('id_user')== null)
 					<span class="fa fa-envelope-o" aria-hidden="true"></span>
 				</div>
 			</div>
-			<div class="col-xs-4 w3l-rightmk">
-				<img src="{{asset('css_frontend/images/tab3.png')}}" alt=" ">
+			<div class="col-xs-4 w3l-rightmk"><br/><br/><br/>
+				<img src="{{asset('css_frontend/images/tab3.jpg')}}" alt=" ">
 			</div>
 			<div class="clearfix"></div>
 		</div>

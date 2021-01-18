@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Adresse;
+use App\Models\Contact;
+use ShoppingCart;
+use Mail;
+use App\Mail\TestMail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -11,8 +14,9 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use PDF;
 
-class AdresseController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,8 +45,20 @@ class AdresseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    { 
+        $date_jour=date('Y-m-d');
+        $contact = new Contact();
+        
+        $contact->nom_contact= $request->nom;
+        $contact->email_contact= $request->email;
+        $contact->objet_contact= $request->objet;
+        $contact->message_contact= $request->message;
+        $contact->date_contact=$date_jour;
+
+        $contact->save();
+		
+		Session()->flash('succes',"Messgae envoyé, merci.");
+        return redirect()->back();
     }
 
     /**
@@ -53,21 +69,7 @@ class AdresseController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-	
-	public function show_adresse_client()
-    { 
-		
-		$id_user= Cookie::get('id_user');
-
-        $adresse = Adresse::where(['id_user' =>$id_user])->first() ;
-		
-		if($adresse == null){
-			return view('pages_frontend/nouveau_adresse',compact('adresse'));
-		}else{
-			return view('pages_frontend/adresse',compact('adresse'));
-		}
+        
     }
 
     /**
@@ -78,7 +80,7 @@ class AdresseController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -90,17 +92,7 @@ class AdresseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $adresse = Adresse::where(['id_adresse' =>$id])->first() ;
-		 
-		$adresse->ville_adresse = $request->ville;
-		$adresse->pays_adresse = $request->pays;
-		$adresse->description_adresse = $request->description;
-		$adresse->id_user = Cookie::get('id_user');
-		
-		$adresse->save();
-		
-		Session()->flash('success','Félicitation, informations modifiées avec succès. ');	
-		return redirect()->back();
+        //
     }
 
     /**
@@ -113,5 +105,4 @@ class AdresseController extends Controller
     {
         //
     }
-
 }

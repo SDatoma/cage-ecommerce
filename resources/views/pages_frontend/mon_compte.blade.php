@@ -59,7 +59,7 @@ if (Cookie::get('id_user')== null)
 									</a>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
-								<a href="{{route('client.adresse',[Cookie::get('id_user')])}}">
+								<a href="{{route('client.adresse')}}">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>
@@ -81,6 +81,7 @@ if (Cookie::get('id_user')== null)
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="row">
                                 <div class="col-lg-6 col-md-6 mb-lm-30px">
+								<a href="/histotique-achats">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">HISTORIQUE</h4>
@@ -92,6 +93,7 @@ if (Cookie::get('id_user')== null)
                                             </div>
                                         </div>
                                     </div>
+									</a>
                                 </div>
 								
                                 <div class="col-lg-6 col-md-6 mb-lm-30px">

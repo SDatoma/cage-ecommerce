@@ -275,7 +275,7 @@ if (Cookie::get('id_user')== null)
 	<div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l" style="font-size:25px">Produits de la meme categorie
+			<h3 class="tittle-w3l" style="font-size:25px">Produits de la même catégorie
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -333,7 +333,7 @@ if (Cookie::get('id_user')== null)
 	<!-- fourth section (noodles) --><div class="featured-section" id="projects">
 		<div class="container">
 					<div class="product-sec1">
-						<h3 class="heading-tittle" style="font-size:25px">Nouvelles Arrivées</h3>
+						<h3 class="heading-tittle" style="font-size:25px">Nouveaux produits</h3>
                         @foreach($nouveau_produits as $nouveau_produit)
 						<div class="col-md-3 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">

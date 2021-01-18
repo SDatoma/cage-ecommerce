@@ -117,7 +117,22 @@ class CommandeController extends Controller
 
         return view('pages_backend/commande/list_commande_valider',compact('commandes'));
     }
+	
+	//historique commande client
+	public function historique_achat()
+    {
+		$id_user= Cookie::get('id_user');
+		
+          $commandes = DB::table('commande')
+		  ->join('ligne_commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+		  ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
+          ->where('commande.id_user', '=', $id_user)
+          ->get();
+		  
 
+        return view('pages_frontend/mes_achats',compact('commandes'));
+    }
+ 
 
     public function getAllUser()
     {

@@ -83,8 +83,17 @@ if (Cookie::get('id_user')== null)
                                 <div class="contact-title mb-30">
                                     <h2>Contacter Nous...</h2>
                                 </div>
-                                <form class="contact-form-style" id="contact-form" action="" method="post">
-                                    <div class="row">
+								
+								@if (Session::has('succes'))
+									<div class="form-group">
+										<div class="alert alert-success">
+											<center>{{ Session::pull('succes') }}</center>
+										</div>
+									</div>
+								@endif
+                                <form class="contact-form-style" id="contact-form" action="{{route('message.store')}}" method="post">
+                                     {{ csrf_field() }}
+									<div class="row">
                                         <div class="col-lg-6">
                                             <input name="nom" placeholder="Nom*" type="text" />
                                         </div>
