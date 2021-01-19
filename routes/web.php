@@ -61,22 +61,7 @@ Route::get('/deconnexion','ConnexionController@deconnection');
 
 Route::get('/histotique-achats', 'CommandeController@historique_achat');
 
-Route::get('/détail_historique/{id}/{reference_commande}', 'CommandeController@detail_historique')->name('voir.detail');
-
-
-
-
-
-
-
-
-
-/****************************
-
-	ROUTE BACKEND
-
-****************************/
-
+// ROUTE BACKEND
 Route::get('/admin', 'AdminController@index');
 
 //Boutique

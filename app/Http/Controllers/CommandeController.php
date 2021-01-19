@@ -124,9 +124,12 @@ class CommandeController extends Controller
 		$id_user= Cookie::get('id_user');
 		
           $commandes = DB::table('commande')
+		  ->join('ligne_commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
+		  ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
           ->where('commande.id_user', '=', $id_user)
           ->get();
 		  
+<<<<<<< HEAD
         return view('pages_frontend/mes_achats',compact('commandes'));
     }
 	
@@ -156,7 +159,10 @@ class CommandeController extends Controller
         ->sum('ligne_commande.prix_commande');
 
         return view('pages_frontend/details-historique-achats',compact('commandes','user','prix_total'));
+=======
+>>>>>>> parent of 8336134... histo
 
+        return view('pages_frontend/mes_achats',compact('commandes'));
     }
  
 

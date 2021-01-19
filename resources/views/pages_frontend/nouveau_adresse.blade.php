@@ -28,7 +28,11 @@ if (Cookie::get('id_user')== null)
                             <div class="login-register-wrapper">
                                 <div class="login-register-tab-list nav">
                                     <a class="active" data-toggle="tab" href="#lg1">
+<<<<<<< HEAD
                                         <h4>AJOUTER UNE ADRESSE</h4>
+=======
+                                        <h4>Vous, n'avez ajouter aucune adresse, ajouter donc une </h4>
+>>>>>>> parent of 8336134... histo
                                     </a>
                                 </div>
                                 <div class="tab-content">

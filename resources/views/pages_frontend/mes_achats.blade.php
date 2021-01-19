@@ -33,27 +33,25 @@ if (Cookie::get('id_user')== null)
                                     <table>
                                         <thead>
                                             <tr>
+<<<<<<< HEAD
                                                 <th>Reférences Commandes</th>
                                                 <th>Nombre de produits</th>
 												<th> Etat commande </th>
                                                 <th>Action</th>
+=======
+                                                <th>Image</th>
+                                                <th>Nom produit</th>
+                                                <th>Quantité</th>
+                                                <th>Prix total</th>
+                                                <th>Date commande</th>
+                                                <th>Etat commande</th>
+>>>>>>> parent of 8336134... histo
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($commandes as $commande)
-											<?php
-
-												 $user = \App\Models\User::where(['id_user' =>$commande->id_user])->first() ;
-
-												 $nombre_produits = DB::table('ligne_commande')
-												 ->join('commande', 'ligne_commande.id_commande', '=', 'commande.id_commande')
-												 ->join('produit', 'produit.id_produit', '=', 'ligne_commande.id_produit')
-												 ->where('commande.id_user', '=', $commande->id_user)
-												 ->where('commande.reference_commande', '=', $commande->reference_commande)
-												  ->count('ligne_commande.id_produit');
-												 
-											?>
                                             <tr>
+<<<<<<< HEAD
                                                 <td class="product-name">{{$commande->reference_commande}}</td>
                                                 <td class="product-name">{{$nombre_produits}}</td>
                                                 <td class="product-name">@if($commande->etat_commande != 0 )  
@@ -67,7 +65,25 @@ if (Cookie::get('id_user')== null)
 															<i class="glyphicon glyphicon-eye-open"></i> Voir détails
 														</button> 
 													</a>
+=======
+                                                <td class="product-thumbnail">
+                                                    <a  href="#"><img class="img-responsive" src="/{{$commande->image_produit}}" width="100px" height="100px" alt="" /></a>
+                                                </td>
+                                                <td class="product-name"><a href="#">{{$commande->nom_produit}}</a></td>
+                                                <td class="product-name"><a href="#">{{$commande->quantite_commande}} </a></td>
+                                                <td class="product-name"><a href="#">{{$commande->prix_commande}} F CFA </a></td>
+												<td class="product-name"><a href="#">
+												<?php echo $new_date_format = date('d-m-Y', strtotime($commande->date_commande)); ?>
+												</a></td>
+												<td class="product-subtotal">
+												@if($commande->etat_commande == 0)
+													<span class="item_price" style="background-color:#a12626; font-size:15px;color:#fff"><b>En attente</b> </span>
+												@else
+													<span class="badge" style="background-color:#06d755; font-size:15px;color:#fff"><b>Livré</b> </span>
+												@endif
+>>>>>>> parent of 8336134... histo
 												</td>
+												
                                                 
                                             </tr>
                                             
