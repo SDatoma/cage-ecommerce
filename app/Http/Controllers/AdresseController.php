@@ -68,16 +68,32 @@ class AdresseController extends Controller
 	
 	public function show_adresse_client()
     { 
-		
 		$id_user= Cookie::get('id_user');
 
         $adresse = Adresse::where(['id_user' =>$id_user])->first() ;
 		
-		if($adresse == null){
-			return view('pages_frontend/nouveau_adresse',compact('adresse'));
-		}else{
-			return view('pages_frontend/adresse',compact('adresse'));
-		}
+		return view('pages_frontend/ajouter_adresse',compact('adresse'));
+		
+    }
+	
+	public function liste_adresse_client()
+    { 
+		$id_user= Cookie::get('id_user');
+
+        $adresses = Adresse::where(['id_user' =>$id_user])->get() ;
+		
+		return view('pages_frontend/nouveau_adresse',compact('adresses'));
+		
+    }
+	
+	//récuperation des adresses
+	public function adresse_client()
+    { 
+		$id_user= Cookie::get('id_user');
+
+        $adresse = Adresse::where(['id_user' =>$id_user])->first() ;
+		
+		return view('pages_frontend/adresse',compact('adresse'));
     }
 
     /**

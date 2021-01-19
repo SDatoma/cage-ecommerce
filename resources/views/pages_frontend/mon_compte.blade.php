@@ -59,7 +59,7 @@ if (Cookie::get('id_user')== null)
 									</a>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-lm-30px">
-								<a href="{{route('client.adresse')}}">
+								<a href="/mes-adresses">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">MODIFIER</h4>

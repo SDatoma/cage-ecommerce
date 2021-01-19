@@ -15,7 +15,7 @@ if (Cookie::get('id_user')== null)
 						Accueil
 						<i>|</i>
 					</li>
-					<li><a href="{{route('profil.client',[Cookie::get('id_user')])}}">Mon compte </a><i>|</i> <a href="#">Mes Adresses</a></li>
+					<li><a href="{{route('profil.client',[Cookie::get('id_user')])}}">Mon compte </a><i>|</i> <a href="/mes-adresses">Mes Adresses</a> <i>|</i> <a href="#">Modification</a></li>
 				</ul>
 			</div>
 		</div>
@@ -33,19 +33,7 @@ if (Cookie::get('id_user')== null)
                                 </div>
                                 <div class="tab-content">
                                     <div id="lg1" class="tab-pane active">
-									@if (Session::has('error'))
-									<div class="form-group">
-										<div class="alert alert-danger">
-											<center>{{ Session::pull('error') }}</center>
-										</div>
-									</div>
-								@else
-									<div class="form-group">
-										<div class="alert alert-success">
-											<center>{{ Session::pull('success') }}</center>
-										</div>
-									</div>
-								@endif
+									
                                         <div class="login-form-container">
                                             <div class="login-register-form" style="color:#000; text-align : right;">
                                                 <form class="form-horizontal" method="POST"  action="{{route('adresse.update',$adresse->id_adresse)}}" enctype="multipart/form-data">
@@ -65,6 +53,7 @@ if (Cookie::get('id_user')== null)
                                     </div>
                                 </div>
                             </div>
+							
                         </div>
                     </div>
                 </div>

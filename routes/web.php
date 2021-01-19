@@ -32,7 +32,11 @@ Route::get('/changer-passe','InscriptionController@passe_client')->name('client.
 
 Route::put('/mot-de-passe-client/{id}','InscriptionController@update_passe_client')->name('client.passe_update');
 
+Route::get('/mes-adresses','AdresseController@liste_adresse_client');
+
 Route::get('/affiche-adresse','AdresseController@show_adresse_client')->name('client.adresse');
+
+Route::get('/modifier-adresse','AdresseController@adresse_client');
 
 
 // ROUTE FRONT-END
