@@ -35,6 +35,7 @@ if (Cookie::get('id_user')== null)
                                             <tr>
                                                 <th>Reférences Commandes</th>
                                                 <th>Nombre de produits</th>
+												<th> Etat commande </th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -55,6 +56,11 @@ if (Cookie::get('id_user')== null)
                                             <tr>
                                                 <td class="product-name">{{$commande->reference_commande}}</td>
                                                 <td class="product-name">{{$nombre_produits}}</td>
+                                                <td class="product-name">@if($commande->etat_commande != 0 )  
+													<span class="badge" style="background-color:#06d755; font-size:15px;color:#fff"><b>Livrer</b> </span>
+												@else 
+													<span class="item_price" style="background-color:#a12626; font-size:15px;color:#fff"><b>En attente</b> </span>
+												@endif </td>
                                                 <td class="product-name">
 													<a href="{{route('voir.detail',[$commande->id_user,$commande->reference_commande])}}">
 														<button style="color:#0079ba; text-decoration: underline overline #FF3028;" title="Voir détail" data-toggle="modal" data-target="#">

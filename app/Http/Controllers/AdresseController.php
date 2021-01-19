@@ -42,7 +42,17 @@ class AdresseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		$adresse = new Adresse();
+		
+		$adresse->ville_adresse = $request->ville;
+		$adresse->pays_adresse = $request->pays;
+		$adresse->description_adresse = $request->description;
+		$adresse->id_user = Cookie::get('id_user');
+		
+		$adresse->save();
+		
+		Session()->flash('success','Félicitation, adresse ajoutée avec succès. ');	
+		return redirect()->back();
     }
 
     /**

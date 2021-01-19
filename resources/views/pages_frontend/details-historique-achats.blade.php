@@ -62,18 +62,10 @@ if (Cookie::get('id_user')== null)
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>
-                                       Libelle
-                                    </th>
-									<th>
-                                        Quantite
-                                    </th>
-									<th>
-                                        Prix Unitaire
-                                    </th>
-                                    <th>
-                                        Total
-                                    </th>
+                                    <th> Libelle </th>
+									<th> Quantite </th>
+									<th> Prix Unitaire </th>
+                                    <th> Total </th>
 
                                 </tr>
                             </thead>
