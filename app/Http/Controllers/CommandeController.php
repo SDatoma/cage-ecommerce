@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use PDF;
-use Alert;
 
 class CommandeController extends Controller
 {
@@ -95,8 +94,8 @@ class CommandeController extends Controller
          Mail::to($user->email_user)->send(new TestMail($user->nom_user, $user->prenom_user, $user->email_user,$user->telephone_user));
 
          ShoppingCart::destroy();
-         //return back()->with('success', 'Sous categorie enregistrement effectuer avec succè');
-         return redirect()->to('/')->with('success', 'Conmande effectuee avec succè');
+ 
+         return redirect()->to('/');
     }
 
 

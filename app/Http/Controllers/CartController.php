@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ShoppingCart;
-Use Alert;
 
 class CartController extends Controller
 {
@@ -39,9 +38,7 @@ class CartController extends Controller
         ShoppingCart::associate('App\Models\Produit');
 
         ShoppingCart::add($request->id_produit,$request->nom_produit,1,$request->prix_produit);
-        //return redirect()->back();
-        return back()->with('success', 'Ajouter au panier avec succes!');
-      
+        return redirect()->back();
     }
 
     public function emptyCart()

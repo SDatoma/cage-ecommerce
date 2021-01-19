@@ -405,7 +405,5 @@
 @yield('content')
 
 
-@include('sweetalert::alert')
-
 @include('footer/footer_back')
 

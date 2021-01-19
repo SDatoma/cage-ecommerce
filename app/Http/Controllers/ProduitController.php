@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
-use Alert;
 
 class ProduitController extends Controller
 {
@@ -61,7 +60,7 @@ class ProduitController extends Controller
 
         if ($verification_produit) {
 
-            Session()->flash('Error',"Cet produit existe deja dans cette boutique , Veuillez mettre à jour la quantité");
+            Session()->flash('error',"Cet produit existe deja dans cette boutique , Veuillez mettre à jour la quantité");
             return back()->withErrors($validator)->withInput();
         }
 
@@ -124,7 +123,8 @@ class ProduitController extends Controller
 
         }
 
-        return back()->with('success', 'Produit enregistre effectuer avec succè');
+        Session()->flash('succes',"Produit enregistrer avec succè");
+        return redirect()->back();
     }
 
     // ajouter une promotion du produit
@@ -135,12 +135,12 @@ class ProduitController extends Controller
         $date_jour = date('Y-m-d');
         
         if($request->date_debut_promotion < $date_jour){
-            Session()->flash('Error',"Date debut promotion invalide ( $request->date_debut_promotion )");
+            Session()->flash('error',"Date debut promotion invalide ( $request->date_debut_promotion )");
             return redirect()->back();
         }
 
         if($request->date_fin_promotion < $request->date_debut_promotion){
-            Session()->flash('Error',"Date fin promotion invalide ( $request->date_fin_promotion )");
+            Session()->flash('error',"Date fin promotion invalide ( $request->date_fin_promotion )");
             return redirect()->back();
         }
          
@@ -163,7 +163,8 @@ class ProduitController extends Controller
 
         $promotion->save();
 
-        return back()->with('success', 'Promotion enregistree effectuer avec succè');
+        Session()->flash('succes',"Promotion enregistrée avec succès");
+        return redirect()->back();
 
     }
 
@@ -305,8 +306,8 @@ class ProduitController extends Controller
 
         $produit->save();
 
-        //return back()->with('success', 'Modification effectuee avec succè');
-        return redirect()->to('/list/produit')->with('success', 'Modification effectuee avec succè');
+        Session()->flash('succes',"Modification effectuee avec succès");
+        return redirect()->to('/list/produit');
     }
 
 
@@ -320,8 +321,7 @@ class ProduitController extends Controller
 
         $promotion->save();
 
-        return back()->with('success', 'Modification effectuee avec succè');
-        // return redirect()->back();
+         return redirect()->back();
     }
 
     /**
@@ -338,8 +338,8 @@ class ProduitController extends Controller
 
         $produit->save();
 
-       return back()->with('error','Suppression effectuer avec succè');
-       
+        Session()->flash('error',"Suppression effectuee avec succès");
+        return redirect()->back();
     }
 
     public function destroyPromotion($id)
@@ -348,7 +348,7 @@ class ProduitController extends Controller
         //dd($promotion);
         $promotion->delete();
 
-        return back()->with('error', 'Suppression effectuer avec succè');
-       
+        Session()->flash('error',"Suppression effectuee avec succès");
+        return redirect()->back();
     }
 }

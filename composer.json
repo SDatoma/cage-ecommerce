@@ -14,14 +14,13 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.5",
-        "khill/lavacharts": "^3.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "maatwebsite/excel": "^3.1",
         "overtrue/laravel-shopping-cart": "^2.0",
         "phpoffice/phpexcel": "^1.8",
-        "realrashid/sweet-alert": "^3.2",
-        "reliese/laravel": "^0.0.16"
+        "reliese/laravel": "^0.0.16",
+        "khill/lavacharts" : "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
