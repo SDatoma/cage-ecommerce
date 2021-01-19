@@ -44,13 +44,12 @@ class NewsController extends Controller
     {
         $news= new News();
 
-        $news->email=$request->email;
+        $news->email_newsletter=$request->email;
 
         $news->save();
 
-        Session()->flash('succes',"Souscription effectuée");
-        
-		return redirect()->back();
+        //Session()->flash('succes',"Souscription effectuée");
+        return back()->with('success', 'Souscription effectuée!');
     }
 
     /**
@@ -87,7 +86,6 @@ class NewsController extends Controller
         //
     }
 	
-
     /**
      * Remove the specified resource from storage.
      *

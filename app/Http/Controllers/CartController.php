@@ -55,7 +55,6 @@ class CartController extends Controller
     {
         $id_categorie=0;
         $items = ShoppingCart::all();
-        
         //dd($items);
         return view('pages_frontend/panier',compact('items','id_categorie'));
     }
