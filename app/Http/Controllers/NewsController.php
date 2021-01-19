@@ -44,7 +44,7 @@ class NewsController extends Controller
     {
         $news= new News();
 
-        $news->email=$request->email;
+        $news->email_newsletter=$request->email;
 
         $news->save();
 
