@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Alert;
 
 class FournisseurController extends Controller
 {
@@ -85,8 +86,7 @@ class FournisseurController extends Controller
 
         $boutique->save();
 
-        Session()->flash('succes',"Enregistrement effectuer avec succè");
-        return redirect()->back();
+        return back()->with('success', 'Enregistrement effectuer avec succè');
 
     }
 
@@ -158,9 +158,7 @@ class FournisseurController extends Controller
         $boutique->description_boutique= $request->description_boutique ;
 
         $boutique->save();
-
-        Session()->flash('succes',"Modification effectuée avec succè");
-        return redirect()->back();
+        return back()->with('success', 'Modification effectuée avec succè');
     }
 
     /**
@@ -177,8 +175,7 @@ class FournisseurController extends Controller
          
         $boutique->save();
 
-        Session()->flash('error',"Suppression effectuée avec succè");
-        return redirect()->back();
+        return back()->with('success', 'Suppression effectuée avec succè');
 
     }
 }
