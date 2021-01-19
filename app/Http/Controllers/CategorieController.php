@@ -50,7 +50,7 @@ class CategorieController extends Controller
         if ($verification_categorie) {
 
             Session()->flash('error',"Cette categorie existe deja dans le catalogue");
-            return back()->withErrors($validator)->withInput();
+            return back();
         }
 
         $categorie= new Categorie();

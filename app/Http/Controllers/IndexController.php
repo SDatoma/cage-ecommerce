@@ -53,8 +53,6 @@ class IndexController extends Controller
 		
 		$categories = Categorie::all();
 		
-		
-		
 		return view('pages_frontend/header/header_frontend',compact('categories'));
 	}
 	

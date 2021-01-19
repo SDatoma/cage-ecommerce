@@ -40,7 +40,7 @@ class CartController extends Controller
 
         ShoppingCart::add($request->id_produit,$request->nom_produit,1,$request->prix_produit);
         //return redirect()->back();
-        return back()->with('success', 'Ajouter au panier avec succes!');
+        return back()->with('success', 'Ajout au panier avec succes!');
       
     }
 

@@ -61,12 +61,6 @@ Route::get('/détail_historique/{id}/{reference_commande}', 'CommandeController@
 
 
 
-
-
-
-
-
-
 /****************************
 
 	ROUTE BACKEND
