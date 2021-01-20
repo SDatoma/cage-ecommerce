@@ -123,7 +123,7 @@ if (Cookie::get('id_user')== null)
                     <div>
                         <div class="col-md-12">
                             <p  class="text-left" style="font-size:18px; text-align: right; margin-top:40px">
-									 <i>La présente facture est arrêtée à la somme de <b style="font-size:20px;color:red; "><?php echo int2str($prix_total+1000)?> F CFA</b> </i></p>
+									 <i>La présente facture est arrêtée à la somme de <b style="font-size:20px;color:red; "><?php echo int2str($prix_total)?> F CFA</b> </i></p>
 										
 									<p  class="text-right" style="text-align: right; margin-top:40px">
 									 Fait à Lomé, le <?php setlocale(LC_TIME, "fr_FR","French");

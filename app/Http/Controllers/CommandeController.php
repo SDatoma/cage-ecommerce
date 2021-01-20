@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Produit;
 use App\Models\Commande;
+use App\Models\adresse;
 use App\Models\LigneCommande;
 use ShoppingCart;
 use Mail;
@@ -55,7 +56,9 @@ class CommandeController extends Controller
          $id_user= Cookie::get('id_user');
         
          $user = User::where(['id_user' =>$id_user])->first() ;
-
+         
+         Mail::to($user->email_user)->send(new TestMail($user->nom_user, $user->prenom_user, $user->email_user,$user->telephone_user));
+         
          $chars = "abcdefghijkmnopqrstuvwxyz023456789";
          srand((double)microtime()*1000000);
          $i = 0 ;
@@ -92,9 +95,7 @@ class CommandeController extends Controller
 
          }
 
-         Mail::to($user->email_user)->send(new TestMail($user->nom_user, $user->prenom_user, $user->email_user,$user->telephone_user));
-
-         ShoppingCart::destroy();
+        ShoppingCart::destroy();
          //return back()->with('success', 'Sous categorie enregistrement effectuer avec succè');
          return redirect()->to('/')->with('success', 'Conmande effectuee avec succè');
     }
@@ -166,10 +167,12 @@ class CommandeController extends Controller
     }
 
     public function checkout(){
-		
+        
+        $id_user = $id_user= Cookie::get('id_user');
+        $adresses = Adresse::where(['id_user' =>$id_user])->get() ;
 		$id_categorie=0 ;
 		
-		return view('pages_frontend/checkout',compact('id_categorie'));
+		return view('pages_frontend/checkout',compact('id_categorie','adresses'));
 	}
 
     /**

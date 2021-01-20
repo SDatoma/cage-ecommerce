@@ -55,57 +55,29 @@ if (Cookie::get('id_user')== null)
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 mb-lm-30px">
+                                <div class="col-lg-5 col-md-6 mb-lm-30px">
                                     <div class="discount-code-wrapper">
                                         <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">Choisissez l'adresse de livraison</h4>
                                         </div>
                                            <div class="">
 										      <div class="row">
+                                              <?php $i=1 ?>
+                                               @foreach($adresses as $adresse)
                                                    <div class="col-md-6">
-                                                      <label for="huey" style="color:blue">Adresse 1</label>&nbsp;&nbsp;
-                                                      <input type="radio" name="adresse" value="" checked>
-                                                     <p> Ville :  </p>
-                                                     <p> Pays :  </p>
-                                                     <p> Quartier :  </p>
-                                                     <p> Description :  </p> 
+                                                      <label for="huey" style="color:blue">Adresse {{$i}}</label>&nbsp;&nbsp;
+                                                      <input type="radio" name="adresse" value="{{$adresse->id_adresse}}" >
+                                                     <p ><strong style="color:black"> Ville </strong>: {{$adresse->ville_adresse}}</p>
+                                                     <p><strong style="color:black"> Pays </strong>: {{$adresse->pays_adresse}}</p>
+                                                     <p><strong style="color:black"> Description </strong>: {{$adresse->description_adresse}}</p>
                                                    </div>
-
-                                                   <div class="col-md-6">
-                                                      <label for="huey" style="color:blue">Adresse 2</label>&nbsp;&nbsp;
-                                                      <input type="radio" name="adresse" value="">
-                                                     <p> Ville :  </p>
-                                                     <p> Pays :  </p>
-                                                     <p> Quartier :  </p>
-                                                     <p> Description :  </p>
-                                                     </br> 
-                                                   </div>
-                                                    
-                                                   <div class="col-md-6">
-                                                      <label for="huey" style="color:blue">Adresse 3</label>&nbsp;&nbsp;
-                                                      <input type="radio" name="adresse" value="">
-                                                     <p> Ville :  </p>
-                                                     <p> Pays :  </p>
-                                                     <p> Quartier :  </p>
-                                                     <p> Description :  </p> 
-                                                   </div>
-
-                                                   <div class="col-md-6">
-                                                      <label for="huey" style="color:blue">Adresse 4</label>&nbsp;&nbsp;
-                                                      <input type="radio" name="adresse" value="">
-                                                     <p> Ville :  </p>
-                                                     <p> Pays :  </p>
-                                                     <p> Quartier :  </p>
-                                                     <p> Description :  </p> 
-                                                   </div>
-                                                  
+                                                   <?php $i++ ?>
+                                                @endforeach
                                                 </div>
-
-
                                            </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-12 mt-md-30px">
+                                <div class="col-lg-3 col-md-12 mt-md-30px">
                                     <div class="grand-totall">
 									   <div class="title-wrap">
                                             <h4 class="cart-bottom-title section-bg-gray">Votre commande</h4>
